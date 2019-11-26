@@ -2,4 +2,5 @@ body {
   background-color: #f4cd94;
   color: #471714;
   font-family: "Special Elite", cursive;
+  min-height: 100vh;
 }

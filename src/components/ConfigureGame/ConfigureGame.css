@@ -24,3 +24,12 @@
 ::placeholder {
   color: #471714;
 }
+
+.configure-screen__button-wrapper {
+  width: 40%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
