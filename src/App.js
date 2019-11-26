@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SplashScreen from "./components/SplashScreen";
-import GameEdit from "./components/GameEdit";
+import GameEdit from "./components/ConfigureGame";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <div className="App">
         <Switch>
           <Route exact path="/" component={SplashScreen} />
-          <Route path="/edit" component={GameEdit} />
+          <Route path="/configure" component={GameEdit} />
         </Switch>
       </div>
     </Router>

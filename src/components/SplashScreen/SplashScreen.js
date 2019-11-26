@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import Header from "../components/Header";
-import Button from "./Button";
-import MainCharacter from "../images/main-character.png";
+import Header from "../Header";
+import Button from "../Button";
+import MainCharacter from "../../images/main-character.png";
 import "./SplashScreen.css";
 
 const SplashScreen = () => {
@@ -14,7 +15,9 @@ const SplashScreen = () => {
         src={MainCharacter}
         alt="Munchkin character holding chainsaw"
       />
-      <Button>New Game</Button>
+      <Button as={Link} to="/configure">
+        New Game
+      </Button>
     </div>
   );
 };
