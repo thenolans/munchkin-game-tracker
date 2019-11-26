@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Header from "../Header";
 import Button from "../Button";
 import MainCharacter from "../../images/main-character.png";
 import "./SplashScreen.css";
@@ -9,7 +8,6 @@ import "./SplashScreen.css";
 const SplashScreen = () => {
   return (
     <div className="splash-screen">
-      <Header className="splash-screen__header" />
       <img
         className="splash-screen__character-image"
         src={MainCharacter}
