@@ -1,13 +1,14 @@
 import React from "react";
 
 import Header from "./Header";
+import "./GameEdit.css";
 
-const EditGame = () => {
+const GameEdit = () => {
   return (
-    <div>
+    <div className="edit-board">
       <Header />
     </div>
   );
 };
 
-export default EditGame;
+export default GameEdit;

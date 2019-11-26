@@ -2,19 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SplashScreen from "./components/SplashScreen";
-import EditGame from "./components/EditGame";
+import GameEdit from "./components/GameEdit";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
-            <SplashScreen />
-          </Route>
-          <Route path="/edit">
-            <EditGame />
-          </Route>
+          <Route exact path="/" component={SplashScreen} />
+          <Route path="/edit" component={GameEdit} />
         </Switch>
       </div>
     </Router>
