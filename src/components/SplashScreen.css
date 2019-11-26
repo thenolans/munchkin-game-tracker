@@ -1,0 +1,12 @@
+.splash-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.splash-screen__character-image {
+  height: 300px;
+  width: auto;
+  margin-bottom: 20px;
+}
