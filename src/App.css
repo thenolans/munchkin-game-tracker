@@ -5,3 +5,7 @@
   flex-direction: column;
   width: 100%;
 }
+
+.game-content {
+  margin-top: 10px;
+}
