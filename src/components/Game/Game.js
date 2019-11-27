@@ -12,6 +12,18 @@ const Game = () => {
         Player Name
         <ScoreInput />
       </div>
+      <div className="game__player-wrapper">
+        Player Name
+        <ScoreInput />
+      </div>
+      <div className="game__player-wrapper">
+        Player Name
+        <ScoreInput />
+      </div>
+      <div className="game__player-wrapper">
+        Player Name
+        <ScoreInput />
+      </div>
 
       <div className="game__button-wrapper">
         <Button as={Link} to="/results">

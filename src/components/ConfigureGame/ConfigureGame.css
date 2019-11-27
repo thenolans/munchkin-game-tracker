@@ -11,22 +11,6 @@
   margin-top: 30px;
 }
 
-.configure-screen__name-input {
-  margin-bottom: 20px;
-  width: 200px;
-  padding: 6px;
-  border-radius: 4px;
-  font-family: "Special Elite", cursive;
-  font-size: 20px;
-  border: solid 2px #471714;
-  background-color: #f4cd94;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-::placeholder {
-  color: #471714;
-}
-
 .configure-screen__add-player {
   display: flex;
   align-items: center;
