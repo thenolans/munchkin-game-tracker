@@ -7,10 +7,12 @@ import "./Results.css";
 const Results = () => {
   return (
     <div className="results">
-      Congrats Player
-      <Button as={Link} to="/configure">
-        Play Again
-      </Button>
+      <div className="result__winner">Congratulations, Player</div>
+      <div className="results__button-wrapper">
+        <Button as={Link} to="/configure">
+          Play Again
+        </Button>
+      </div>
     </div>
   );
 };

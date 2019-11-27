@@ -27,6 +27,17 @@
   color: #471714;
 }
 
+.configure-screen__add-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Special Elite", cursive;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: #f4cd94;
+}
+
 .configure-screen__button-wrapper {
   width: 70%;
   display: flex;

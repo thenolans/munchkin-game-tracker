@@ -11,6 +11,7 @@ const ConfigureGame = () => {
         <input className="configure-screen__name-input" placeholder="Name" />
         <input className="configure-screen__name-input" placeholder="Name" />
         <input className="configure-screen__name-input" placeholder="Name" />
+        <button className="configure-screen__add-player">+ Add Player</button>
       </div>
       <div className="configure-screen__button-wrapper">
         <Button as={Link} to="/game">
