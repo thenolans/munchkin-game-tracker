@@ -11,7 +11,9 @@ const ScoreInput = () => {
     }
   };
   const incrementScore = () => {
-    setPlayerScore(playerScore + 1);
+    if (playerScore < 99) {
+      setPlayerScore(playerScore + 1);
+    }
   };
 
   return (
