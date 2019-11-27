@@ -6,6 +6,37 @@
   width: 100%;
 }
 
+.game__player-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 26px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.game__score-wrapper {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.game__score-button {
+  font-family: "Special Elite", cursive;
+  font-size: 20px;
+  color: #471714;
+  border: none;
+  cursor: pointer;
+  background-color: #f4cd94;
+}
+
+.game__score {
+  border: solid 2px #471714;
+  padding: 15px;
+  line-height: 14px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
 .game__button-wrapper {
   width: 40%;
   display: flex;
