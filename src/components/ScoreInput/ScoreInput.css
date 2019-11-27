@@ -1,0 +1,22 @@
+.score-input__wrapper {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.score-input__button {
+  font-family: "Special Elite", cursive;
+  font-size: 20px;
+  color: #471714;
+  border: none;
+  cursor: pointer;
+  background-color: #f4cd94;
+}
+
+.score-input__score {
+  border: solid 2px #471714;
+  padding: 15px;
+  line-height: 14px;
+  border-radius: 4px;
+  font-size: 20px;
+}
