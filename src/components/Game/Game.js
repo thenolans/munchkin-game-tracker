@@ -1,25 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
 import ScoreInput from "../ScoreInput";
 import "./Game.css";
+import { GameContext } from "../../contexts/gameContext";
 
 const Game = () => {
+  const game = useContext(GameContext);
+  const [players] = game.usePlayers;
   return (
     <div className="game">
-      <div className="game__player-wrapper">
-        <div className="game__player-name"> Dacey</div>
-        <ScoreInput />
-      </div>
-      <div className="game__player-wrapper">
-        <div className="game__player-name"> Jim</div>
-        <ScoreInput />
-      </div>
-      <div className="game__player-wrapper">
-        <div className="game__player-name"> Tom</div>
-        <ScoreInput />
-      </div>
+      {players.map(player => (
+        <div className="game__player-wrapper">
+          <div className="game__player-name"> {player.name}</div>
+          <ScoreInput />
+        </div>
+      ))}
+
       <div className="game__button-wrapper">
         <Button as={Link} to="/results">
           End

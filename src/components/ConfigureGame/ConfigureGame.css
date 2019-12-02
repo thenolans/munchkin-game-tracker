@@ -1,7 +1,5 @@
 .configure-screen {
   width: 100%;
-}
-.configure-screen__name-input-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -9,6 +7,18 @@
 
 .configure-screen__name-input-wrapper {
   margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.configure-screen__remove-player-input {
+  font-family: "Special Elite", cursive;
+  font-size: 20px;
+  color: #471714;
+  border: none;
+  cursor: pointer;
+  background-color: #f4cd94;
+  padding: 0 10px;
 }
 
 .configure-screen__add-player {
@@ -20,10 +30,11 @@
   border: none;
   cursor: pointer;
   background-color: #f4cd94;
+  margin-top: 20px;
 }
 
 .configure-screen__button-wrapper {
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
