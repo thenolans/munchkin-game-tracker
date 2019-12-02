@@ -1,23 +1,17 @@
 .game {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
+  max-width: 400px;
 }
 
 .game__player-wrapper {
   display: flex;
-  flex-direction: row;
   font-size: 26px;
   align-items: center;
   margin-top: 30px;
+  justify-content: space-between;
 }
 
 .game__button-wrapper {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   margin-top: 50px;
+  text-align: right;
 }

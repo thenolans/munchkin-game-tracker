@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
-import PlayerName from "../NameInput";
 import "./ConfigureGame.css";
+import NameInput from "../NameInput";
 
 const ConfigureGame = () => {
+  const [numberOfInputs, setNumberOfInputs] = useState([null, null]);
+
+  const addInput = () => {
+    if (numberOfInputs.length < 6) {
+      setNumberOfInputs([...numberOfInputs, null]);
+    }
+  };
+
   return (
     <div className="configure-screen">
       <div className="configure-screen__name-input-wrapper">
-        <PlayerName />
-        <button className="configure-screen__add-player">+ Add Player</button>
+        {numberOfInputs.map(input => (
+          <NameInput />
+        ))}
+        <button className="configure-screen__add-player" onClick={addInput}>
+          + Add Player
+        </button>
       </div>
       <div className="configure-screen__button-wrapper">
         <Button as={Link} to="/game">
