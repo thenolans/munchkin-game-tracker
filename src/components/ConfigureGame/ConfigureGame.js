@@ -7,10 +7,16 @@ import NameInput from "../NameInput";
 
 const ConfigureGame = () => {
   const [numberOfInputs, setNumberOfInputs] = useState([null, null]);
+  const [isShowingAddPlayerButton, setIsShowingAddPlayerButton] = useState(
+    true
+  );
 
   const addInput = () => {
-    if (numberOfInputs.length < 6) {
+    if (numberOfInputs.length <= 5) {
       setNumberOfInputs([...numberOfInputs, null]);
+    }
+    if (numberOfInputs.length > 4) {
+      setIsShowingAddPlayerButton(false);
     }
   };
 
@@ -20,9 +26,11 @@ const ConfigureGame = () => {
         {numberOfInputs.map(input => (
           <NameInput />
         ))}
-        <button className="configure-screen__add-player" onClick={addInput}>
-          + Add Player
-        </button>
+        {isShowingAddPlayerButton && (
+          <button className="configure-screen__add-player" onClick={addInput}>
+            + Add Player
+          </button>
+        )}
       </div>
       <div className="configure-screen__button-wrapper">
         <Button as={Link} to="/game">
