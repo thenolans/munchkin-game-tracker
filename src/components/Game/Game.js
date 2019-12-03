@@ -2,22 +2,31 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
-import ScoreInput from "../ScoreInput";
 import "./Game.css";
 import { GameContext } from "../../contexts/gameContext";
+import ScoreInput from "../ScoreInput/ScoreInput";
 
 const Game = () => {
   const game = useContext(GameContext);
-  const [players] = game.usePlayers;
+  const [players, setPlayers] = game.usePlayers;
+
+  const updatePlayerScore = (newScore, playerIndex) => {
+    const newData = [...players];
+    newData[playerIndex].score = newScore;
+    setPlayers(newData);
+  };
+
   return (
     <div className="game">
-      {players.map(player => (
-        <div className="game__player-wrapper">
-          <div className="game__player-name"> {player.name}</div>
-          <ScoreInput />
+      {players.map((player, index) => (
+        <div className="game__player-wrapper" key={index}>
+          <div className="game__player-name">{player.name}</div>
+          <ScoreInput
+            currentScore={player.score}
+            onChange={newScore => updatePlayerScore(newScore, index)}
+          />
         </div>
       ))}
-
       <div className="game__button-wrapper">
         <Button as={Link} to="/results">
           End
