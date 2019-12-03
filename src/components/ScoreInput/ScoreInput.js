@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./ScoreInput.css";
 
-const ScoreInput = () => {
-  const [playerScore, setPlayerScore] = useState(1);
-
-  const decrementScore = () => {
-    if (playerScore > 1) {
-      setPlayerScore(playerScore - 1);
+const ScoreInput = ({ currentScore, onChange }) => {
+  const incrementScore = () => {
+    if (currentScore < 99) {
+      onChange(currentScore + 1);
     }
   };
-  const incrementScore = () => {
-    if (playerScore < 99) {
-      setPlayerScore(playerScore + 1);
+
+  const decrementScore = () => {
+    if (currentScore > 1) {
+      onChange(currentScore - 1);
     }
   };
 
@@ -20,15 +19,15 @@ const ScoreInput = () => {
     <div className="score-input">
       <div className="score-input__wrapper">
         <button
-          className="score-input__button score-input__button-decrement"
           onClick={decrementScore}
+          className="score-input__button score-input__button-decrement"
         >
           -
         </button>
-        <div className="score-input__score">{playerScore}</div>
+        <div className="score-input__score">{currentScore}</div>
         <button
-          className="score-input__button score-input__button-increment"
           onClick={incrementScore}
+          className="score-input__button score-input__button-increment"
         >
           +
         </button>

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import nanoid from "nanoid";
 
 import Button from "../Button";
 import "./ConfigureGame.css";
 import Input from "../Input";
 import { GameContext } from "../../contexts/gameContext";
+import { Player } from "../../utils/player";
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 6;
@@ -17,7 +17,7 @@ const ConfigureGame = () => {
 
   const addInput = () => {
     if (numberOfPlayers < MAX_PLAYERS) {
-      setPlayers([...players, { id: nanoid(), name: "" }]);
+      setPlayers([...players, new Player()]);
     }
   };
 
@@ -31,11 +31,7 @@ const ConfigureGame = () => {
 
   const handleNameChange = (playerName, playerIndex) => {
     const newPlayers = [...players];
-    const newPlayerData = {
-      ...players[playerIndex],
-      name: playerName
-    };
-    newPlayers[playerIndex] = newPlayerData;
+    newPlayers[playerIndex].name = playerName;
     setPlayers(newPlayers);
   };
 
