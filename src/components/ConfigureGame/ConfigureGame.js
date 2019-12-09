@@ -43,11 +43,13 @@ const ConfigureGame = () => {
             onChange={event => handleNameChange(event.target.value, index)}
             placeholder="Name"
             value={player.name}
+            aria-label="Enter player's name"
           />
           {numberOfPlayers > MIN_PLAYERS && (
             <button
               className="configure-screen__remove-player-input"
               onClick={() => removeInput(index)}
+              aria-label="Remove player"
             >
               -
             </button>
@@ -55,12 +57,16 @@ const ConfigureGame = () => {
         </div>
       ))}
       {numberOfPlayers < MAX_PLAYERS && (
-        <button className="configure-screen__add-player" onClick={addInput}>
+        <button
+          className="configure-screen__add-player"
+          onClick={addInput}
+          aria-label="Add a player"
+        >
           + Add Player
         </button>
       )}
       <div className="configure-screen__button-wrapper">
-        <Button as={Link} to="/game">
+        <Button aria-label="Start game" as={Link} to="/game">
           Start
         </Button>
       </div>
