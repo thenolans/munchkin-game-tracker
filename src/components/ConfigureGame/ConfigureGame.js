@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
@@ -13,7 +13,16 @@ const MAX_PLAYERS = 6;
 const ConfigureGame = () => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
+  const [playersAreValid, setPlayersAreValid] = useState(false);
   const numberOfPlayers = players.length;
+
+  useEffect(() => {
+    if (players.some(player => !player.name)) {
+      setPlayersAreValid(false);
+    } else {
+      setPlayersAreValid(true);
+    }
+  }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const addInput = () => {
     if (numberOfPlayers < MAX_PLAYERS) {
@@ -41,10 +50,10 @@ const ConfigureGame = () => {
         <div className="configure-screen__name-input-wrapper" key={player.id}>
           <Input
             onChange={event => handleNameChange(event.target.value, index)}
-            placeholder="Name"
+            placeholder="Enter player's name"
             value={player.name}
-            aria-label="Enter player's name"
           />
+
           {numberOfPlayers > MIN_PLAYERS && (
             <button
               className="configure-screen__remove-player-input"
@@ -56,6 +65,7 @@ const ConfigureGame = () => {
           )}
         </div>
       ))}
+
       {numberOfPlayers < MAX_PLAYERS && (
         <button
           className="configure-screen__add-player"
@@ -65,11 +75,14 @@ const ConfigureGame = () => {
           + Add Player
         </button>
       )}
-      <div className="configure-screen__button-wrapper">
-        <Button aria-label="Start game" as={Link} to="/game">
-          Start
-        </Button>
-      </div>
+
+      {playersAreValid && (
+        <div className="configure-screen__button-wrapper">
+          <Button aria-label="Start game" as={Link} to="/game">
+            Start
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
