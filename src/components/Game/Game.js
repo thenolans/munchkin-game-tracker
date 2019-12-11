@@ -28,7 +28,10 @@ const Game = () => {
         </div>
       ))}
       <div className="game__button-wrapper">
-        <Button as={Link} to="/configure" aria-label="End game">
+        <Button as={Link} to="/configure">
+          Back
+        </Button>
+        <Button as={Link} to="/" aria-label="End game">
           End Game
         </Button>
       </div>

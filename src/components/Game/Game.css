@@ -12,6 +12,9 @@
 }
 
 .game__button-wrapper {
-  margin-top: 50px;
   text-align: right;
+  max-width: 500px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
 }
