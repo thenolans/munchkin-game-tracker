@@ -1,0 +1,36 @@
+.avatar-picker__wrapper {
+  position: relative;
+}
+
+.avatar-picker__text {
+  margin-bottom: 10px;
+}
+
+.avatar-picker__placeholder {
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.avatar-picker__avatar-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 400px;
+  position: absolute;
+  border: solid 1px #000;
+  background: #f4cd94;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.avatar-picker__avatar-image {
+  width: 60px;
+  height: auto;
+  border: #471714 1px solid;
+  border-radius: 30px;
+  margin: 4px 4px 0 4px;
+  cursor: pointer;
+}

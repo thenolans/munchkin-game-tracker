@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button";
 import "./ConfigureGame.css";
 import Input from "../Input";
+import AvatarPicker from "../AvatarPicker";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 
@@ -46,25 +47,27 @@ const ConfigureGame = () => {
 
   return (
     <div className="configure-screen">
-      {players.map((player, index) => (
-        <div className="configure-screen__name-input-wrapper" key={player.id}>
-          <Input
-            onChange={event => handleNameChange(event.target.value, index)}
-            placeholder="Enter player's name"
-            value={player.name}
-          />
-
-          {numberOfPlayers > MIN_PLAYERS && (
-            <button
-              className="configure-screen__remove-player-input"
-              onClick={() => removeInput(index)}
-              aria-label="Remove player"
-            >
-              -
-            </button>
-          )}
-        </div>
-      ))}
+      {players.map((player, index) => {
+        return (
+          <div className="configure-screen__name-input-wrapper" key={player.id}>
+            <AvatarPicker />
+            <Input
+              onChange={event => handleNameChange(event.target.value, index)}
+              placeholder="Enter player's name"
+              value={player.name}
+            />
+            {numberOfPlayers > MIN_PLAYERS && (
+              <button
+                className="configure-screen__remove-player-input"
+                onClick={() => removeInput(index)}
+                aria-label="Remove player"
+              >
+                -
+              </button>
+            )}
+          </div>
+        );
+      })}
 
       {numberOfPlayers < MAX_PLAYERS && (
         <button
@@ -75,7 +78,6 @@ const ConfigureGame = () => {
           + Add Player
         </button>
       )}
-
       {playersAreValid && (
         <div className="configure-screen__button-wrapper">
           <Button aria-label="Start game" as={Link} to="/game">
