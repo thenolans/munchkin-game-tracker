@@ -20,6 +20,11 @@ const Game = () => {
     <div className="game">
       {players.map((player, index) => (
         <div className="game__player-wrapper" key={index}>
+          <img
+            className="game__player-avatar"
+            src={player.avatar.src}
+            alt={player.avatar.alt}
+          />
           <div className="game__player-name">{player.name}</div>
           <ScoreInput
             currentScore={player.score}

@@ -46,7 +46,6 @@ const ConfigureGame = () => {
   };
 
   const updatePlayerAvatar = (newAvatar, playerIndex) => {
-    console.log(newAvatar);
     const newData = [...players];
     newData[playerIndex].avatar = newAvatar;
     setPlayers(newData);

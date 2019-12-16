@@ -7,14 +7,24 @@
   display: flex;
   font-size: 26px;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
   justify-content: space-between;
+}
+
+.game__player-avatar {
+  width: 60px;
+  height: auto;
+  border: #471714 1px solid;
+  border-radius: 30px;
+  margin: 4px 4px 0 4px;
+  cursor: pointer;
+  background-color: white;
 }
 
 .game__button-wrapper {
   text-align: right;
   max-width: 500px;
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }

@@ -6,18 +6,11 @@
   margin-bottom: 10px;
 }
 
-.avatar-picker__placeholder {
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-}
-
 .avatar-picker__avatar-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 300px;
   position: absolute;
   border: solid 1px #000;
   background: #f4cd94;
@@ -26,11 +19,13 @@
   transform: translate(-50%, -50%);
 }
 
+.avatar-picker__placeholder,
 .avatar-picker__avatar-image {
-  width: 60px;
+  width: 50px;
   height: auto;
   border: #471714 1px solid;
   border-radius: 30px;
   margin: 4px 4px 0 4px;
   cursor: pointer;
+  background-color: white;
 }
