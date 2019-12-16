@@ -10,6 +10,8 @@ I wanted this application to require the players to input their name. I utilized
 
 I have used many applications in the past, where I accidently clicked the back button and lost all of my progress. I didn't want my users to click the wrong button and lose their progress. I decided to use useContext, to give me access to my state without prop drilling.
 
+I also wanted to incorporate a fun element to my sore keeper. I decided to allow users to select an avatar. I made a custom avatar picker using React-Tippy that would have a tooltip with a list of avatars.
+
 Accessibility is something that I wanted to work on with this application. I installed a screen reader to make sure that my application could be used with screen readers. I also wanted to make sure that users could tab through inputs and buttons.
 
 <img width="1437" alt="Munchkin landing page" src="https://user-images.githubusercontent.com/54158919/70554186-4c4b0d80-1b42-11ea-8e4e-5ffe96791114.png">
