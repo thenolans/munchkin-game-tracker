@@ -4,7 +4,7 @@ import { Tooltip } from "react-tippy";
 import AVATAR_LIST from "../../avatarList";
 import "./AvatarPicker.css";
 
-const AvatarPicker = () => {
+const AvatarPicker = props => {
   return (
     <div className="avatar-picker__wrapper">
       <Tooltip
@@ -12,17 +12,22 @@ const AvatarPicker = () => {
           <div className="avatar-picker__avatar-list">
             {AVATAR_LIST.map((avatar, index) => (
               <img
-                src={avatar.photo}
+                src={avatar.src}
                 alt={avatar.alt}
                 key={index}
                 className="avatar-picker__avatar-image"
+                onClick={() => props.onChange(avatar)}
               />
             ))}
           </div>
         }
         trigger="click"
       >
-        <div className="avatar-picker__placeholder"></div>
+        <img
+          className="avatar-picker__placeholder"
+          src={props.avatar.src}
+          alt={props.avatar.alt}
+        />
       </Tooltip>
     </div>
   );

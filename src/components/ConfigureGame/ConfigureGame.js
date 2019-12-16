@@ -45,12 +45,22 @@ const ConfigureGame = () => {
     setPlayers(newPlayers);
   };
 
+  const updatePlayerAvatar = (newAvatar, playerIndex) => {
+    console.log(newAvatar);
+    const newData = [...players];
+    newData[playerIndex].avatar = newAvatar;
+    setPlayers(newData);
+  };
+
   return (
     <div className="configure-screen">
       {players.map((player, index) => {
         return (
           <div className="configure-screen__name-input-wrapper" key={player.id}>
-            <AvatarPicker />
+            <AvatarPicker
+              avatar={player.avatar}
+              onChange={newAvatar => updatePlayerAvatar(newAvatar, index)}
+            />
             <Input
               onChange={event => handleNameChange(event.target.value, index)}
               placeholder="Enter player's name"

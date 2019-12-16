@@ -9,7 +9,7 @@
 .avatar-picker__placeholder {
   width: 60px;
   height: 60px;
-  background: #000;
+  background: white;
   border-radius: 50%;
 }
 
