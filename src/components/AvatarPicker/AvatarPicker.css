@@ -1,24 +1,27 @@
 .avatar-picker__wrapper {
   position: relative;
+  width: 70px;
 }
 
 .avatar-picker__text {
-  margin-bottom: 10px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
 }
-
 .avatar-picker__avatar-list {
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 300px;
   position: absolute;
-  border: solid 1px #000;
+  border: solid 2px #471714;
+  border-radius: 5px;
   background: #f4cd94;
   top: -100%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .avatar-picker__placeholder,
 .avatar-picker__avatar-image {
   width: 50px;

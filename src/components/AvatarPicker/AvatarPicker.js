@@ -10,6 +10,7 @@ const AvatarPicker = props => {
       <Tooltip
         html={
           <div className="avatar-picker__avatar-list">
+            <div className="avatar-picker__text">Please select an avatar</div>
             {AVATAR_LIST.map((avatar, index) => (
               <img
                 src={avatar.src}
