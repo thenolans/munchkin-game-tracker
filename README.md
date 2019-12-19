@@ -12,7 +12,7 @@ I have used many applications in the past, where I accidently clicked the back b
 
 I also wanted to incorporate a fun element to my sore keeper. I decided to allow users to select an avatar. I made a custom avatar picker using React-Tippy that would have a tooltip with a list of avatars.
 
-Accessibility is something that I wanted to work on with this application. I installed a screen reader to make sure that my application could be used with screen readers. I also wanted to make sure that users could tab through inputs and buttons.
+After watching the 2019 React Conference talk on accessibility, I knew that accessibility was something that I wanted to work on for this application. I installed a screen reader to make sure that my application could be used with screen readers. I also wanted to make sure that users could tab through inputs and buttons. I am still learning about accessibility, but I hope to make this application fully accessible in the future.
 
 <img width="1437" alt="Munchkin landing page" src="https://user-images.githubusercontent.com/54158919/70554186-4c4b0d80-1b42-11ea-8e4e-5ffe96791114.png">
 
