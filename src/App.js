@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -16,6 +16,17 @@ const App = () => {
       .fill(null)
       .map(() => new Player())
   );
+
+  useEffect(() => {
+    const savedGame = localStorage.getItem("game");
+    if (savedGame) {
+      setPlayers(JSON.parse(savedGame));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("game", JSON.stringify(players));
+  }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="game-header">
