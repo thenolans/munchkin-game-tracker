@@ -10,6 +10,8 @@ I wanted this application to require the players to input their name. I utilized
 
 I have used many applications in the past, where I accidently clicked the back button and lost all of my progress. I didn't want my users to click the wrong button and lose their progress. I decided to use useContext, to give me access to my state without prop drilling.
 
+I also did not want users to lose their progress once they refreshed the page. I decided to save the game progress to local storage using useEffect.
+
 I also wanted to incorporate a fun element to my sore keeper. I decided to allow users to select an avatar. I made a custom avatar picker using React-Tippy that would have a tooltip with a list of avatars.
 
 After watching the 2019 React Conference talk on accessibility, I knew that accessibility was something that I wanted to work on for this application. I installed a screen reader to make sure that my application could be used with screen readers. I also wanted to make sure that users could tab through inputs and buttons. I am still learning about accessibility, but I hope to make this application fully accessible in the future.
