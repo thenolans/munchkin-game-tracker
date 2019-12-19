@@ -42,7 +42,6 @@ const App = () => {
               <Route exact path="/" component={SplashScreen} />
               <Route path="/configure" component={ConfigureGame} />
               <Route path="/game" component={Game} />
-              <Route path="/results" component={Results} />
             </Switch>
           </div>
         </Router>
