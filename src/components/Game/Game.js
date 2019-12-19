@@ -5,8 +5,9 @@ import Button from "../Button";
 import "./Game.css";
 import { GameContext } from "../../contexts/gameContext";
 import ScoreInput from "../ScoreInput/ScoreInput";
+import { Player } from "../../utils/player";
 
-const Game = () => {
+const Game = props => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
 
@@ -14,6 +15,15 @@ const Game = () => {
     const newData = [...players];
     newData[playerIndex].score = newScore;
     setPlayers(newData);
+  };
+
+  const resetGame = () => {
+    setPlayers(
+      Array(2)
+        .fill(null)
+        .map(() => new Player())
+    );
+    props.history.push("/");
   };
 
   return (
@@ -36,7 +46,7 @@ const Game = () => {
         <Button as={Link} to="/configure">
           Back
         </Button>
-        <Button as={Link} to="/" aria-label="End game">
+        <Button aria-label="End game" onClick={resetGame}>
           End Game
         </Button>
       </div>
