@@ -1,8 +1,10 @@
 {
   "name": "munchkin-score-keeper",
+  "homepage": "https://daceynolan.github.io/munchkin-score-keeper/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "nanoid": "^2.1.7",
     "react": "^16.12.0",
@@ -15,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
