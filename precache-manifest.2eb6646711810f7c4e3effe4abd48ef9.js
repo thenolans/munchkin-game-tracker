@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ab9ed989f1cd5f2c5b1f5de6b216bda8",
+    "revision": "fb8fff0d92d690b483178b896fb0b5ad",
     "url": "/munchkin-score-keeper/index.html"
   },
   {
-    "revision": "904fc95e2c344d1a67e5",
+    "revision": "0a98e5822da35d738284",
     "url": "/munchkin-score-keeper/static/css/main.3db09808.chunk.css"
   },
   {
-    "revision": "5860d16f52a6cfda0cbe",
-    "url": "/munchkin-score-keeper/static/js/2.bd2d409c.chunk.js"
+    "revision": "4e63d6e390f6b5364328",
+    "url": "/munchkin-score-keeper/static/js/2.18b2243c.chunk.js"
   },
   {
-    "revision": "904fc95e2c344d1a67e5",
-    "url": "/munchkin-score-keeper/static/js/main.3c8c2b75.chunk.js"
+    "revision": "0a98e5822da35d738284",
+    "url": "/munchkin-score-keeper/static/js/main.36c4b93f.chunk.js"
   },
   {
     "revision": "041c0d7f30f89bf2c964",

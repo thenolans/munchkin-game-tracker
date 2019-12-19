@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/munchkin-score-keeper/static/css/main.3db09808.chunk.css",
-    "main.js": "/munchkin-score-keeper/static/js/main.3c8c2b75.chunk.js",
-    "main.js.map": "/munchkin-score-keeper/static/js/main.3c8c2b75.chunk.js.map",
+    "main.js": "/munchkin-score-keeper/static/js/main.36c4b93f.chunk.js",
+    "main.js.map": "/munchkin-score-keeper/static/js/main.36c4b93f.chunk.js.map",
     "runtime-main.js": "/munchkin-score-keeper/static/js/runtime-main.fe5699ed.js",
     "runtime-main.js.map": "/munchkin-score-keeper/static/js/runtime-main.fe5699ed.js.map",
-    "static/js/2.bd2d409c.chunk.js": "/munchkin-score-keeper/static/js/2.bd2d409c.chunk.js",
-    "static/js/2.bd2d409c.chunk.js.map": "/munchkin-score-keeper/static/js/2.bd2d409c.chunk.js.map",
+    "static/js/2.18b2243c.chunk.js": "/munchkin-score-keeper/static/js/2.18b2243c.chunk.js",
+    "static/js/2.18b2243c.chunk.js.map": "/munchkin-score-keeper/static/js/2.18b2243c.chunk.js.map",
     "index.html": "/munchkin-score-keeper/index.html",
-    "precache-manifest.42d97b582e3646b8ad23ad83e6c2e77a.js": "/munchkin-score-keeper/precache-manifest.42d97b582e3646b8ad23ad83e6c2e77a.js",
+    "precache-manifest.2eb6646711810f7c4e3effe4abd48ef9.js": "/munchkin-score-keeper/precache-manifest.2eb6646711810f7c4e3effe4abd48ef9.js",
     "service-worker.js": "/munchkin-score-keeper/service-worker.js",
     "static/css/main.3db09808.chunk.css.map": "/munchkin-score-keeper/static/css/main.3db09808.chunk.css.map",
     "static/media/dragon.png": "/munchkin-score-keeper/static/media/dragon.cd3579e0.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.fe5699ed.js",
-    "static/js/2.bd2d409c.chunk.js",
+    "static/js/2.18b2243c.chunk.js",
     "static/css/main.3db09808.chunk.css",
-    "static/js/main.3c8c2b75.chunk.js"
+    "static/js/main.36c4b93f.chunk.js"
   ]
 }
