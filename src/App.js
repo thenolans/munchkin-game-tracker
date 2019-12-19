@@ -25,7 +25,7 @@ const App = () => {
           usePlayers: [players, setPlayers]
         }}
       >
-        <Router>
+        <Router basename="/munchkin-score-keeper">
           <div className="game-content">
             <Switch>
               <Route exact path="/" component={SplashScreen} />
