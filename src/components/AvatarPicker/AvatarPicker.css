@@ -8,6 +8,11 @@
   width: 100%;
   text-align: center;
 }
+.avatar-picker__button {
+  background: none;
+  border: none;
+  padding: 0;
+}
 .avatar-picker__avatar-list {
   padding: 10px;
   display: flex;
@@ -15,14 +20,18 @@
   flex-wrap: wrap;
   width: 300px;
   position: absolute;
+  overflow: hidden;
   border: solid 2px #471714;
   border-radius: 5px;
   background: #f4cd94;
-  top: -100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
-.avatar-picker__placeholder,
+
+.avatar-picker__placeholder {
+  border: none;
+  background: none;
+}
+
+.avatar-picker__placeholder-img,
 .avatar-picker__avatar-image {
   width: 50px;
   height: auto;

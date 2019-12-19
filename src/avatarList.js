@@ -17,7 +17,7 @@ export default [
   },
   {
     src: require("./images/helmet.jpg"),
-    alt: "Avatar of a munchkin wearing a helmet"
+    alt: "Avatar of a person wearing helmet"
   },
   {
     src: require("./images/king.jpg"),

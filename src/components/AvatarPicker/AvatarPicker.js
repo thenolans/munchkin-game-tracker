@@ -12,23 +12,33 @@ const AvatarPicker = props => {
           <div className="avatar-picker__avatar-list">
             <div className="avatar-picker__text">Please select an avatar</div>
             {AVATAR_LIST.map((avatar, index) => (
-              <img
-                src={avatar.src}
-                alt={avatar.alt}
+              <button
+                aria-label={`Click to change avatar to ${avatar.alt}`}
+                className="avatar-picker__button"
                 key={index}
-                className="avatar-picker__avatar-image"
                 onClick={() => props.onChange(avatar)}
-              />
+              >
+                <img
+                  src={avatar.src}
+                  alt={avatar.alt}
+                  className="avatar-picker__avatar-image"
+                />
+              </button>
             ))}
           </div>
         }
         trigger="click"
       >
-        <img
+        <button
+          aria-label="Change default avatar"
           className="avatar-picker__placeholder"
-          src={props.avatar.src}
-          alt={props.avatar.alt}
-        />
+        >
+          <img
+            className="avatar-picker__placeholder-img"
+            src={props.avatar.src}
+            alt={props.avatar.alt}
+          />
+        </button>
       </Tooltip>
     </div>
   );
