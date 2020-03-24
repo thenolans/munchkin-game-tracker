@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "nanoid": "^2.1.7",

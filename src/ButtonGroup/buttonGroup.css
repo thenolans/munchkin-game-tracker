@@ -1,0 +1,27 @@
+.button-group {
+  position: relative;
+  display: inline-flex;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.button-group .button {
+  box-shadow: none;
+}
+
+.button-group > .button:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.button-group > .button:first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button-group > .button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.button-group .button + .button {
+  margin-left: -2px;
+}
