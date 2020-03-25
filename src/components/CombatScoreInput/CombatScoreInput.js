@@ -11,12 +11,24 @@ const CombatScoreKeeper = ({ onAdjustmentClick }) => {
   return (
     <div className="combat-score-input">
       <ButtonGroup>
-        <Button onClick={() => handleAdjustmentClick(-5)}>-5</Button>
-        <Button onClick={() => handleAdjustmentClick(-3)}>-3</Button>
-        <Button onClick={() => handleAdjustmentClick(-1)}>-1</Button>
-        <Button onClick={() => handleAdjustmentClick(1)}>+1</Button>
-        <Button onClick={() => handleAdjustmentClick(3)}>+3</Button>
-        <Button onClick={() => handleAdjustmentClick(5)}>+5</Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(-5)}>
+          -5
+        </Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(-3)}>
+          -3
+        </Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(-1)}>
+          -1
+        </Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(1)}>
+          +1
+        </Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(3)}>
+          +3
+        </Button>
+        <Button border fluid onClick={() => handleAdjustmentClick(5)}>
+          +5
+        </Button>
       </ButtonGroup>
     </div>
   );

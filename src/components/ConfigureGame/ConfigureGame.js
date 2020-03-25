@@ -89,7 +89,7 @@ const ConfigureGame = () => {
       )}
       {playersAreValid && (
         <div className="configure-screen__button-wrapper">
-          <Button aria-label="Start game" as={Link} to="/game">
+          <Button aria-label="Start game" border as={Link} to="/game">
             Start
           </Button>
         </div>
