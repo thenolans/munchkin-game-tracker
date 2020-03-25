@@ -40,7 +40,11 @@ const Game = props => {
           <div className="game__player-name">{player.name}</div>
           <div className="game__player-score-wrapper">
             <Link to={`/combat?score=${player.score}`}>
-              <img className="game__player-combat" src={Swords} alt="swords" />
+              <img
+                className="game__player-combat"
+                src={Swords}
+                alt={`enter combat with ${player.name}`}
+              />
             </Link>
             <ScoreInput
               currentScore={player.score}
