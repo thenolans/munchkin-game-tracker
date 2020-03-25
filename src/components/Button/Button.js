@@ -16,7 +16,7 @@ const Button = ({
       className={cx(
         "button",
         { "button--fluid": fluid },
-        { "button--styleReset": styleReset }
+        { "button--style-reset": styleReset }
       )}
       type={type}
       {...props}
