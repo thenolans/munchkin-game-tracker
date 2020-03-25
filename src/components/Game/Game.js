@@ -43,7 +43,7 @@ const Game = props => {
               <img
                 className="game__player-combat"
                 src={Swords}
-                alt={`enter combat with ${player.name}`}
+                alt={`Enter combat with ${player.name}`}
               />
             </Link>
             <ScoreInput
