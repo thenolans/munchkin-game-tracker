@@ -39,9 +39,9 @@ const Game = props => {
 
           <div className="game__player-name">{player.name}</div>
           <div className="game__player-score-wrapper">
-            <Button as={Link} to={`/combat?score=${player.score}`}>
+            <Link to={`/combat?score=${player.score}`}>
               <img className="game__player-combat" src={Swords} alt="swords" />
-            </Button>
+            </Link>
             <ScoreInput
               currentScore={player.score}
               onChange={newScore => updatePlayerScore(newScore, index)}
@@ -50,10 +50,10 @@ const Game = props => {
         </div>
       ))}
       <div className="game__button-wrapper">
-        <Button as={Link} border to="/configure">
+        <Button as={Link} to="/configure">
           Back
         </Button>
-        <Button aria-label="End game" border onClick={resetGame}>
+        <Button aria-label="End game" onClick={resetGame}>
           End Game
         </Button>
       </div>

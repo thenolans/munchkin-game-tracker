@@ -7,7 +7,7 @@ const Button = ({
   as: T = "button",
   className,
   fluid,
-  border,
+  styleReset,
   type = "button",
   ...props
 }) => {
@@ -16,7 +16,7 @@ const Button = ({
       className={cx(
         "button",
         { "button--fluid": fluid },
-        { "button--border": border }
+        { "button--styleReset": styleReset }
       )}
       type={type}
       {...props}

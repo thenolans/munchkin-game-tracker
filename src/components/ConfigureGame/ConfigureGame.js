@@ -66,30 +66,26 @@ const ConfigureGame = () => {
               value={player.name}
             />
             {numberOfPlayers > MIN_PLAYERS && (
-              <button
-                className="configure-screen__remove-player-input"
+              <Button
+                styleReset
                 onClick={() => removeInput(index)}
                 aria-label="Remove player"
               >
                 -
-              </button>
+              </Button>
             )}
           </div>
         );
       })}
 
       {numberOfPlayers < MAX_PLAYERS && (
-        <button
-          className="configure-screen__add-player"
-          onClick={addInput}
-          aria-label="Add a player"
-        >
+        <Button styleReset onClick={addInput} aria-label="Add a player">
           + Add Player
-        </button>
+        </Button>
       )}
       {playersAreValid && (
         <div className="configure-screen__button-wrapper">
-          <Button aria-label="Start game" border as={Link} to="/game">
+          <Button as={Link} to="/game">
             Start
           </Button>
         </div>

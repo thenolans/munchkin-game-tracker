@@ -4,16 +4,6 @@
   border-radius: 4px;
 }
 
-.score-input__button {
-  font-family: "Special Elite", cursive;
-  font-size: 20px;
-  color: #471714;
-  border: none;
-  cursor: pointer;
-  background-color: #f4cd94;
-  padding: 0 10px;
-}
-
 .score-input__score {
   border-right: solid 2px #471714;
   border-left: solid 2px #471714;
