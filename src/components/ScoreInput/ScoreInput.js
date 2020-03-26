@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./ScoreInput.css";
+import Button from "../Button";
 
 const ScoreInput = ({ currentScore, onChange }) => {
   const incrementScore = () => {
@@ -18,21 +19,21 @@ const ScoreInput = ({ currentScore, onChange }) => {
   return (
     <div className="score-input">
       <div className="score-input__wrapper">
-        <button
+        <Button
+          styleReset
           onClick={decrementScore}
-          className="score-input__button score-input__button-decrement"
           aria-label="Decrement score by one"
         >
           -
-        </button>
+        </Button>
         <div className="score-input__score">{currentScore}</div>
-        <button
+        <Button
+          styleReset
           onClick={incrementScore}
-          className="score-input__button score-input__button-increment"
           aria-label="Increment score by one"
         >
           +
-        </button>
+        </Button>
       </div>
     </div>
   );

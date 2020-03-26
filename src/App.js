@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import SplashScreen from "./components/SplashScreen";
+import "./App.css";
+import Combat from "./components/Combat";
 import ConfigureGame from "./components/ConfigureGame";
 import Game from "./components/Game";
-import Results from "./components/Results";
-import "./App.css";
 import { GameContext } from "./contexts/gameContext";
+import Header from "./components/Header";
+import SplashScreen from "./components/SplashScreen";
 import { Player } from "./utils/player";
 
 const App = () => {
@@ -42,6 +42,7 @@ const App = () => {
               <Route exact path="/" component={SplashScreen} />
               <Route path="/configure" component={ConfigureGame} />
               <Route path="/game" component={Game} />
+              <Route path="/combat" component={Combat} />
             </Switch>
           </div>
         </Router>

@@ -5,6 +5,7 @@ import Button from "../Button";
 import "./Game.css";
 import { GameContext } from "../../contexts/gameContext";
 import ScoreInput from "../ScoreInput/ScoreInput";
+import Swords from "../../images/swords.svg";
 import { Player } from "../../utils/player";
 
 const Game = props => {
@@ -35,11 +36,21 @@ const Game = props => {
             src={player.avatar.src}
             alt={player.avatar.alt}
           />
+
           <div className="game__player-name">{player.name}</div>
-          <ScoreInput
-            currentScore={player.score}
-            onChange={newScore => updatePlayerScore(newScore, index)}
-          />
+          <div className="game__player-score-wrapper">
+            <Link to={`/combat?score=${player.score}`}>
+              <img
+                className="game__player-combat"
+                src={Swords}
+                alt={`Enter combat with ${player.name}`}
+              />
+            </Link>
+            <ScoreInput
+              currentScore={player.score}
+              onChange={newScore => updatePlayerScore(newScore, index)}
+            />
+          </div>
         </div>
       ))}
       <div className="game__button-wrapper">

@@ -1,6 +1,10 @@
 body {
-  background-color: #f4cd94;
+  background: url("./images/paper-texture.jpg") repeat;
   color: #471714;
-  font-family: "Special Elite", cursive;
+  font-family: "Sen", sans-serif;
   min-height: 100vh;
+}
+
+body * {
+  box-sizing: border-box;
 }

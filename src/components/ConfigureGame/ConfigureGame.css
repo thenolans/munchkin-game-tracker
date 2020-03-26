@@ -12,28 +12,6 @@
   flex-direction: row;
 }
 
-.configure-screen__remove-player-input {
-  font-family: "Special Elite", cursive;
-  font-size: 20px;
-  color: #471714;
-  border: none;
-  cursor: pointer;
-  background-color: #f4cd94;
-  padding: 0 10px;
-}
-
-.configure-screen__add-player {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Special Elite", cursive;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  background-color: #f4cd94;
-  margin-top: 20px;
-}
-
 .configure-screen__button-wrapper {
   width: 50%;
   display: flex;
