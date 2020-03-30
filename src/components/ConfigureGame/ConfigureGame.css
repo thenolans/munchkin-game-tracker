@@ -6,14 +6,28 @@
 }
 
 .configure-screen__name-input-wrapper {
+  width: 100%;
+  max-width: 350px;
   margin-top: 20px;
   height: 50px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.configure-screen__player-name {
+  font-size: 26px;
+}
+
+.configure-screen__start-button-wrapper {
+  width: 50%;
+  display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .configure-screen__button-wrapper {
-  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

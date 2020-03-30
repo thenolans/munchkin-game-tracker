@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import nanoid from "nanoid";
 
+import Avatar from "../Avatar";
 import Button from "../Button";
 import "./ConfigureGame.css";
-import Input from "../Input";
-import AvatarPicker from "../AvatarPicker";
 import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
+import CreateEdit from "../CreateEdit";
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 6;
@@ -15,6 +15,8 @@ const ConfigureGame = () => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
   const [playersAreValid, setPlayersAreValid] = useState(false);
+  const [isShowingModal, setIsShowingModal] = useState(false);
+  const [playerToEditId, setPlayerToEditId] = useState(null);
   const numberOfPlayers = players.length;
 
   useEffect(() => {
@@ -25,12 +27,6 @@ const ConfigureGame = () => {
     }
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const addInput = () => {
-    if (numberOfPlayers < MAX_PLAYERS) {
-      setPlayers([...players, new Player()]);
-    }
-  };
-
   const removeInput = index => {
     const newPlayers = [...players];
     if (newPlayers.length > MIN_PLAYERS) {
@@ -39,52 +35,84 @@ const ConfigureGame = () => {
     }
   };
 
-  const handleNameChange = (playerName, playerIndex) => {
-    const newPlayers = [...players];
-    newPlayers[playerIndex].name = playerName;
-    setPlayers(newPlayers);
+  const handlePlayerCreateOrUpdate = player => {
+    const newData = [...players];
+
+    if (player.id) {
+      const playerIndex = players.findIndex(p => {
+        return p.id === player.id;
+      });
+      newData[playerIndex] = player;
+    } else {
+      newData.push({ ...player, id: nanoid(), score: 1 });
+    }
+    setPlayers(newData);
   };
 
-  const updatePlayerAvatar = (newAvatar, playerIndex) => {
-    const newData = [...players];
-    newData[playerIndex].avatar = newAvatar;
-    setPlayers(newData);
+  const showModal = () => {
+    setIsShowingModal(true);
+  };
+
+  const hideModal = () => {
+    setIsShowingModal(false);
+    setPlayerToEditId(null);
   };
 
   return (
     <div className="configure-screen">
+      {isShowingModal && (
+        <CreateEdit
+          player={players.find(p => p.id === playerToEditId)}
+          onClose={hideModal}
+          onPlayerSave={player => {
+            handlePlayerCreateOrUpdate(player);
+          }}
+        />
+      )}
       {players.map((player, index) => {
         return (
           <div className="configure-screen__name-input-wrapper" key={player.id}>
-            <AvatarPicker
-              avatar={player.avatar}
-              onChange={newAvatar => updatePlayerAvatar(newAvatar, index)}
-            />
-            <Input
-              onChange={event => handleNameChange(event.target.value, index)}
-              placeholder="Enter player's name"
-              value={player.name}
-            />
-            {numberOfPlayers > MIN_PLAYERS && (
+            <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+            <div className="configure-screen__player-name">
+              {player.name || "Player's Name"}
+            </div>
+            <div className="configure-screen__button-wrapper">
               <Button
+                onClick={() => {
+                  showModal();
+                  setPlayerToEditId(player.id);
+                }}
                 styleReset
-                onClick={() => removeInput(index)}
-                aria-label="Remove player"
               >
-                -
+                Edit
               </Button>
-            )}
+              {numberOfPlayers > MIN_PLAYERS && (
+                <Button
+                  styleReset
+                  onClick={() => removeInput(index)}
+                  aria-label="Remove player"
+                >
+                  -
+                </Button>
+              )}
+            </div>
           </div>
         );
       })}
 
       {numberOfPlayers < MAX_PLAYERS && (
-        <Button styleReset onClick={addInput} aria-label="Add a player">
+        <Button
+          styleReset
+          onClick={() => {
+            showModal();
+          }}
+          aria-label="Add a player"
+        >
           + Add Player
         </Button>
       )}
       {playersAreValid && (
-        <div className="configure-screen__button-wrapper">
+        <div className="configure-screen__start-button-wrapper">
           <Button as={Link} to="/game">
             Start
           </Button>
