@@ -1,9 +1,9 @@
-.avatar-picker__avatar-list {
+.avatar-picker {
   display: flex;
   justify-content: center;
 }
 
-.avatar-picker__avatar-select {
+.avatar-picker__avatar-option {
   background: none;
   border: none;
   padding: 0;

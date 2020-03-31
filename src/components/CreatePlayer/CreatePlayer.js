@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import nanoid from "nanoid";
 
@@ -10,18 +10,15 @@ import { GameContext } from "../../contexts/gameContext";
 const CreatePlayer = props => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
-  const [playerToEditId] = useState(null);
 
   const handlePlayerCreate = player => {
     const newData = [...players];
 
-    if (!player.id) {
-      newData.push({
-        ...player,
-        id: nanoid(),
-        score: 1
-      });
-    }
+    newData.push({
+      ...player,
+      id: nanoid(),
+      score: 1
+    });
 
     setPlayers(newData);
     props.history.push("/configure");
@@ -36,7 +33,6 @@ const CreatePlayer = props => {
         </Button>
       </div>
       <PlayerForm
-        efaultFormData={players.find(p => p.id === playerToEditId)}
         onSave={player => {
           handlePlayerCreate(player);
         }}

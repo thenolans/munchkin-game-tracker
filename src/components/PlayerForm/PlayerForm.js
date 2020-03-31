@@ -39,7 +39,7 @@ const EditCreateForm = props => {
 
   return (
     <>
-      <form className="player-form__form">
+      <form className="player-form">
         <div className="player-form__form-option">
           <label className="player-form__form-label">Player's Name</label>
           <Input

@@ -37,14 +37,14 @@ const ConfigureGame = () => {
     <div className="configure-screen">
       {players.map((player, index) => {
         return (
-          <div className="configure-screen__name-input-wrapper" key={player.id}>
-            <div className="configure-screen__player-info">
+          <div className="player__wrapper" key={player.id}>
+            <div className="player__info">
               <Avatar src={player.avatar.src} alt={player.avatar.alt} />
-              <div className="configure-screen__player-name">
+              <div className="player__name">
                 {player.name || "Player's Name"}
               </div>
             </div>
-            <div className="configure-screen__button-wrapper">
+            <div className="player__actions">
               <Link to={`/player/edit/${player.id}`}>
                 <img
                   className="configure-screen__icon"
@@ -70,7 +70,7 @@ const ConfigureGame = () => {
         );
       })}
 
-      <div className="configure-screen__add-player-button-wrapper">
+      <div className="configure-screen__add-player">
         {numberOfPlayers < MAX_PLAYERS && (
           <Button as={Link} to="/player/create" styleReset>
             + Add Player

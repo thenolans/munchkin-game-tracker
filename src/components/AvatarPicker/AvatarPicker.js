@@ -6,11 +6,11 @@ import "./AvatarPicker.css";
 
 const AvatarPicker = props => {
   return (
-    <div className="avatar-picker__avatar-list">
+    <div className="avatar-picker">
       {AVATAR_LIST.map(avatar => (
         <button
           aria-label={`Click to change avatar to ${avatar.alt}`}
-          className="avatar-picker__avatar-select"
+          className="avatar-picker__avatar-option"
           key={avatar.alt}
           onClick={() => props.onChange(avatar)}
         >
