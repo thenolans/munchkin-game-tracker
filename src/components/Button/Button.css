@@ -23,12 +23,4 @@
   cursor: pointer;
   background-color: transparent;
   box-shadow: none;
-  padding: 10px;
-}
-
-.button--icon-style-reset {
-  border: none;
-  cursor: pointer;
-  box-shadow: none;
-  padding: 0px;
 }

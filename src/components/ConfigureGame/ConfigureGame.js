@@ -54,7 +54,7 @@ const ConfigureGame = () => {
               </Link>
               {numberOfPlayers > MIN_PLAYERS && (
                 <Button
-                  iconStyleReset
+                  styleReset
                   onClick={() => removeInput(index)}
                   aria-label="Remove player"
                 >
