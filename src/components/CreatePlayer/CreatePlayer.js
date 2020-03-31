@@ -16,8 +16,13 @@ const CreatePlayer = props => {
     const newData = [...players];
 
     if (!player.id) {
-      newData.push({ ...player, id: nanoid(), score: 1 });
+      newData.push({
+        ...player,
+        id: nanoid(),
+        score: 1
+      });
     }
+
     setPlayers(newData);
     props.history.push("/configure");
   };
