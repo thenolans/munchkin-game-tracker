@@ -10,24 +10,21 @@ const EditPlayer = props => {
   const { id } = props.match.params;
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
-  const [playerToEditId] = useState(id);
 
   const handlePlayerUpdate = player => {
     const newData = [...players];
 
-    if (player.id) {
-      const playerIndex = players.findIndex(p => {
-        return p.id === player.id;
-      });
-      newData[playerIndex] = player;
+    const playerIndex = players.findIndex(p => {
+      return p.id === player.id;
+    });
+    newData[playerIndex] = player;
 
-      setPlayers(newData);
-      props.history.push("/configure");
-    }
+    setPlayers(newData);
+    props.history.push("/configure");
   };
 
   return (
-    <>
+    <div className="edit-player">
       <div className="edit-player__heading">
         <h1>Edit Player</h1>
         <Button as={Link} to="/configure" styleReset>
@@ -36,12 +33,12 @@ const EditPlayer = props => {
       </div>
 
       <PlayerForm
-        defaultFormData={players.find(p => p.id === playerToEditId)}
+        defaultFormData={players.find(p => p.id === id)}
         onSave={player => {
           handlePlayerUpdate(player);
         }}
       />
-    </>
+    </div>
   );
 };
 

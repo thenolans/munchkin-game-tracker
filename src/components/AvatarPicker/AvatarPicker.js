@@ -10,7 +10,7 @@ const AvatarPicker = props => {
       {AVATAR_LIST.map(avatar => (
         <button
           aria-label={`Click to change avatar to ${avatar.alt}`}
-          className="avatar-picker__avatar-option"
+          className="avatar-picker__option"
           key={avatar.alt}
           onClick={() => props.onChange(avatar)}
         >

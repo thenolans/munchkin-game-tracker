@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 import "./playerForm.css";
-import Button from "../Button";
 import AvatarPicker from "../AvatarPicker";
-import Input from "../Input";
+import Button from "../Button";
 import FormError from "../FormError";
+import Input from "../Input";
+import Label from "../Label";
 
 const EditCreateForm = props => {
   const [playerData, setPlayerData] = useState(props.defaultFormData || {});
@@ -40,8 +41,8 @@ const EditCreateForm = props => {
   return (
     <>
       <form className="player-form">
-        <div className="player-form__form-option">
-          <label className="player-form__form-label">Player's Name</label>
+        <div className="player-form__section">
+          <Label>Player's Name</Label>
           <Input
             onChange={event => updatePlayerData("name", event.target.value)}
             value={playerData.name || ""}
@@ -50,8 +51,8 @@ const EditCreateForm = props => {
           {errors && <FormError>{errors.name}</FormError>}
         </div>
 
-        <div className="player-form__form-option">
-          <label className="player-form__form-label">Avatar</label>
+        <div className="player-form__section">
+          <Label>Avatar</Label>
           <AvatarPicker
             onChange={newAvatar => updatePlayerData("avatar", newAvatar)}
           />

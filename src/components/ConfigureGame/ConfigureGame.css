@@ -1,9 +1,9 @@
-.configure-screen {
+.configure-game {
   display: flex;
   flex-direction: column;
 }
 
-.player__wrapper {
+.player {
   margin-bottom: 20px;
   height: 50px;
   display: flex;
@@ -27,12 +27,12 @@
   margin-top: 10px;
 }
 
-.configure-screen__icon {
+.configure-game__icon {
   width: 36px;
   height: auto;
 }
 
-.configure-screen__add-player {
+.configure-game__add-player {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;

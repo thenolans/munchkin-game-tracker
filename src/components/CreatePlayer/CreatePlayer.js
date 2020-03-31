@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import nanoid from "nanoid";
 
 import "./createPlayer.css";
 import Button from "../Button";
+import { Player } from "../../utils/player";
 import PlayerForm from "../PlayerForm";
 import { GameContext } from "../../contexts/gameContext";
 
@@ -15,17 +15,15 @@ const CreatePlayer = props => {
     const newData = [...players];
 
     newData.push({
-      ...player,
-      id: nanoid(),
-      score: 1
+      ...player
     });
 
-    setPlayers(newData);
+    setPlayers(newData, new Player());
     props.history.push("/configure");
   };
 
   return (
-    <>
+    <div className="create-player">
       <div className="create-player__heading">
         <h1>Create Player</h1>
         <Button as={Link} to="/configure" styleReset>
@@ -37,7 +35,7 @@ const CreatePlayer = props => {
           handlePlayerCreate(player);
         }}
       />
-    </>
+    </div>
   );
 };
 

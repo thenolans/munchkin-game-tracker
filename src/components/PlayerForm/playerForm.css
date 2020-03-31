@@ -2,11 +2,7 @@
   margin-bottom: 30px;
 }
 
-.player-form__form-option {
+.player-form__section {
   font-size: 26px;
   margin-bottom: 20px;
-}
-.player-form__form-label {
-  display: block;
-  margin-bottom: 8px;
 }

@@ -34,10 +34,10 @@ const ConfigureGame = () => {
   };
 
   return (
-    <div className="configure-screen">
+    <div className="configure-game">
       {players.map((player, index) => {
         return (
-          <div className="player__wrapper" key={player.id}>
+          <div className="player" key={player.id}>
             <div className="player__info">
               <Avatar src={player.avatar.src} alt={player.avatar.alt} />
               <div className="player__name">
@@ -47,7 +47,7 @@ const ConfigureGame = () => {
             <div className="player__actions">
               <Link to={`/player/edit/${player.id}`}>
                 <img
-                  className="configure-screen__icon"
+                  className="configure-game__icon"
                   src={Pencil}
                   alt={"Edit player"}
                 />
@@ -59,7 +59,7 @@ const ConfigureGame = () => {
                   aria-label="Remove player"
                 >
                   <img
-                    className="configure-screen__icon"
+                    className="configure-game__icon"
                     src={Trash}
                     alt={"Remove player"}
                   />
@@ -70,7 +70,7 @@ const ConfigureGame = () => {
         );
       })}
 
-      <div className="configure-screen__add-player">
+      <div className="configure-game__add-player">
         {numberOfPlayers < MAX_PLAYERS && (
           <Button as={Link} to="/player/create" styleReset>
             + Add Player

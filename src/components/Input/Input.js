@@ -5,7 +5,10 @@ import "./Input.css";
 
 const Input = ({ className, fluid, ...props }) => {
   return (
-    <input className={cx("input", { "input--fluid": fluid })} {...props} />
+    <input
+      className={cx("input", { "input--fluid": fluid }, className)}
+      {...props}
+    />
   );
 };
 
