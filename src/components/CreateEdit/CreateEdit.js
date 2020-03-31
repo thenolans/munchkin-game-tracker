@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import "./createEdit.css";
 // import { Player } from "../../utils/player";
 import AvatarPicker from "../AvatarPicker";
 import Button from "../Button";

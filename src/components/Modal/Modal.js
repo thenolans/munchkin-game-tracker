@@ -1,11 +1,12 @@
 import React from "react";
 
 import "./modal.css";
+import Card from "../Card";
 
 const Modal = ({ ...props }) => {
   return (
     <div className="modal">
-      <div className="modal__card" {...props} />
+      <Card>{props.children}</Card>
     </div>
   );
 };

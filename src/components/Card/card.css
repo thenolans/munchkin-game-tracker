@@ -1,0 +1,13 @@
+.card {
+  background-color: #4a1615;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.card__inner {
+  border-radius: 30px;
+  background-color: #fff4e8;
+  padding: 20px 15px;
+}

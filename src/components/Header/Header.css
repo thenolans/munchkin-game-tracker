@@ -1,4 +1,9 @@
 .header {
-  margin-top: 70px;
-  min-width: 300px;
+  margin: 20px 0;
+}
+
+.header__logo {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
 }

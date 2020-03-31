@@ -8,6 +8,7 @@ const Button = ({
   className,
   fluid,
   styleReset,
+  iconStyleReset,
   type = "button",
   ...props
 }) => {
@@ -16,7 +17,8 @@ const Button = ({
       className={cx(
         "button",
         { "button--fluid": fluid },
-        { "button--style-reset": styleReset }
+        { "button--style-reset": styleReset },
+        { "button--icon-style-reset": iconStyleReset }
       )}
       type={type}
       {...props}

@@ -1,18 +1,18 @@
-.create-edit__header {
+.player-form__header {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.create-edit__form {
+.player-form__form {
   margin-bottom: 30px;
 }
 
-.create-edit__form-option {
+.player-form__form-option {
   font-size: 26px;
   margin-bottom: 20px;
 }
-.create-edit__form-label {
+.player-form__form-label {
   display: block;
   margin-bottom: 8px;
 }

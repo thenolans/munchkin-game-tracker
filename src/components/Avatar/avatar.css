@@ -1,7 +1,7 @@
 .avatar-image {
-  width: 50px;
+  width: 42px;
   height: auto;
-  border: #471714 1px solid;
+  border: none;
   border-radius: 30px;
   margin: 4px 4px 0 4px;
   cursor: pointer;
