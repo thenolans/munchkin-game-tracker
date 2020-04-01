@@ -15,14 +15,12 @@ const Combat = props => {
 
   return (
     <div className="combat">
-      <div className="combat__heading">
-        <h1>Combat</h1>
-        <img className="combat__heading-icon" src={Swords} alt="swords" />
+      <div className="combat__header">
+        <h1 className="combat__title">Combat</h1>
+        <img className="combat__icon" src={Swords} alt="swords" />
       </div>
       <div className="combat__section">
-        <div className="combat__section-title">
-          Munchkin(s): {munchkinScore}
-        </div>
+        <div className="combat__combatant">Munchkin(s): {munchkinScore}</div>
         <CombatScoreInput
           onAdjustmentClick={adjustment =>
             setMunchkinScore(munchkinScore + adjustment)
@@ -30,14 +28,14 @@ const Combat = props => {
         />
       </div>
       <div className="combat__section">
-        <div className="combat__section-title">Monster(s): {monsterScore} </div>
+        <div className="combat__combatant">Monster(s): {monsterScore} </div>
         <CombatScoreInput
           onAdjustmentClick={adjustment =>
             setMonsterScore(monsterScore + adjustment)
           }
         />
       </div>
-      <Button as={Link} fluid to="/game">
+      <Button as={Link} border fluid to="/game">
         End Combat
       </Button>
     </div>

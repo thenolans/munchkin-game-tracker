@@ -22,8 +22,8 @@ const CreatePlayer = props => {
 
   return (
     <div className="create-player">
-      <div className="create-player__heading">
-        <h1>Create Player</h1>
+      <div className="create-player__header">
+        <h1 className="create-player__title">Create Player</h1>
         <Button as={Link} to="/configure" styleReset>
           X
         </Button>

@@ -30,18 +30,18 @@ const Game = props => {
   return (
     <div className="game">
       {players.map((player, index) => (
-        <div className="game__player-wrapper" key={index}>
+        <div className="game-player" key={index}>
           <img
-            className="game__player-avatar"
+            className="game-player__avatar"
             src={player.avatar.src}
             alt={player.avatar.alt}
           />
 
-          <div className="game__player-name">{player.name}</div>
-          <div className="game__player-score-wrapper">
-            <Link to={`/combat?score=${player.score}`}>
+          <div className="game-player__name">{player.name}</div>
+          <div className="game-player__actions">
+            <Link to={`/combat?score=${player.score}`} className="test">
               <img
-                className="game__player-combat"
+                className="game-player__combat"
                 src={Swords}
                 alt={`Enter combat with ${player.name}`}
               />
@@ -53,11 +53,13 @@ const Game = props => {
           </div>
         </div>
       ))}
-      <div className="game__button-wrapper">
-        <Button as={Link} to="/configure">
+      <div className="game__actions">
+        <Button border as={Link} to="/configure">
           Back
         </Button>
-        <Button onClick={resetGame}>End Game</Button>
+        <Button border onClick={resetGame}>
+          End Game
+        </Button>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const EditPlayer = props => {
   return (
     <div className="edit-player">
       <div className="edit-player__heading">
-        <h1>Edit Player</h1>
+        <h1 className="edit-player__title">Edit Player</h1>
         <Button as={Link} to="/configure" styleReset>
           X
         </Button>

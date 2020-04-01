@@ -3,7 +3,7 @@
   max-width: 400px;
 }
 
-.game__player-wrapper {
+.game-player {
   display: flex;
   font-size: 26px;
   align-items: center;
@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.game__player-avatar {
+.game-player__avatar {
   width: 50px;
   height: auto;
   border: #471714 1px solid;
@@ -21,20 +21,26 @@
   background-color: white;
 }
 
-.game__player-score-wrapper {
+.game-player__actions {
   display: flex;
+  align-items: center;
 }
 
-.game__player-combat {
+.game-player__combat {
   width: 45px;
   height: auto;
-  margin-right: 10px;
 }
 
-.game__button-wrapper {
+.game__actions {
   text-align: right;
   max-width: 500px;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.test {
+  width: 50px;
+  height: 45px;
+  margin-right: 6px;
 }
