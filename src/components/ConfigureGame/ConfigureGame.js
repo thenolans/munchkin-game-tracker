@@ -47,7 +47,7 @@ const ConfigureGame = () => {
             <div className="player__actions">
               <Link to={`/player/edit/${player.id}`}>
                 <img
-                  className="configure-game__icon"
+                  className="player__icon"
                   src={Pencil}
                   alt={"Edit player"}
                 />
