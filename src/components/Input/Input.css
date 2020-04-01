@@ -1,14 +1,20 @@
 .input {
+  color: #4a1615;
+  height: 50px;
   width: 250px;
   padding: 6px;
   border-radius: 4px;
   font-size: 18px;
   font-family: "Sen", sans-serif;
-  border: solid 2px #471714;
-  background-color: #f4cd94;
+  border: solid 2px #4a1615;
+  background-color: transparent;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .input::placeholder {
-  color: #471714;
+  color: #4a1615;
+}
+
+.input--fluid {
+  width: 100%;
 }

@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import Avatar from "../Avatar";
 import Button from "../Button";
 import "./ConfigureGame.css";
-import Input from "../Input";
-import AvatarPicker from "../AvatarPicker";
 import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
+import Trash from "../../images/trash.svg";
+import Pencil from "../../images/pencil.svg";
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 6;
@@ -25,12 +25,6 @@ const ConfigureGame = () => {
     }
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const addInput = () => {
-    if (numberOfPlayers < MAX_PLAYERS) {
-      setPlayers([...players, new Player()]);
-    }
-  };
-
   const removeInput = index => {
     const newPlayers = [...players];
     if (newPlayers.length > MIN_PLAYERS) {
@@ -39,56 +33,54 @@ const ConfigureGame = () => {
     }
   };
 
-  const handleNameChange = (playerName, playerIndex) => {
-    const newPlayers = [...players];
-    newPlayers[playerIndex].name = playerName;
-    setPlayers(newPlayers);
-  };
-
-  const updatePlayerAvatar = (newAvatar, playerIndex) => {
-    const newData = [...players];
-    newData[playerIndex].avatar = newAvatar;
-    setPlayers(newData);
-  };
-
   return (
-    <div className="configure-screen">
+    <div className="configure-game">
       {players.map((player, index) => {
         return (
-          <div className="configure-screen__name-input-wrapper" key={player.id}>
-            <AvatarPicker
-              avatar={player.avatar}
-              onChange={newAvatar => updatePlayerAvatar(newAvatar, index)}
-            />
-            <Input
-              onChange={event => handleNameChange(event.target.value, index)}
-              placeholder="Enter player's name"
-              value={player.name}
-            />
-            {numberOfPlayers > MIN_PLAYERS && (
-              <Button
-                styleReset
-                onClick={() => removeInput(index)}
-                aria-label="Remove player"
-              >
-                -
-              </Button>
-            )}
+          <div className="player" key={player.id}>
+            <div className="player__info">
+              <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+              <div className="player__name">
+                {player.name || "Player's Name"}
+              </div>
+            </div>
+            <div className="player__actions">
+              <Link to={`/player/edit/${player.id}`}>
+                <img
+                  className="configure-game__icon"
+                  src={Pencil}
+                  alt={"Edit player"}
+                />
+              </Link>
+              {numberOfPlayers > MIN_PLAYERS && (
+                <Button
+                  styleReset
+                  onClick={() => removeInput(index)}
+                  aria-label="Remove player"
+                >
+                  <img
+                    className="player__icon"
+                    src={Trash}
+                    alt={"Remove player"}
+                  />
+                </Button>
+              )}
+            </div>
           </div>
         );
       })}
 
-      {numberOfPlayers < MAX_PLAYERS && (
-        <Button styleReset onClick={addInput} aria-label="Add a player">
-          + Add Player
-        </Button>
-      )}
-      {playersAreValid && (
-        <div className="configure-screen__button-wrapper">
-          <Button as={Link} to="/game">
-            Start
+      <div className="configure-game__add-player">
+        {numberOfPlayers < MAX_PLAYERS && (
+          <Button as={Link} to="/player/create" styleReset>
+            + Add Player
           </Button>
-        </div>
+        )}
+      </div>
+      {playersAreValid && (
+        <Button as={Link} fluid to="/game">
+          Start
+        </Button>
       )}
     </div>
   );

@@ -1,21 +1,39 @@
-.configure-screen {
-  width: 100%;
+.configure-game {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
-.configure-screen__name-input-wrapper {
-  margin-top: 20px;
+.player {
+  margin-bottom: 20px;
   height: 50px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.configure-screen__button-wrapper {
-  width: 50%;
+.player__info {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  font-size: 20px;
+  align-items: center;
+}
+
+.player__name {
+  padding-left: 10px;
+  white-space: nowrap;
+}
+
+.player__actions {
+  display: flex;
   margin-top: 10px;
+}
+
+.player__icon {
+  width: 36px;
+  height: auto;
+}
+
+.configure-game__add-player {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
 }
