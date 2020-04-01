@@ -10,22 +10,22 @@ const CombatScoreInput = ({ onAdjustmentClick }) => {
 
   return (
     <ButtonGroup>
-      <Button border fluid onClick={() => handleAdjustmentClick(-5)}>
+      <Button fluid onClick={() => handleAdjustmentClick(-5)}>
         -5
       </Button>
-      <Button border fluid onClick={() => handleAdjustmentClick(-3)}>
+      <Button fluid onClick={() => handleAdjustmentClick(-3)}>
         -3
       </Button>
-      <Button border fluid onClick={() => handleAdjustmentClick(-1)}>
+      <Button fluid onClick={() => handleAdjustmentClick(-1)}>
         -1
       </Button>
-      <Button border fluid onClick={() => handleAdjustmentClick(1)}>
+      <Button fluid onClick={() => handleAdjustmentClick(1)}>
         +1
       </Button>
-      <Button border fluid onClick={() => handleAdjustmentClick(3)}>
+      <Button fluid onClick={() => handleAdjustmentClick(3)}>
         +3
       </Button>
-      <Button border fluid onClick={() => handleAdjustmentClick(5)}>
+      <Button fluid onClick={() => handleAdjustmentClick(5)}>
         +5
       </Button>
     </ButtonGroup>

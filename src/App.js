@@ -15,17 +15,11 @@ import CreatePlayer from "./components/CreatePlayer";
 
 const App = () => {
   const [players, setPlayers] = useState(
-    Array(2)
-      .fill(null)
-      .map(() => new Player())
+    JSON.parse(localStorage.getItem("game")) ||
+      Array(2)
+        .fill(null)
+        .map(() => new Player())
   );
-
-  useEffect(() => {
-    const savedGame = localStorage.getItem("game");
-    if (savedGame) {
-      setPlayers(JSON.parse(savedGame));
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("game", JSON.stringify(players));

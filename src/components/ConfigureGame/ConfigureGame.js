@@ -74,7 +74,7 @@ const ConfigureGame = () => {
         )}
       </div>
       {playersAreValid && (
-        <Button as={Link} border fluid to="/game">
+        <Button as={Link} fluid to="/game">
           Start
         </Button>
       )}

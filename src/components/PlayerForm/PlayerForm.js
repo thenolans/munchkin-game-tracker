@@ -60,7 +60,6 @@ const PlayerForm = props => {
         </div>
       </form>
       <Button
-        border
         fluid
         type="submit"
         onClick={() => {

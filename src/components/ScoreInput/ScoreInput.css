@@ -1,14 +1,17 @@
-.score-input__wrapper {
+.score-input__actions {
   display: flex;
-  border: solid 2px #471714;
-  border-radius: 4px;
+}
+
+.score-input__button {
+  padding: 4px 10px;
+  font-size: 26px;
 }
 
 .score-input__score {
-  border-right: solid 2px #471714;
-  border-left: solid 2px #471714;
-  padding: 10px 15px;
-  font-size: 20px;
+  font-size: 26px;
   width: 20px;
   text-align: center;
+  align-self: center;
+  padding: 4px 10px;
+  box-sizing: content-box;
 }

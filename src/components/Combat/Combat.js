@@ -35,7 +35,7 @@ const Combat = props => {
           }
         />
       </div>
-      <Button as={Link} border fluid to="/game">
+      <Button as={Link} fluid to="/game">
         End Combat
       </Button>
     </div>

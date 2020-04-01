@@ -18,12 +18,22 @@ const ScoreInput = ({ currentScore, onChange }) => {
 
   return (
     <div className="score-input">
-      <div className="score-input__wrapper">
-        <Button onClick={decrementScore} aria-label="Decrement score by one">
+      <div className="score-input__actions">
+        <Button
+          onClick={decrementScore}
+          className="score-input__button"
+          styleReset
+          aria-label="Decrement score by one"
+        >
           -
         </Button>
         <div className="score-input__score">{currentScore}</div>
-        <Button onClick={incrementScore} aria-label="Increment score by one">
+        <Button
+          onClick={incrementScore}
+          className="score-input__button"
+          styleReset
+          aria-label="Increment score by one"
+        >
           +
         </Button>
       </div>

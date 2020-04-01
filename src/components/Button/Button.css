@@ -1,4 +1,5 @@
 .button {
+  font-family: "Sen", sans-serif;
   color: #4a1615;
   font-size: 20px;
   background-color: transparent;
@@ -8,6 +9,8 @@
   display: block;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 15px;
+  border: solid 2px #4a1615;
+  border-radius: 12px;
 }
 
 .button--fluid {
@@ -15,15 +18,9 @@
 }
 
 .button--style-reset {
-  font-size: 20px;
   border: none;
   cursor: pointer;
   background-color: transparent;
   box-shadow: none;
   padding: 0px;
-}
-
-.button--border {
-  border: solid 2px #4a1615;
-  border-radius: 4px;
 }

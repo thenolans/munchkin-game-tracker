@@ -13,13 +13,13 @@
 
 .player__info {
   display: flex;
-  font-size: 20px;
   align-items: center;
 }
 
 .player__name {
   padding-left: 10px;
   white-space: nowrap;
+  font-size: 26px;
 }
 
 .player__actions {
