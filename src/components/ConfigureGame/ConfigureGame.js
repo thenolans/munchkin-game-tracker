@@ -59,7 +59,7 @@ const ConfigureGame = () => {
                   aria-label="Remove player"
                 >
                   <img
-                    className="configure-game__icon"
+                    className="player__icon"
                     src={Trash}
                     alt={"Remove player"}
                   />

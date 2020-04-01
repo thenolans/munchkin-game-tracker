@@ -7,7 +7,7 @@ import FormError from "../FormError";
 import Input from "../Input";
 import Label from "../Label";
 
-const EditCreateForm = props => {
+const PlayerForm = props => {
   const [playerData, setPlayerData] = useState(props.defaultFormData || {});
   const [errors, setErrors] = useState();
 
@@ -72,4 +72,4 @@ const EditCreateForm = props => {
   );
 };
 
-export default EditCreateForm;
+export default PlayerForm;

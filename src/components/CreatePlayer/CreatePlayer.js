@@ -14,11 +14,9 @@ const CreatePlayer = props => {
   const handlePlayerCreate = player => {
     const newData = [...players];
 
-    newData.push({
-      ...player
-    });
+    newData.push(new Player(player.name, null, player.avatar));
 
-    setPlayers(newData, new Player());
+    setPlayers(newData);
     props.history.push("/configure");
   };
 
