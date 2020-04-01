@@ -53,11 +53,7 @@ const ConfigureGame = () => {
                 />
               </Link>
               {numberOfPlayers > MIN_PLAYERS && (
-                <Button
-                  styleReset
-                  onClick={() => removeInput(index)}
-                  aria-label="Remove player"
-                >
+                <Button styleReset onClick={() => removeInput(index)}>
                   <img
                     className="player__icon"
                     src={Trash}

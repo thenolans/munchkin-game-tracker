@@ -57,9 +57,7 @@ const Game = props => {
         <Button as={Link} to="/configure">
           Back
         </Button>
-        <Button aria-label="End game" onClick={resetGame}>
-          End Game
-        </Button>
+        <Button onClick={resetGame}>End Game</Button>
       </div>
     </div>
   );
