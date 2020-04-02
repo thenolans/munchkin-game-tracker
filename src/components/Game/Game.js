@@ -57,9 +57,6 @@ const Game = props => {
                 <div className="game-player__info">
                   <Avatar src={player.avatar.src} alt={player.avatar.alt} />
                   <div className="game-player__name">{player.name}</div>
-                  <div className="game-player__total">
-                    ({player.level + player.bonus})
-                  </div>
                 </div>
 
                 {lowestPlayerLevel === player.level && (
@@ -78,17 +75,13 @@ const Game = props => {
                     onChange={newLevel => updatePlayerLevel(newLevel, index)}
                   />
                 </div>
-                <Link
-                  to={`/combat?score=${player.level + player.bonus}`}
-                  className="actions__combat-link"
-                >
+                <Link to={`/combat?score=${player.level + player.bonus}`}>
                   <img
                     className="actions__combat-img"
                     src={Swords}
                     alt={`Enter combat with ${player.name}`}
                   />
                 </Link>
-
                 <div className="actions__section">
                   <div className="actions__score">Bonus</div>
                   <ScoreInput

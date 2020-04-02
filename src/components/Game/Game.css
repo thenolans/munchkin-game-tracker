@@ -17,8 +17,8 @@
 }
 
 .game-player__name {
-  margin-left: 10px;
-  font-size: 26px;
+  margin-left: 4px;
+  font-size: 20px;
 }
 
 .game-player__score {
@@ -39,17 +39,12 @@
 }
 
 .actions__score {
-  font: 12px;
+  font-size: 12px;
 }
 
 .actions__combat-img {
-  width: 45px;
+  width: 36px;
   height: auto;
-}
-
-.actions__combat-link {
-  width: 45px;
-  height: 45px;
 }
 
 .game__actions {
