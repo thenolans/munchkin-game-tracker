@@ -1,9 +1,10 @@
 .player-card {
-  border: solid 2px #4a1615;
-  padding: 16px;
-  max-width: 400px;
-  width: 100%;
+  border-bottom: solid 2px #b6a1a1;
+  padding: 12px;
   margin-bottom: 10px;
-  border-radius: 12px;
   background-color: #fff4e8;
+}
+
+.player-card:last-child {
+  border-bottom: none;
 }

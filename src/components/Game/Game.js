@@ -14,21 +14,27 @@ import { Player } from "../../utils/player";
 const Game = props => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
-  const [lowestPlayerScore, setLowestPlayerScore] = useState();
-  const [highestPlayerScore, setHightestPlayerScore] = useState();
+  const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
+  const [highestPlayerLevel, setHightestPlayerLevel] = useState();
 
   useEffect(() => {
-    const scores = players.map(player => player.score);
-    const max = Math.max(...scores);
-    const min = Math.min(...scores);
-    const minScoresLength = scores.filter(score => min === score).length;
-    setLowestPlayerScore(minScoresLength === 1 ? min : null);
-    setHightestPlayerScore(max);
+    const levels = players.map(player => player.level);
+    const max = Math.max(...levels);
+    const min = Math.min(...levels);
+    const minLevelLength = levels.filter(level => min === level).length;
+    setLowestPlayerLevel(minLevelLength === 1 ? min : null);
+    setHightestPlayerLevel(max);
   }, [players]);
 
-  const updatePlayerScore = (newScore, playerIndex) => {
+  const updatePlayerLevel = (newLevel, playerIndex) => {
     const newData = [...players];
-    newData[playerIndex].score = newScore;
+    newData[playerIndex].level = newLevel;
+    setPlayers(newData);
+  };
+
+  const updatePlayerBonus = (newBonus, playerIndex) => {
+    const newData = [...players];
+    newData[playerIndex].bonus = newBonus;
     setPlayers(newData);
   };
 
@@ -43,42 +49,58 @@ const Game = props => {
 
   return (
     <div className="game">
-      {players.map((player, index) => (
-        <PlayerCard key={index}>
-          <div className="game-player">
-            <div className="game-player__section">
-              <div className="game-player__info">
-                <Avatar src={player.avatar.src} alt={player.avatar.alt} />
-                <div className="game-player__name">{player.name}</div>
+      <div>
+        {players.map((player, index) => (
+          <PlayerCard key={index}>
+            <div className="game-player">
+              <div className="game-player__section">
+                <div className="game-player__info">
+                  <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+                  <div className="game-player__name">{player.name}</div>
+                  <div className="game-player__total">
+                    ({player.level + player.bonus})
+                  </div>
+                </div>
+
+                {lowestPlayerLevel === player.level && (
+                  <Status theme="warning">Discards</Status>
+                )}
+                {highestPlayerLevel === player.level && (
+                  <Status theme="success">First</Status>
+                )}
               </div>
 
-              {lowestPlayerScore === player.score && (
-                <Status theme="warning">Discards</Status>
-              )}
-              {highestPlayerScore === player.score && (
-                <Status theme="success">First</Status>
-              )}
-            </div>
+              <div className="actions">
+                <div className="actions__section">
+                  <div className="actions__score">Level</div>
+                  <ScoreInput
+                    currentScore={player.level || 1}
+                    onChange={newLevel => updatePlayerLevel(newLevel, index)}
+                  />
+                </div>
+                <Link
+                  to={`/combat?score=${player.level + player.bonus}`}
+                  className="actions__combat-link"
+                >
+                  <img
+                    className="actions__combat-img"
+                    src={Swords}
+                    alt={`Enter combat with ${player.name}`}
+                  />
+                </Link>
 
-            <div className="game-player__actions">
-              <ScoreInput
-                currentScore={player.score}
-                onChange={newScore => updatePlayerScore(newScore, index)}
-              />
-              <Link
-                to={`/combat?score=${player.score}`}
-                className="game-player__link"
-              >
-                <img
-                  className="game-player__combat"
-                  src={Swords}
-                  alt={`Enter combat with ${player.name}`}
-                />
-              </Link>
+                <div className="actions__section">
+                  <div className="actions__score">Bonus</div>
+                  <ScoreInput
+                    currentScore={player.bonus || 0}
+                    onChange={newBonus => updatePlayerBonus(newBonus, index)}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </PlayerCard>
-      ))}
+          </PlayerCard>
+        ))}
+      </div>
       <div className="game__actions">
         <Button as={Link} to="/configure">
           Back

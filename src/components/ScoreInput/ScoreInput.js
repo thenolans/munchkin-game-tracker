@@ -3,7 +3,7 @@ import React from "react";
 import "./ScoreInput.css";
 import Button from "../Button";
 
-const ScoreInput = ({ currentScore, onChange }) => {
+const ScoreInput = ({ onChange, currentScore }) => {
   const incrementScore = () => {
     if (currentScore < 99) {
       onChange(currentScore + 1);

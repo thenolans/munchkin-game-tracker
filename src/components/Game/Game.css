@@ -3,10 +3,6 @@
   max-width: 400px;
 }
 
-.game-player {
-  font-size: 26px;
-}
-
 .game-player__section {
   display: flex;
   align-items: center;
@@ -14,24 +10,46 @@
   justify-content: space-between;
 }
 
-.game-player__name {
-  margin-left: 10px;
-}
-
 .game-player__info {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.game-player__actions {
+.game-player__name {
+  margin-left: 10px;
+  font-size: 26px;
+}
+
+.game-player__score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.game-player__combat {
+.actions__section {
+  text-align: center;
+  font: 12px;
+}
+
+.actions__score {
+  font: 12px;
+}
+
+.actions__combat-img {
   width: 45px;
   height: auto;
+}
+
+.actions__combat-link {
+  width: 45px;
+  height: 45px;
 }
 
 .game__actions {
@@ -40,9 +58,4 @@
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
-}
-
-.game-player__link {
-  width: 50px;
-  height: 45px;
 }
