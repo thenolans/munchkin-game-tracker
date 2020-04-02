@@ -66,7 +66,7 @@ const PlayerForm = props => {
           handleSubmit();
         }}
       >
-        Create
+        Save
       </Button>
     </>
   );
