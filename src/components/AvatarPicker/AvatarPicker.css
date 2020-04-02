@@ -1,6 +1,5 @@
 .avatar-picker {
   display: flex;
-  justify-content: center;
 }
 
 .avatar-picker__option {
