@@ -21,6 +21,10 @@
   font-size: 20px;
 }
 
+.game-player__sex {
+  padding: 10px;
+}
+
 .game-player__score {
   display: flex;
   justify-content: center;

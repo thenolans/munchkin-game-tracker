@@ -16,8 +16,9 @@ const Game = props => {
   const [players, setPlayers] = game.usePlayers;
   const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
   const [highestPlayerLevel, setHightestPlayerLevel] = useState();
-  const [toggleSex, setToggleSex] = useState(false);
+  const [isToggleSex, setIsToggleSex] = useState(false);
 
+  console.log(players);
   useEffect(() => {
     const levels = players.map(player => player.level);
     const max = Math.max(...levels);
@@ -41,8 +42,8 @@ const Game = props => {
 
   const togglePlayerSex = playerIndex => {
     const newData = [...players];
-    setToggleSex(!toggleSex);
-    newData[playerIndex].sex = toggleSex ? "M" : "F";
+    setIsToggleSex(!isToggleSex);
+    newData[playerIndex].sex = isToggleSex ? "M" : "F";
     setPlayers(newData);
   };
 
@@ -73,7 +74,11 @@ const Game = props => {
                 {highestPlayerLevel === player.level && (
                   <Status theme="success">First</Status>
                 )}
-                <Button styleReset onClick={() => togglePlayerSex(index)}>
+                <Button
+                  className="game-player__sex"
+                  styleReset
+                  onClick={() => togglePlayerSex(index)}
+                >
                   {player.sex}
                 </Button>
               </div>
