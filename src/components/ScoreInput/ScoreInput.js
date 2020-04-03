@@ -3,17 +3,15 @@ import React from "react";
 import "./ScoreInput.css";
 import Button from "../Button";
 
-const ScoreInput = ({ onChange, currentScore }) => {
+const ScoreInput = ({ onChange, currentScore, min, max }) => {
   const incrementScore = () => {
-    if (currentScore < 99) {
-      onChange(currentScore + 1);
-    }
+    if (max && currentScore >= max) return;
+    onChange(currentScore + 1);
   };
 
   const decrementScore = () => {
-    if (currentScore > 1) {
-      onChange(currentScore - 1);
-    }
+    if (min && currentScore <= min) return;
+    onChange(currentScore - 1);
   };
 
   return (

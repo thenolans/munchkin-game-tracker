@@ -21,6 +21,16 @@
   font-size: 20px;
 }
 
+.game-player__badges {
+  display: flex;
+  align-items: center;
+}
+
+.game-player__sex {
+  margin-left: 12px;
+  width: 30px;
+}
+
 .game-player__score {
   display: flex;
   justify-content: center;

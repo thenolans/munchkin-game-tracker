@@ -58,31 +58,35 @@ const Game = props => {
                   <Avatar src={player.avatar.src} alt={player.avatar.alt} />
                   <div className="game-player__name">{player.name}</div>
                 </div>
-
-                {lowestPlayerLevel === player.level && (
-                  <Status theme="warning">Discards</Status>
-                )}
-                {highestPlayerLevel === player.level && (
-                  <Status theme="success">First</Status>
-                )}
-                <Button
-                  onClick={() =>
-                    updatePlayer(
-                      player.id,
-                      "sex",
-                      player.sex === "M" ? "F" : "M"
-                    )
-                  }
-                  theme="info"
-                >
-                  {player.sex}
-                </Button>
+                <div className="game-player__badges">
+                  {lowestPlayerLevel === player.level && (
+                    <Status theme="warning">Discards</Status>
+                  )}
+                  {highestPlayerLevel === player.level && (
+                    <Status theme="success">First</Status>
+                  )}
+                  <Button
+                    className="game-player__sex"
+                    onClick={() =>
+                      updatePlayer(
+                        player.id,
+                        "sex",
+                        player.sex === "M" ? "F" : "M"
+                      )
+                    }
+                    theme="info"
+                  >
+                    {player.sex}
+                  </Button>
+                </div>
               </div>
 
               <div className="actions">
                 <div className="actions__section">
                   <div className="actions__score">Level</div>
                   <ScoreInput
+                    min={1}
+                    max={99}
                     currentScore={player.level || 1}
                     onChange={newLevel =>
                       updatePlayer(player.id, "level", newLevel)
