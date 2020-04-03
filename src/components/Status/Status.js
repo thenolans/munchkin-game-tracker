@@ -3,13 +3,10 @@ import cx from "classnames";
 
 import "./status.css";
 
-const Status = ({ className, theme, ...props }) => {
+const Status = ({ className, theme = "default", ...props }) => {
   return (
     <div
-      className={cx("status", className, {
-        "status--warning": theme === "warning",
-        "status--success": theme === "success"
-      })}
+      className={cx("status", `status--${theme}`, className, {})}
       {...props}
     />
   );

@@ -16,9 +16,7 @@ const Game = props => {
   const [players, setPlayers] = game.usePlayers;
   const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
   const [highestPlayerLevel, setHightestPlayerLevel] = useState();
-  const [isToggleSex, setIsToggleSex] = useState(false);
 
-  console.log(players);
   useEffect(() => {
     const levels = players.map(player => player.level);
     const max = Math.max(...levels);
@@ -28,30 +26,35 @@ const Game = props => {
     setHightestPlayerLevel(max);
   }, [players]);
 
-  const updatePlayerLevel = (newLevel, playerIndex) => {
+  const updatePlayer = ({ index, newLevel, newBonus, sex }) => {
     const newData = [...players];
-    newData[playerIndex].level = newLevel;
-    setPlayers(newData);
+    if (newLevel) {
+      newData[index].level = newLevel;
+      setPlayers(newData);
+    }
+    if (newBonus) {
+      newData[index].bonus = newBonus;
+      setPlayers(newData);
+    }
   };
 
-  const updatePlayerBonus = (newBonus, playerIndex) => {
+  const updatePlayerSex = (sex, index) => {
     const newData = [...players];
-    newData[playerIndex].bonus = newBonus;
-    setPlayers(newData);
-  };
-
-  const togglePlayerSex = playerIndex => {
-    const newData = [...players];
-    setIsToggleSex(!isToggleSex);
-    newData[playerIndex].sex = isToggleSex ? "M" : "F";
-    setPlayers(newData);
+    if (sex === "M") {
+      newData[index].sex = "F";
+      setPlayers(newData);
+    }
+    if (sex === "F") {
+      newData[index].sex = "M";
+      setPlayers(newData);
+    }
   };
 
   const resetGame = () => {
     setPlayers(
       Array(2)
         .fill(null)
-        .map(() => new Player())
+        .map(() => new Player({ ...players }))
     );
     props.history.push("/");
   };
@@ -75,9 +78,8 @@ const Game = props => {
                   <Status theme="success">First</Status>
                 )}
                 <Button
-                  className="game-player__sex"
-                  styleReset
-                  onClick={() => togglePlayerSex(index)}
+                  onClick={sex => updatePlayerSex(player.sex, index)}
+                  theme="info"
                 >
                   {player.sex}
                 </Button>
@@ -88,7 +90,7 @@ const Game = props => {
                   <div className="actions__score">Level</div>
                   <ScoreInput
                     currentScore={player.level || 1}
-                    onChange={newLevel => updatePlayerLevel(newLevel, index)}
+                    onChange={newLevel => updatePlayer({ newLevel, index })}
                   />
                 </div>
                 <Link to={`/combat?score=${player.level + player.bonus}`}>
@@ -102,7 +104,7 @@ const Game = props => {
                   <div className="actions__score">Bonus</div>
                   <ScoreInput
                     currentScore={player.bonus || 0}
-                    onChange={newBonus => updatePlayerBonus(newBonus, index)}
+                    onChange={newBonus => updatePlayer({ newBonus, index })}
                   />
                 </div>
               </div>

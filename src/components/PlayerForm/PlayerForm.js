@@ -12,8 +12,6 @@ const PlayerForm = props => {
   const [playerData, setPlayerData] = useState(props.defaultFormData || {});
   const [errors, setErrors] = useState();
 
-  console.log(playerData);
-
   const updatePlayerData = (field, value) => {
     setPlayerData({
       ...playerData,

@@ -8,6 +8,7 @@ const Button = ({
   className,
   fluid,
   styleReset,
+  theme,
   type = "button",
   ...props
 }) => {
@@ -17,6 +18,7 @@ const Button = ({
         "button",
         { "button--fluid": fluid },
         { "button--style-reset": styleReset },
+        { "button--info": theme === "info" },
         className
       )}
       type={type}

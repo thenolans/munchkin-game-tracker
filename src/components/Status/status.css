@@ -1,8 +1,7 @@
 .status {
-  border: solid 2px #4a1615;
+  border: solid 2px;
   border-radius: 6px;
   padding: 6px;
-  padding-right: 10;
   font-size: 12px;
 }
 

@@ -1,7 +1,7 @@
 import nanoid from "nanoid";
 import defaultAvatar from "../images/dragon.png";
 
-export function Player(name, sex, level, bonus, avatar) {
+export function Player({ name, sex, level, bonus, avatar }) {
   this.id = nanoid();
   this.name = name || "";
   this.sex = sex || "";

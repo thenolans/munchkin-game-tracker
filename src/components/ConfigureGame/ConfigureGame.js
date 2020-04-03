@@ -46,18 +46,14 @@ const ConfigureGame = () => {
             </div>
             <div className="player__actions">
               <Link to={`/player/edit/${player.id}`}>
-                <img
-                  className="player__icon"
-                  src={Pencil}
-                  alt={"Edit player"}
-                />
+                <img className="player__icon" src={Pencil} alt="Edit player" />
               </Link>
               {numberOfPlayers > MIN_PLAYERS && (
                 <Button styleReset onClick={() => removeInput(index)}>
                   <img
                     className="player__icon"
                     src={Trash}
-                    alt={"Remove player"}
+                    alt="Remove player"
                   />
                 </Button>
               )}
