@@ -26,28 +26,16 @@ const Game = props => {
     setHightestPlayerLevel(max);
   }, [players]);
 
-  const updatePlayer = ({ index, newLevel, newBonus, sex }) => {
+  const updatePlayer = (playerId, field, value) => {
     const newData = [...players];
-    if (newLevel) {
-      newData[index].level = newLevel;
-      setPlayers(newData);
-    }
-    if (newBonus) {
-      newData[index].bonus = newBonus;
-      setPlayers(newData);
-    }
-  };
 
-  const updatePlayerSex = (sex, index) => {
-    const newData = [...players];
-    if (sex === "M") {
-      newData[index].sex = "F";
-      setPlayers(newData);
-    }
-    if (sex === "F") {
-      newData[index].sex = "M";
-      setPlayers(newData);
-    }
+    const playerIndex = players.findIndex(p => {
+      return p.id === playerId;
+    });
+
+    newData[playerIndex][field] = value;
+
+    setPlayers(newData);
   };
 
   const resetGame = () => {
@@ -62,8 +50,8 @@ const Game = props => {
   return (
     <div className="game">
       <div>
-        {players.map((player, index) => (
-          <PlayerCard key={index}>
+        {players.map(player => (
+          <PlayerCard key={player.id}>
             <div className="game-player">
               <div className="game-player__section">
                 <div className="game-player__info">
@@ -78,7 +66,13 @@ const Game = props => {
                   <Status theme="success">First</Status>
                 )}
                 <Button
-                  onClick={sex => updatePlayerSex(player.sex, index)}
+                  onClick={() =>
+                    updatePlayer(
+                      player.id,
+                      "sex",
+                      player.sex === "M" ? "F" : "M"
+                    )
+                  }
                   theme="info"
                 >
                   {player.sex}
@@ -90,7 +84,9 @@ const Game = props => {
                   <div className="actions__score">Level</div>
                   <ScoreInput
                     currentScore={player.level || 1}
-                    onChange={newLevel => updatePlayer({ newLevel, index })}
+                    onChange={newLevel =>
+                      updatePlayer(player.id, "level", newLevel)
+                    }
                   />
                 </div>
                 <Link to={`/combat?score=${player.level + player.bonus}`}>
@@ -104,7 +100,9 @@ const Game = props => {
                   <div className="actions__score">Bonus</div>
                   <ScoreInput
                     currentScore={player.bonus || 0}
-                    onChange={newBonus => updatePlayer({ newBonus, index })}
+                    onChange={newBonus =>
+                      updatePlayer(player.id, "bonus", newBonus)
+                    }
                   />
                 </div>
               </div>
