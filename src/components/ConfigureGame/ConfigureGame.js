@@ -25,7 +25,7 @@ const ConfigureGame = () => {
     }
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const removeInput = index => {
+  const removePlayer = index => {
     const newPlayers = [...players];
     if (newPlayers.length > MIN_PLAYERS) {
       newPlayers.splice(index, 1);
@@ -49,7 +49,7 @@ const ConfigureGame = () => {
                 <img className="player__icon" src={Pencil} alt="Edit player" />
               </Link>
               {numberOfPlayers > MIN_PLAYERS && (
-                <Button styleReset onClick={() => removeInput(index)}>
+                <Button styleReset onClick={() => removePlayer(index)}>
                   <img
                     className="player__icon"
                     src={Trash}

@@ -42,7 +42,7 @@ const Game = props => {
     setPlayers(
       Array(2)
         .fill(null)
-        .map(() => new Player({ ...players }))
+        .map(() => new Player({}))
     );
     props.history.push("/");
   };

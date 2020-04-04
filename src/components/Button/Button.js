@@ -8,7 +8,7 @@ const Button = ({
   className,
   fluid,
   styleReset,
-  theme,
+  theme = "default",
   type = "button",
   ...props
 }) => {
@@ -16,9 +16,10 @@ const Button = ({
     <T
       className={cx(
         "button",
+        `button--${theme}`,
         { "button--fluid": fluid },
         { "button--style-reset": styleReset },
-        { "button--info": theme === "info" },
+
         className
       )}
       type={type}
