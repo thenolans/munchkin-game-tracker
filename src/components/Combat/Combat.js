@@ -22,6 +22,7 @@ const Combat = props => {
       <div className="combat__section">
         <div className="combat__combatant">Munchkin(s): {munchkinScore}</div>
         <CombatScoreInput
+          combatant="munchkin"
           onAdjustmentClick={adjustment =>
             setMunchkinScore(munchkinScore + adjustment)
           }
@@ -30,6 +31,7 @@ const Combat = props => {
       <div className="combat__section">
         <div className="combat__combatant">Monster(s): {monsterScore} </div>
         <CombatScoreInput
+          combatant="monster"
           onAdjustmentClick={adjustment =>
             setMonsterScore(monsterScore + adjustment)
           }

@@ -67,6 +67,7 @@ const Game = props => {
                   )}
                   <Button
                     className="game-player__sex"
+                    aria-label={`Change ${player.name}'s sex`}
                     onClick={() =>
                       updatePlayer(
                         player.id,
@@ -91,6 +92,8 @@ const Game = props => {
                     onChange={newLevel =>
                       updatePlayer(player.id, "level", newLevel)
                     }
+                    player={player.name}
+                    score="level"
                   />
                 </div>
                 <Link to={`/combat?score=${player.level + player.bonus}`}>
@@ -107,6 +110,8 @@ const Game = props => {
                     onChange={newBonus =>
                       updatePlayer(player.id, "bonus", newBonus)
                     }
+                    player={player.name}
+                    score="bonus"
                   />
                 </div>
               </div>

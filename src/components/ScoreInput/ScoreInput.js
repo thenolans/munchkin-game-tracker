@@ -3,7 +3,7 @@ import React from "react";
 import "./ScoreInput.css";
 import Button from "../Button";
 
-const ScoreInput = ({ onChange, currentScore, min, max }) => {
+const ScoreInput = ({ onChange, currentScore, min, max, score, player }) => {
   const incrementScore = () => {
     if (max && currentScore >= max) return;
     onChange(currentScore + 1);
@@ -21,7 +21,7 @@ const ScoreInput = ({ onChange, currentScore, min, max }) => {
           onClick={decrementScore}
           className="score-input__button"
           styleReset
-          aria-label="Decrement score by one"
+          aria-label={`Decrement ${player}'s ${score} by one`}
         >
           -
         </Button>
@@ -30,7 +30,7 @@ const ScoreInput = ({ onChange, currentScore, min, max }) => {
           onClick={incrementScore}
           className="score-input__button"
           styleReset
-          aria-label="Increment score by one"
+          aria-label={`Increment ${player}'s ${score} by one`}
         >
           +
         </Button>
