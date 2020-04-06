@@ -19,7 +19,6 @@ const Button = ({
         `button--${theme}`,
         { "button--fluid": fluid },
         { "button--style-reset": styleReset },
-
         className
       )}
       type={type}
