@@ -47,6 +47,14 @@ const Game = props => {
     props.history.push("/");
   };
 
+  const rematchGame = () => {
+    setPlayers(
+      players.map(player => {
+        return { ...player, level: 1, bonus: 0, sex: player.originalSex };
+      })
+    );
+  };
+
   return (
     <div className="game">
       <div>
@@ -121,8 +129,9 @@ const Game = props => {
       </div>
       <div className="game__actions">
         <Button as={Link} to="/configure">
-          Back
+          {"<"}
         </Button>
+        <Button onClick={rematchGame}>Rematch</Button>
         <Button onClick={resetGame}>End Game</Button>
       </div>
     </div>

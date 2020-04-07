@@ -4,7 +4,8 @@ import defaultAvatar from "../images/dragon.png";
 export function Player({ name, sex, level, bonus, avatar } = {}) {
   this.id = nanoid();
   this.name = name || "";
-  this.sex = sex || "";
+  this.sex = sex || "F";
+  this.originalSex = sex || "F";
   this.level = level || 1;
   this.bonus = bonus || 0;
   this.avatar = avatar || {

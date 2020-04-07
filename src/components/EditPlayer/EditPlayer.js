@@ -5,6 +5,7 @@ import "./editPlayer.css";
 import Button from "../Button";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import { GameContext } from "../../contexts/gameContext";
+import { Player } from "../../utils/player";
 
 const EditPlayer = props => {
   const { id } = props.match.params;
@@ -17,7 +18,7 @@ const EditPlayer = props => {
     const playerIndex = players.findIndex(p => {
       return p.id === player.id;
     });
-    newData[playerIndex] = player;
+    newData[playerIndex] = new Player(player);
 
     setPlayers(newData);
     props.history.push("/configure");
