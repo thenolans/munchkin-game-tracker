@@ -7,3 +7,17 @@
   border: none;
   padding: 0;
 }
+
+.avatar-picker__option {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.avatar-picker__label .avatar-image {
+  border: 2px solid transparent;
+}
+
+input[type="radio"]:checked + .avatar-picker__label .avatar-image {
+  border-color: #4a1615;
+}
