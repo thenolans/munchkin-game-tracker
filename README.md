@@ -1,25 +1,38 @@
 # Munchkin Score Keeper
 
-When I was trying to find my next application idea, I tried to think of something that I could make that would potentially help me in the future.
+One of my favorite games is a role-playing card game called Munchkin, created by Steve Jackson Games. Instead of keeping score with paper and pen, this application is a reusable scorekeeper that tracks users' level, combat bonus, and gender. Users can enter combat mode, which will allow them to increment or decrement their combat score and increment and decrement a monster's level.
 
-I really enjoy playing games. One of my favorite games is a role-playing card game called Munchkin, created by Steve Jackson Games. To keep score of the game, I would have to use paper and pen. That was when I got the idea to create a score keeper.
+- Utilized `useEffect` to check validity of players
+- Implemented a `useContext` hook to manage the state of the game data.
+- Persisted game data in local storage and reload the game progress on refresh
+- Experimented with multiple routes using `react-router`
+- Focused on the accessibility and keyboard navigation for the user
+- Incorporated testing using `jest` and `react-testing-library`
+- Conditionally render player status (First or Discards) based on their level
+- Allow users to toggle their sex while in game mode
+- Created a player form that will allow users to edit existing players or create new players
 
-The game can be played with 2-6 players. I wanted to allow the user to add or take away players, as long as you still have 2-6 players.
+<div align="center">
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149502-433ea700-7d95-11ea-9f20-a1dd32de4ce8.png">
 
-I wanted this application to require the players to input their name. I utilized useEffect to check the values in the name inputs.
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149574-5f424880-7d95-11ea-9d42-4c3ea5af0cd9.png">
 
-I have used many applications in the past, where I accidently clicked the back button and lost all of my progress. I didn't want my users to click the wrong button and lose their progress. I decided to use useContext, to give me access to my state without prop drilling.
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149605-69644700-7d95-11ea-871a-c67918ca9a86.png">
 
-I also did not want users to lose their progress once they refreshed the page. I decided to save the game progress to local storage using useEffect.
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149632-72edaf00-7d95-11ea-87cb-eed4346dcf97.png">
 
-I also wanted to incorporate a fun element to my sore keeper. I decided to allow users to select an avatar. I made a custom avatar picker using React-Tippy that would have a tooltip with a list of avatars.
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149657-7b45ea00-7d95-11ea-9485-bcd8af525ad4.png">
 
-After watching the 2019 React Conference talk on accessibility, I knew that accessibility was something that I wanted to work on for this application. I installed a screen reader to make sure that my application could be used with screen readers. I also wanted to make sure that users could tab through inputs and buttons. I am still learning about accessibility, but I hope to make this application fully accessible in the future.
+<img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149787-a9c3c500-7d95-11ea-9d68-3c57d8e10a8e.png">
 
-<img width="1437" alt="Munchkin landing page" src="https://user-images.githubusercontent.com/54158919/70554186-4c4b0d80-1b42-11ea-8e4e-5ffe96791114.png">
+</div>
 
 ## Setup Instructions
 
 1. Clone this repository.
 2. Install dependencies with `yarn install`
 3. Start app with `yarn start`
+
+---
+
+Munchkin is a trademark of Steve Jackson Games, and its rules and art are copyrighted by Steve Jackson Games. All rights are reserved by Steve Jackson Games. This game aid is the original creation of Cynthia Dacey Nolan and is released for free distribution, and not for resale, under the permissions granted in the <a href="http://www.sjgames.com/general/online_policy.html">Steve Jackson Games Online Policy</a>.
