@@ -12,7 +12,7 @@ One of my favorite games is a role-playing card game called Munchkin, created by
 - Allow users to toggle their sex while in game mode
 - Created a player form that will allow users to edit existing players or create new players
 
-<div align="center">
+<div>
 <img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149502-433ea700-7d95-11ea-9f20-a1dd32de4ce8.png">
 
 <img width="150" height= "230" src="https://user-images.githubusercontent.com/54158919/79149574-5f424880-7d95-11ea-9d42-4c3ea5af0cd9.png">
