@@ -57,6 +57,10 @@
   height: auto;
 }
 
+.actions__combat-score {
+  text-align: center;
+}
+
 .game__actions {
   text-align: right;
   max-width: 500px;

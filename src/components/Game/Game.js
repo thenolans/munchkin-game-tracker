@@ -11,31 +11,33 @@ import Swords from "../../images/swords.svg";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 
-const Game = props => {
+const Game = (props) => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
   const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
   const [highestPlayerLevel, setHightestPlayerLevel] = useState();
 
   useEffect(() => {
-    const levels = players.map(player => player.level);
+    const levels = players.map((player) => player.level);
     const max = Math.max(...levels);
     const min = Math.min(...levels);
-    const minLevelLength = levels.filter(level => min === level).length;
+    const minLevelLength = levels.filter((level) => min === level).length;
     setLowestPlayerLevel(minLevelLength === 1 ? min : null);
     setHightestPlayerLevel(max);
   }, [players]);
 
   const updatePlayer = (playerId, field, value) => {
-    const newData = [...players];
-
-    const playerIndex = players.findIndex(p => {
-      return p.id === playerId;
-    });
-
-    newData[playerIndex][field] = value;
-
-    setPlayers(newData);
+    setPlayers(
+      players.map((player) => {
+        if (player.id === playerId) {
+          return {
+            ...player,
+            [field]: value,
+          };
+        }
+        return player;
+      })
+    );
   };
 
   const resetGame = () => {
@@ -49,7 +51,7 @@ const Game = props => {
 
   const rematchGame = () => {
     setPlayers(
-      players.map(player => {
+      players.map((player) => {
         return { ...player, level: 1, bonus: 0, sex: player.originalSex };
       })
     );
@@ -57,10 +59,10 @@ const Game = props => {
 
   return (
     <div className="game">
-      <div>
-        {players.map(player => (
+      <div data-testid="game-player__options">
+        {players.map((player) => (
           <PlayerCard key={player.id}>
-            <div className="game-player">
+            <div className="game-player" data-testid={`player-${player.id}`}>
               <div className="game-player__section">
                 <div className="game-player__info">
                   <Avatar src={player.avatar.src} alt={player.avatar.alt} />
@@ -75,6 +77,7 @@ const Game = props => {
                   )}
                   <Button
                     className="game-player__sex"
+                    data-testid="toggle-sex"
                     aria-label={`Change ${player.name}'s sex`}
                     onClick={() =>
                       updatePlayer(
@@ -91,31 +94,42 @@ const Game = props => {
               </div>
 
               <div className="actions">
-                <div className="actions__section">
+                <div
+                  className="actions__section"
+                  data-testid={`player-${player.id}__level-update`}
+                >
                   <div className="actions__score">Level</div>
                   <ScoreInput
                     min={1}
                     max={99}
                     currentScore={player.level || 1}
-                    onChange={newLevel =>
+                    onChange={(newLevel) =>
                       updatePlayer(player.id, "level", newLevel)
                     }
                     player={player.name}
                     score="level"
                   />
                 </div>
-                <Link to={`/combat?score=${player.level + player.bonus}`}>
-                  <img
-                    className="actions__combat-img"
-                    src={Swords}
-                    alt={`Enter combat with ${player.name}`}
-                  />
-                </Link>
-                <div className="actions__section">
+                <div className="actions__combat">
+                  <Link to={`/combat?score=${player.level + player.bonus}`}>
+                    <img
+                      className="actions__combat-img"
+                      src={Swords}
+                      alt={`Enter combat with ${player.name}`}
+                    />
+                  </Link>
+                  <div className="actions__combat-score">
+                    {player.level + player.bonus}
+                  </div>
+                </div>
+                <div
+                  className="actions__section"
+                  data-testid={`player-${player.id}__bonus-update`}
+                >
                   <div className="actions__score">Bonus</div>
                   <ScoreInput
                     currentScore={player.bonus || 0}
-                    onChange={newBonus =>
+                    onChange={(newBonus) =>
                       updatePlayer(player.id, "bonus", newBonus)
                     }
                     player={player.name}
@@ -131,8 +145,12 @@ const Game = props => {
         <Button as={Link} to="/configure">
           {"<"}
         </Button>
-        <Button onClick={rematchGame}>Rematch</Button>
-        <Button onClick={resetGame}>End Game</Button>
+        <Button data-testid="game__actions-rematch" onClick={rematchGame}>
+          Rematch
+        </Button>
+        <Button data-testid="game__actions-reset" onClick={resetGame}>
+          End Game
+        </Button>
       </div>
     </div>
   );
