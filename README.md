@@ -13,17 +13,17 @@ One of my favorite games is a role-playing card game called Munchkin, created by
 - Created a player form that will allow users to edit existing players or create new players
 
 <div>
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149502-433ea700-7d95-11ea-9f20-a1dd32de4ce8.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149502-433ea700-7d95-11ea-9f20-a1dd32de4ce8.png">
 
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149574-5f424880-7d95-11ea-9d42-4c3ea5af0cd9.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149574-5f424880-7d95-11ea-9d42-4c3ea5af0cd9.png">
 
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149605-69644700-7d95-11ea-871a-c67918ca9a86.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149605-69644700-7d95-11ea-871a-c67918ca9a86.png">
 
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149632-72edaf00-7d95-11ea-87cb-eed4346dcf97.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149632-72edaf00-7d95-11ea-87cb-eed4346dcf97.png">
 
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149657-7b45ea00-7d95-11ea-9485-bcd8af525ad4.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149657-7b45ea00-7d95-11ea-9485-bcd8af525ad4.png">
 
-<img width="130" height= "230" src="https://user-images.githubusercontent.com/54158919/79149787-a9c3c500-7d95-11ea-9d68-3c57d8e10a8e.png">
+<img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149787-a9c3c500-7d95-11ea-9d68-3c57d8e10a8e.png">
 
 </div>
 
