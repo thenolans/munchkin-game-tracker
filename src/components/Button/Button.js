@@ -21,6 +21,7 @@ const Button = ({
         { "button--style-reset": styleReset },
         className
       )}
+      data-testid="button"
       type={type}
       {...props}
     />

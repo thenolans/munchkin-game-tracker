@@ -18,14 +18,14 @@ const ConfigureGame = () => {
   const numberOfPlayers = players.length;
 
   useEffect(() => {
-    if (players.some(player => !player.name)) {
+    if (players.some((player) => !player.name)) {
       setPlayersAreValid(false);
     } else {
       setPlayersAreValid(true);
     }
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const removePlayer = index => {
+  const removePlayer = (index) => {
     const newPlayers = [...players];
     if (newPlayers.length > MIN_PLAYERS) {
       newPlayers.splice(index, 1);
@@ -35,32 +35,46 @@ const ConfigureGame = () => {
 
   return (
     <div className="configure-game">
-      {players.map((player, index) => {
-        return (
-          <div className="player" key={player.id}>
-            <div className="player__info">
-              <Avatar src={player.avatar.src} alt={player.avatar.alt} />
-              <div className="player__name">
-                {player.name || "Player's Name"}
+      <div className="configure-game__players" data-testid="players">
+        {players.map((player, index) => {
+          return (
+            <div
+              className="player"
+              key={player.id}
+              data-testid={`player-${index}`}
+            >
+              <div className="player__info">
+                <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+                <div className="player__name">
+                  {player.name || "Player's Name"}
+                </div>
               </div>
-            </div>
-            <div className="player__actions">
-              <Link to={`/player/edit/${player.id}`}>
-                <img className="player__icon" src={Pencil} alt="Edit player" />
-              </Link>
-              {numberOfPlayers > MIN_PLAYERS && (
-                <Button styleReset onClick={() => removePlayer(index)}>
+              <div className="player__actions">
+                <Link to={`/player/edit/${player.id}`}>
                   <img
                     className="player__icon"
-                    src={Trash}
-                    alt="Remove player"
+                    src={Pencil}
+                    alt="Edit player"
                   />
-                </Button>
-              )}
+                </Link>
+                {numberOfPlayers > MIN_PLAYERS && (
+                  <Button
+                    data-testid={`player-${index}-remove`}
+                    styleReset
+                    onClick={() => removePlayer(index)}
+                  >
+                    <img
+                      className="player__icon"
+                      src={Trash}
+                      alt="Remove player"
+                    />
+                  </Button>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <div className="configure-game__add-player">
         {numberOfPlayers < MAX_PLAYERS && (

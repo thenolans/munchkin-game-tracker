@@ -4,13 +4,14 @@ import Button from "../Button";
 import ButtonGroup from "../ButtonGroup";
 
 const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
-  const handleAdjustmentClick = adjustment => {
+  const handleAdjustmentClick = (adjustment) => {
     onAdjustmentClick(adjustment);
   };
 
   return (
     <ButtonGroup>
       <Button
+        data-testid="decrement-5"
         aria-label={`decrement ${combatant}'s total by 5`}
         fluid
         onClick={() => handleAdjustmentClick(-5)}
@@ -18,6 +19,7 @@ const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
         -5
       </Button>
       <Button
+        data-testid="decrement-3"
         aria-label={`decrement ${combatant}'s total by 3`}
         fluid
         onClick={() => handleAdjustmentClick(-3)}
@@ -25,6 +27,7 @@ const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
         -3
       </Button>
       <Button
+        data-testid="decrement-1"
         aria-label={`decrement ${combatant}'s total by 1`}
         fluid
         onClick={() => handleAdjustmentClick(-1)}
@@ -32,6 +35,7 @@ const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
         -1
       </Button>
       <Button
+        data-testid="increment-1"
         aria-label={`increment ${combatant}'s total by 1`}
         fluid
         onClick={() => handleAdjustmentClick(1)}
@@ -39,6 +43,7 @@ const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
         +1
       </Button>
       <Button
+        data-testid="increment-3"
         aria-label={`increment ${combatant}'s total by 3`}
         fluid
         onClick={() => handleAdjustmentClick(3)}
@@ -46,6 +51,7 @@ const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
         +3
       </Button>
       <Button
+        data-testid="increment-5"
         aria-label={`increment ${combatant}'s total by 5`}
         fluid
         onClick={() => handleAdjustmentClick(5)}

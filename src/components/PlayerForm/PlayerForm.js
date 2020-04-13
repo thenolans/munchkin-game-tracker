@@ -8,14 +8,14 @@ import GenderSelect from "../GenderSelect";
 import Input from "../Input";
 import Label from "../Label";
 
-const PlayerForm = props => {
+const PlayerForm = (props) => {
   const [playerData, setPlayerData] = useState(props.defaultFormData || {});
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
 
   const updatePlayerData = (field, value) => {
     setPlayerData({
       ...playerData,
-      [field]: value
+      [field]: value,
     });
   };
 
@@ -49,27 +49,41 @@ const PlayerForm = props => {
         <div className="player-form__section">
           <Label>Player's Name</Label>
           <Input
-            onChange={event => updatePlayerData("name", event.target.value)}
+            data-testid="form__name-input"
+            onChange={(event) => updatePlayerData("name", event.target.value)}
             value={playerData.name || ""}
             fluid
           />
-          {errors && <FormError>{errors.name}</FormError>}
+          {errors.name && (
+            <FormError data-testid="form__name-error">{errors.name}</FormError>
+          )}
         </div>
         <div className="player-form__section">
           <Label>Player's Sex</Label>
-          <GenderSelect onChange={newSex => updatePlayerData("sex", newSex)} />
-          {errors && <FormError>{errors.sex}</FormError>}
+          <GenderSelect
+            value={playerData.sex}
+            onChange={(newSex) => updatePlayerData("sex", newSex)}
+          />
+          {errors.sex && (
+            <FormError data-testid="form__sex-error">{errors.sex}</FormError>
+          )}
         </div>
 
         <div className="player-form__section">
           <Label>Avatar</Label>
           <AvatarPicker
-            onChange={newAvatar => updatePlayerData("avatar", newAvatar)}
+            value={playerData.avatar}
+            onChange={(newAvatar) => updatePlayerData("avatar", newAvatar)}
           />
-          {errors && <FormError>{errors.avatar}</FormError>}
+          {errors.avatar && (
+            <FormError data-testid="form__avatar-error">
+              {errors.avatar}
+            </FormError>
+          )}
         </div>
       </form>
       <Button
+        data-testid="player-form__submit"
         fluid
         type="submit"
         onClick={() => {

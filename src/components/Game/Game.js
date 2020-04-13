@@ -118,7 +118,10 @@ const Game = (props) => {
                       alt={`Enter combat with ${player.name}`}
                     />
                   </Link>
-                  <div className="actions__combat-score">
+                  <div
+                    data-testid="combat-score"
+                    className="actions__combat-score"
+                  >
                     {player.level + player.bonus}
                   </div>
                 </div>

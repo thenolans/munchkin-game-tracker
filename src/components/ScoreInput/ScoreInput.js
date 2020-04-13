@@ -15,9 +15,10 @@ const ScoreInput = ({ onChange, currentScore, min, max, score, player }) => {
   };
 
   return (
-    <div className="score-input">
+    <div className="score-input" data-testid="score-input">
       <div className="score-input__actions">
         <Button
+          data-testid="decrement"
           onClick={decrementScore}
           className="score-input__button"
           styleReset
@@ -25,8 +26,11 @@ const ScoreInput = ({ onChange, currentScore, min, max, score, player }) => {
         >
           -
         </Button>
-        <div className="score-input__score">{currentScore}</div>
+        <div data-testid="current-score" className="score-input__score">
+          {currentScore}
+        </div>
         <Button
+          data-testid="increment"
           onClick={incrementScore}
           className="score-input__button"
           styleReset

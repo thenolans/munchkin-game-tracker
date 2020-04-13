@@ -7,7 +7,7 @@ import CombatScoreInput from "../CombatScoreInput";
 import Button from "../Button";
 import Swords from "../../images/swords.svg";
 
-const Combat = props => {
+const Combat = (props) => {
   const { score } = parse(props.location.search);
 
   const [munchkinScore, setMunchkinScore] = useState(Number(score || 0));
@@ -19,20 +19,24 @@ const Combat = props => {
         <h1 className="combat__title">Combat</h1>
         <img className="combat__icon" src={Swords} alt="swords" />
       </div>
-      <div className="combat__section">
-        <div className="combat__combatant">Munchkin(s): {munchkinScore}</div>
+      <div className="combat__section" data-testid="munchkin-combat">
+        <div className="combat__combatant">
+          Munchkin(s): <span data-testid="munchkin-score">{munchkinScore}</span>
+        </div>
         <CombatScoreInput
           combatant="munchkin"
-          onAdjustmentClick={adjustment =>
+          onAdjustmentClick={(adjustment) =>
             setMunchkinScore(munchkinScore + adjustment)
           }
         />
       </div>
-      <div className="combat__section">
-        <div className="combat__combatant">Monster(s): {monsterScore} </div>
+      <div className="combat__section" data-testid="monster-combat">
+        <div className="combat__combatant">
+          Monster(s): <span data-testid="monster-score">{monsterScore}</span>
+        </div>
         <CombatScoreInput
           combatant="monster"
-          onAdjustmentClick={adjustment =>
+          onAdjustmentClick={(adjustment) =>
             setMonsterScore(monsterScore + adjustment)
           }
         />

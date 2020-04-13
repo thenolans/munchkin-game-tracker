@@ -6,8 +6,9 @@ import "./status.css";
 const Status = ({ className, theme = "default", ...props }) => {
   return (
     <div
-      className={cx("status", `status--${theme}`, className, {})}
+      className={cx("status", `status--${theme}`, className)}
       {...props}
+      data-testid="status"
     />
   );
 };
