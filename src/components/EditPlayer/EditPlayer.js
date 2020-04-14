@@ -5,7 +5,6 @@ import "./editPlayer.css";
 import Button from "../Button";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
 
 const EditPlayer = (props) => {
   const { id } = props.match.params;
