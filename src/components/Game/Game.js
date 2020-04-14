@@ -64,7 +64,7 @@ const Game = (props) => {
             <div className="game-player" data-testid={`player-${player.id}`}>
               <div className="game-player__section">
                 <div className="game-player__info">
-                  <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+                  <Avatar id={player.avatar} />
                   <div className="game-player__name">{player.name}</div>
                 </div>
                 <div className="game-player__badges">

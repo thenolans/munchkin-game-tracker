@@ -44,7 +44,7 @@ const ConfigureGame = () => {
               data-testid={`player-${index}`}
             >
               <div className="player__info">
-                <Avatar src={player.avatar.src} alt={player.avatar.alt} />
+                <Avatar id={player.avatar} />
                 <div className="player__name">
                   {player.name || "Player's Name"}
                 </div>
