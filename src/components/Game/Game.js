@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./Game.css";
 import Avatar from "../Avatar";
 import Button from "../Button";
+import getHighestLevel from "../../utils/getHighestLevel";
+import getLowestUniqueLevel from "../../utils/getLowestUniqueLevel";
 import PlayerCard from "../PlayerCard/PlayerCard";
 import ScoreInput from "../ScoreInput/ScoreInput";
 import Status from "../Status";
@@ -19,11 +21,8 @@ const Game = (props) => {
 
   useEffect(() => {
     const levels = players.map((player) => player.level);
-    const max = Math.max(...levels);
-    const min = Math.min(...levels);
-    const minLevelLength = levels.filter((level) => min === level).length;
-    setLowestPlayerLevel(minLevelLength === 1 ? min : null);
-    setHightestPlayerLevel(max);
+    setLowestPlayerLevel(getLowestUniqueLevel(levels));
+    setHightestPlayerLevel(getHighestLevel(levels));
   }, [players]);
 
   const updatePlayer = (playerId, field, value) => {
@@ -70,10 +69,14 @@ const Game = (props) => {
                 </div>
                 <div className="game-player__badges">
                   {lowestPlayerLevel === player.level && (
-                    <Status theme="warning">Discards</Status>
+                    <Status theme="warning" data-testid="discard-status">
+                      Discards
+                    </Status>
                   )}
                   {highestPlayerLevel === player.level && (
-                    <Status theme="success">First</Status>
+                    <Status theme="success" data-testid="first-place-status">
+                      First
+                    </Status>
                   )}
                   <Button
                     className="game-player__sex"
@@ -102,7 +105,7 @@ const Game = (props) => {
                   <ScoreInput
                     min={1}
                     max={99}
-                    currentScore={player.level || 1}
+                    currentScore={player.level}
                     onChange={(newLevel) =>
                       updatePlayer(player.id, "level", newLevel)
                     }
@@ -131,7 +134,7 @@ const Game = (props) => {
                 >
                   <div className="actions__score">Bonus</div>
                   <ScoreInput
-                    currentScore={player.bonus || 0}
+                    currentScore={player.bonus}
                     onChange={(newBonus) =>
                       updatePlayer(player.id, "bonus", newBonus)
                     }

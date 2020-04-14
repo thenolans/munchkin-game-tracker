@@ -1,27 +1,33 @@
 export default [
   {
     src: require("./images/dragon.png"),
-    alt: "Avatar of a dragon"
+    alt: "avatar of a dragon",
+    id: "dragon",
   },
   {
     src: require("./images/elf.jpg"),
-    alt: "Avatar of an elf"
+    alt: "avatar of an elf",
+    id: "elf",
   },
 
   {
     src: require("./images/man.jpg"),
-    alt: "Avatar of a bald man"
+    alt: "avatar of a bald man",
+    id: "man",
   },
   {
     src: require("./images/wizard.jpg"),
-    alt: "Avatar of a wizard"
+    alt: "avatar of a wizard",
+    id: "wizard",
   },
   {
     src: require("./images/thief.jpg"),
-    alt: "Avatar of a thief"
+    alt: "avatar of a thief",
+    id: "thief",
   },
   {
     src: require("./images/pirate.jpg"),
-    alt: "Avatar of a pirate"
-  }
+    alt: "avatar of a pirate",
+    id: "pirate",
+  },
 ];

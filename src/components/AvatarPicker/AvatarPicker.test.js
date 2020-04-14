@@ -9,12 +9,12 @@ describe("<AvatarPicker/>", () => {
     const mockCallback = jest.fn();
     const { getByTestId } = render(<AvatarPicker onChange={mockCallback} />);
     expect(mockCallback).toHaveBeenCalledTimes(0);
-    fireEvent.click(getByTestId("avatar-option__1"));
+    fireEvent.click(getByTestId("avatar-option__wizard"));
     expect(mockCallback).toHaveBeenCalledTimes(1);
-    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[1]);
-    fireEvent.click(getByTestId("avatar-option__3"));
-    expect(mockCallback).toHaveBeenCalledTimes(2);
     expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[3]);
+    fireEvent.click(getByTestId("avatar-option__dragon"));
+    expect(mockCallback).toHaveBeenCalledTimes(2);
+    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[0]);
   });
 
   test("renders avatar options", () => {

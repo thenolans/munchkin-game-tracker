@@ -1,13 +1,11 @@
-.page-not-found {
+/* .page-not-found {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .page-not-found__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .page-not-found__heading {
@@ -27,10 +25,13 @@
 .page-not-found__content {
   font-size: 20px;
   margin-bottom: 30px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .page-not-found__img {
   height: 200px;
   width: 200px;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
 }

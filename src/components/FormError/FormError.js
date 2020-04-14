@@ -7,7 +7,7 @@ const FormError = ({ className, ...props }) => {
   return (
     <div
       className={cx("form-error", className)}
-      data-testid="error"
+      data-testid="form-error"
       {...props}
     />
   );

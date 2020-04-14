@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import Input from "./";
 
 describe("<Input/>", () => {
-  test("renders a label by default", () => {
+  test("renders an input by default", () => {
     const { container } = render(<Input />);
     const input = container.querySelector("input");
     expect(input).not.toBeNull();

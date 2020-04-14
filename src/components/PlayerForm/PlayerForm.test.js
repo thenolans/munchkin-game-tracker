@@ -39,14 +39,14 @@ describe("<PlayerForm/>", () => {
         }
       />
     );
-    const avatarOption2 = getByTestId("avatar-option__2");
-    const avatarOption5 = getByTestId("avatar-option__5");
-    fireEvent.click(avatarOption2);
-    expect(avatarOption2.checked).toBe(true);
-    expect(avatarOption5.checked).not.toBe(true);
-    fireEvent.click(avatarOption5);
-    expect(avatarOption5.checked).toBe(true);
-    expect(avatarOption2.checked).not.toBe(true);
+    const avatarOptionElf = getByTestId("avatar-option__elf");
+    const avatarOptionPirate = getByTestId("avatar-option__pirate");
+    fireEvent.click(avatarOptionElf);
+    expect(avatarOptionElf.checked).toBe(true);
+    expect(avatarOptionPirate.checked).not.toBe(true);
+    fireEvent.click(avatarOptionPirate);
+    expect(avatarOptionPirate.checked).toBe(true);
+    expect(avatarOptionElf.checked).not.toBe(true);
   });
 
   test("handle player name min character error", () => {

@@ -7,18 +7,18 @@ import PlayerForm from "../PlayerForm/PlayerForm";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 
-const EditPlayer = props => {
+const EditPlayer = (props) => {
   const { id } = props.match.params;
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
 
-  const handlePlayerUpdate = player => {
+  const handlePlayerUpdate = (player) => {
     const newData = [...players];
 
-    const playerIndex = players.findIndex(p => {
+    const playerIndex = players.findIndex((p) => {
       return p.id === player.id;
     });
-    newData[playerIndex] = new Player(player);
+    newData[playerIndex] = player;
 
     setPlayers(newData);
     props.history.push("/configure");
@@ -34,8 +34,8 @@ const EditPlayer = props => {
       </div>
 
       <PlayerForm
-        defaultFormData={players.find(p => p.id === id)}
-        onSave={player => {
+        defaultFormData={players.find((p) => p.id === id)}
+        onSave={(player) => {
           handlePlayerUpdate(player);
         }}
       />

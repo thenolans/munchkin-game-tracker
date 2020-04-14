@@ -7,20 +7,20 @@ import "./AvatarPicker.css";
 const AvatarPicker = (props) => {
   return (
     <div className="avatar-picker" data-testid="avatar-options">
-      {AVATAR_LIST.map((avatar, index) => (
-        <div key={avatar.alt}>
+      {AVATAR_LIST.map((avatar) => (
+        <div key={avatar.id}>
           <input
             checked={props.value === avatar}
             type="radio"
             value={avatar}
             name="avatar"
             onChange={() => props.onChange(avatar)}
-            data-testid={`avatar-option__${index}`}
-            id={avatar.alt}
-            aria-label={`Click to change avatar to ${avatar.alt}`}
+            data-testid={`avatar-option__${avatar.id}`}
+            id={avatar.id}
+            aria-label={`Change user's avatar to a ${avatar.id}`}
             className="avatar-picker__option"
           />
-          <label htmlFor={avatar.alt} className="avatar-picker__label">
+          <label htmlFor={avatar.id} className="avatar-picker__label">
             <Avatar src={avatar.src} alt={avatar.alt} />
           </label>
         </div>

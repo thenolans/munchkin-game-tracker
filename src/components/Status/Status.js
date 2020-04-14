@@ -7,8 +7,8 @@ const Status = ({ className, theme = "default", ...props }) => {
   return (
     <div
       className={cx("status", `status--${theme}`, className)}
-      {...props}
       data-testid="status"
+      {...props}
     />
   );
 };
