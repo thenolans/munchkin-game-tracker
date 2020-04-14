@@ -149,7 +149,7 @@ const Game = (props) => {
       </div>
       <div className="game__actions">
         <Button as={Link} to="/configure">
-          {"<"}
+          &lt;
         </Button>
         <Button data-testid="game__actions-rematch" onClick={rematchGame}>
           Rematch
