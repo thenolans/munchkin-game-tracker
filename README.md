@@ -1,16 +1,22 @@
 # Munchkin Score Keeper
 
+### Purpose
+
 One of my favorite games is a role-playing card game called Munchkin, created by Steve Jackson Games. Instead of keeping score with paper and pen, this application is a reusable scorekeeper that tracks users' level, combat bonus, and gender. Users can enter combat mode, which will allow them to increment or decrement their combat score and increment and decrement a monster's level.
+
+### Development Focus
 
 - Utilized `useEffect` to check validity of players
 - Implemented a `useContext` hook to manage the state of the game data.
-- Persisted game data in local storage and reload the game progress on refresh
-- Experimented with multiple routes using `react-router`
+- Persisted game data in `localStorage` and reload the game progress on refresh
+- Use `react-router`to handle routes and navigation
 - Focused on the accessibility and keyboard navigation for the user
 - Incorporated testing using `jest` and `react-testing-library`
 - Conditionally render player status (First or Discards) based on their level
 - Allow users to toggle their sex while in game mode
 - Created a player form that will allow users to edit existing players or create new players
+
+### Screenshots
 
 <div>
 <img width="140" height= "230" src="https://user-images.githubusercontent.com/54158919/79149502-433ea700-7d95-11ea-9f20-a1dd32de4ce8.png">
