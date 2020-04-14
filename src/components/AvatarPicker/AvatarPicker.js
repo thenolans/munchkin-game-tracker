@@ -12,7 +12,7 @@ const AvatarPicker = (props) => {
           <input
             checked={props.value === avatar}
             type="radio"
-            value={avatar}
+            value={avatar.id}
             name="avatar"
             onChange={() => props.onChange(avatar)}
             data-testid={`avatar-option__${avatar.id}`}
