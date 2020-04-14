@@ -14,21 +14,21 @@ const PLAYERS = [
     sex: "F",
     bonus: 0,
     level: 5,
-    avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
+    avatar: "dragon",
   }),
   new Player({
     name: "Tom",
     sex: "M",
     bonus: 0,
     level: 2,
-    avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
+    avatar: "wizard",
   }),
   new Player({
     name: "Nala",
     sex: "F",
     bonus: 1,
     level: 5,
-    avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
+    avatar: "elf",
   }),
 ];
 

@@ -11,10 +11,10 @@ describe("<AvatarPicker/>", () => {
     expect(mockCallback).toHaveBeenCalledTimes(0);
     fireEvent.click(getByTestId("avatar-option__wizard"));
     expect(mockCallback).toHaveBeenCalledTimes(1);
-    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[3]);
+    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[3].id);
     fireEvent.click(getByTestId("avatar-option__dragon"));
     expect(mockCallback).toHaveBeenCalledTimes(2);
-    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[0]);
+    expect(mockCallback).toHaveBeenCalledWith(AVATAR_LIST[0].id);
   });
 
   test("renders avatar options", () => {
