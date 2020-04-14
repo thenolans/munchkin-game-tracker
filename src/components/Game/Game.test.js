@@ -5,27 +5,29 @@ import { MemoryRouter, withRouter } from "react-router-dom";
 import Game from "./";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
+import getLowestUniqueLevel from "../../utils/getLowestUniqueLevel";
+import getHighestLevel from "../../utils/getHighestLevel";
 
 const PLAYERS = [
   new Player({
     name: "Dacey",
     sex: "F",
     bonus: 0,
-    level: 1,
+    level: 5,
     avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
   }),
   new Player({
     name: "Tom",
     sex: "M",
     bonus: 0,
-    level: 1,
+    level: 2,
     avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
   }),
   new Player({
     name: "Nala",
     sex: "F",
     bonus: 1,
-    level: 2,
+    level: 5,
     avatar: { alt: "dragon", src: "https://via.placeholder.com/150" },
   }),
 ];
@@ -176,9 +178,9 @@ describe("<Game/>", () => {
 
   test.each`
     operation           | testid         | expected
-    ${"decrement by 1"} | ${"decrement"} | ${1}
-    ${"increment by 1"} | ${"increment"} | ${3}
-  `("handles bonus $operation ", ({ testid, expected }) => {
+    ${"decrement by 1"} | ${"decrement"} | ${4}
+    ${"increment by 1"} | ${"increment"} | ${6}
+  `("handles level $operation ", ({ testid, expected }) => {
     const mockCallback = jest.fn();
     const PLAYER_INDEX = 2;
     const { getByTestId } = setup(
@@ -203,13 +205,66 @@ describe("<Game/>", () => {
     );
   });
 
-  test("Handles score total", () => {
+  test("handles score total", () => {
     const PLAYER_INDEX = 2;
     const { getByTestId } = setup();
     const player = getByTestId(`player-${PLAYERS[PLAYER_INDEX].id}`);
-    expect(within(player).getByTestId("combat-score")).toHaveTextContent(3);
+    expect(within(player).getByTestId("combat-score")).toHaveTextContent(
+      PLAYERS[PLAYER_INDEX].level + PLAYERS[PLAYER_INDEX].bonus
+    );
   });
 
-  // test.todo("display discard badge on player in last");
-  // test.todo("display first badge on players in first");
+  test("display discard badge on player with lowest level", () => {
+    const { getByTestId } = setup();
+    const lowestLevel = getLowestUniqueLevel(PLAYERS.map((p) => p.level));
+    const lowestPlayerIndex = PLAYERS.findIndex((p) => p.level === lowestLevel);
+    PLAYERS.map((player, index) => {
+      const playerNode = getByTestId(`player-${player.id}`);
+      if (index === lowestPlayerIndex) {
+        expect(
+          within(playerNode).queryByTestId("discard-status")
+        ).toBeInTheDocument();
+      } else {
+        expect(
+          within(playerNode).queryByTestId("discard-status")
+        ).not.toBeInTheDocument();
+      }
+    });
+  });
+
+  test("doesn't display discard badge on tied lowest level", () => {
+    const players = [
+      new Player({ level: 2 }),
+      new Player({ level: 2 }),
+      new Player({ level: 5 }),
+    ];
+    const { getByTestId } = setup(undefined, undefined, players);
+    players.map((player) => {
+      const playerNode = getByTestId(`player-${player.id}`);
+      expect(
+        within(playerNode).queryByTestId("discard-status")
+      ).not.toBeInTheDocument();
+    });
+  });
+
+  test("display first place badge on players with highest level", () => {
+    const { getByTestId } = setup();
+    const hightestLevel = getHighestLevel(PLAYERS.map((p) => p.level));
+    const highestPlayerIds = PLAYERS.filter(
+      (p) => p.level === hightestLevel
+    ).map((p) => p.id);
+
+    PLAYERS.map((player) => {
+      const playerNode = getByTestId(`player-${player.id}`);
+      if (highestPlayerIds.includes(player.id)) {
+        expect(
+          within(playerNode).queryByTestId("first-place-status")
+        ).toBeInTheDocument();
+      } else {
+        expect(
+          within(playerNode).queryByTestId("first-place-status")
+        ).not.toBeInTheDocument();
+      }
+    });
+  });
 });
