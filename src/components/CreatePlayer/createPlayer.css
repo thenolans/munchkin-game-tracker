@@ -1,5 +1,10 @@
-.create-player__heading {
+.create-player__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  align-items: center;
+}
+
+.create-player__title {
+  margin: 0;
 }

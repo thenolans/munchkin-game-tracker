@@ -1,9 +1,8 @@
 .avatar-image {
-  width: 42px;
-  height: auto;
-  border: none;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  margin: 4px 4px 0 4px;
   cursor: pointer;
   background-color: white;
+  display: inline-block;
 }

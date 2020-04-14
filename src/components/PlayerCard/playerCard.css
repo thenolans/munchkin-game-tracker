@@ -1,0 +1,10 @@
+.player-card {
+  border-bottom: solid 2px #b6a1a1;
+  padding: 12px 0;
+  margin-bottom: 10px;
+  background-color: #fff4e8;
+}
+
+.player-card:last-child {
+  border-bottom: none;
+}

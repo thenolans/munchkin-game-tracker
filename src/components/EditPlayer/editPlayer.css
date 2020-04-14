@@ -2,4 +2,9 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  align-items: center;
+}
+
+.edit-player__title {
+  margin: 0;
 }

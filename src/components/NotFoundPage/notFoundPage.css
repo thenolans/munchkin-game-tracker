@@ -1,0 +1,31 @@
+.page-not-found__section {
+  text-align: center;
+}
+
+.page-not-found__heading {
+  margin: 0;
+}
+
+.page-not-found__title {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.page-not-found__error {
+  font-size: 20px;
+  text-align: center;
+}
+
+.page-not-found__content {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.page-not-found__img {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}

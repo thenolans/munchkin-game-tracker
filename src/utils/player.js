@@ -1,12 +1,11 @@
 import nanoid from "nanoid";
-import defaultAvatar from "../images/dragon.png";
 
-export function Player(name, score, avatar) {
+export function Player({ name, sex, level, bonus, avatar = "dragon" } = {}) {
   this.id = nanoid();
   this.name = name || "";
-  this.score = score || 1;
-  this.avatar = avatar || {
-    alt: "dragon",
-    src: defaultAvatar
-  };
+  this.sex = sex || "F";
+  this.originalSex = sex || "F";
+  this.level = level || 1;
+  this.bonus = bonus || 0;
+  this.avatar = avatar;
 }

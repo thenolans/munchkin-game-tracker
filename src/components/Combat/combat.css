@@ -1,20 +1,20 @@
-h1 {
-  margin: 0;
-}
-
 .combat {
   width: 100%;
   max-width: 450px;
 }
 
-.combat__heading {
+.combat__header {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.combat__heading-icon {
+.combat__title {
+  margin: 0;
+}
+
+.combat__icon {
   width: 40px;
   height: auto;
   margin-left: 8px;
@@ -24,7 +24,7 @@ h1 {
   margin-bottom: 32px;
 }
 
-.combat__section-title {
+.combat__combatant {
   font-size: 26px;
   margin-bottom: 8px;
 }
