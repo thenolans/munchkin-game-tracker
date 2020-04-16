@@ -33,6 +33,12 @@ One of my favorite games is a role-playing card game called Munchkin, created by
 
 </div>
 
+### Testing
+
+One of my main goals was to implement testing using `jest` and `react-testing-library` and get my test coverage to 100%.
+
+![code-coverage- munchkin](https://user-images.githubusercontent.com/54158919/79487348-1e8d3e00-7fe6-11ea-84b0-81aecef65721.png)
+
 ## Setup Instructions
 
 1. Clone this repository.
