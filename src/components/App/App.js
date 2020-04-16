@@ -16,7 +16,8 @@ import { Player } from "../../utils/player";
 
 const App = () => {
   const [players, setPlayers] = useState(
-    JSON.parse(localStorage.getItem("game")) ||
+    //version local storage key to prevent stale data with app changes
+    JSON.parse(localStorage.getItem("game_v1.0.0")) ||
       Array(2)
         .fill(null)
         .map(() => new Player())
