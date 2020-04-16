@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-import "./App.css";
-import Card from "./components/Card";
-import Combat from "./components/Combat";
-import ConfigureGame from "./components/ConfigureGame";
-import CreatePlayer from "./components/CreatePlayer";
-import EditPlayer from "./components/EditPlayer";
-import Game from "./components/Game";
-import { GameContext } from "./contexts/gameContext";
-import Header from "./components/Header";
-import NotFoundPage from "./components/NotFoundPage";
-import SplashScreen from "./components/SplashScreen";
-import { Player } from "./utils/player";
+import "./app.css";
+import Card from "../Card";
+import Combat from "../Combat";
+import ConfigureGame from "../ConfigureGame";
+import CreatePlayer from "../CreatePlayer";
+import EditPlayer from "../EditPlayer";
+import Game from "../Game";
+import { GameContext } from "../../contexts/gameContext";
+import Header from "../Header";
+import NotFoundPage from "../NotFoundPage";
+import SplashScreen from "../SplashScreen";
+import { Player } from "../../utils/player";
 
 const App = () => {
   const [players, setPlayers] = useState(

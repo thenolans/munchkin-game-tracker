@@ -48,7 +48,7 @@ describe("<ConfigureGame/>", () => {
     expect(removeButtons.length).toBe(PLAYERS.length);
   });
 
-  test("handles min players", () => {
+  test("handles remove players for min players", () => {
     const { queryAllByAltText } = setup(undefined, [
       new Player({ name: "Dacey" }),
       new Player({ name: "Tom" }),

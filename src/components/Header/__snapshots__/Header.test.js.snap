@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> renders without crashing 1`] = `
+<div
+  class="header"
+>
+  <img
+    alt="Munchkin game logo"
+    class="header__logo"
+    src="logo-transparent.png"
+  />
+</div>
+`;

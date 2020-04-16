@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./Game.css";
+import "./game.css";
 import Avatar from "../Avatar";
 import Button from "../Button";
 import getHighestLevel from "../../utils/getHighestLevel";
