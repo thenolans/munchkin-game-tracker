@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import "./Button.css";
+import "./button.css";
 
 const Button = ({
   as: T = "button",

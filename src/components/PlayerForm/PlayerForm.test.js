@@ -34,7 +34,7 @@ describe("<PlayerForm/>", () => {
         defaultFormData={
           new Player({
             name: "Dacey",
-            avatar: {},
+            avatar: "wizard",
           })
         }
       />

@@ -2,7 +2,7 @@ import React from "react";
 
 import AVATAR_LIST from "../../avatarList";
 import Avatar from "../Avatar";
-import "./AvatarPicker.css";
+import "./avatarPicker.css";
 
 const AvatarPicker = (props) => {
   return (

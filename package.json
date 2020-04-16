@@ -41,5 +41,11 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.3.0",
     "@testing-library/react": "^10.0.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
   }
 }

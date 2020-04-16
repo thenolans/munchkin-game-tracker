@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ScoreInput.css";
+import "./scoreInput.css";
 import Button from "../Button";
 
 const ScoreInput = ({ onChange, currentScore, min, max, score, player }) => {

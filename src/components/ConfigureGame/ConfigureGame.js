@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Avatar from "../Avatar";
 import Button from "../Button";
-import "./ConfigureGame.css";
+import "./configureGame.css";
 import { GameContext } from "../../contexts/gameContext";
 import Trash from "../../images/trash.svg";
 import Pencil from "../../images/pencil.svg";
@@ -26,11 +26,9 @@ const ConfigureGame = () => {
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const removePlayer = (index) => {
-    const newPlayers = [...players];
-    if (newPlayers.length > MIN_PLAYERS) {
-      newPlayers.splice(index, 1);
-      setPlayers(newPlayers);
-    }
+    const currentPlayers = [...players];
+    currentPlayers.splice(index, 1);
+    setPlayers(currentPlayers);
   };
 
   return (

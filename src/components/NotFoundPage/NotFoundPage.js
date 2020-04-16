@@ -9,19 +9,22 @@ const NotFoundPage = () => {
   return (
     <div className="page-not-found">
       <div className="page-not-found__section">
-        <h1 className="page-not-found__heading">Level 404</h1>
-        <div className="page-not-found__title">Error Monster</div>
+        <h3 className="page-not-found__heading">Level 404</h3>
+        <div className="page-not-found__title">Monster That Eats Your Page</div>
         <div className="page-not-found__error">
-          When the error monster appears, it eats the page you are looking for.
+          He has the munchies and eats the page you are looking for. You must
+          runaway and let him keep his treasure.
         </div>
       </div>
       <img className="page-not-found__img" src={Monster} alt="door"></img>
       <div className="page-not-found__content">
-        Bad Stuff: You must run away.
+        <span className="page-not-found--bold">Bad Stuff: </span> You don't know
+        where you are and you suffer from confusion. You are sent back home.
       </div>
       <Button as={Link} to="/">
         Run Away
       </Button>
+      <div className="page-not-found__footer">10 Treasures</div>
     </div>
   );
 };

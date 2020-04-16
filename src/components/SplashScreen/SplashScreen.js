@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Button from "../Button";
 import MainCharacter from "../../images/main-character.png";
-import "./SplashScreen.css";
+import "./splashScreen.css";
 
 const SplashScreen = () => {
   return (

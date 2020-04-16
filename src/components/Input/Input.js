@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import "./Input.css";
+import "./input.css";
 
 const Input = ({ className, fluid, ...props }) => {
   return (
