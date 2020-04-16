@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/munchkin-score-keeper/precache-manifest.e965fc26f7f68c3e846be777b918149a.js"
+  "/munchkin-score-keeper/precache-manifest.b2177f480959a8fd22f423e9b34002da.js"
 );
 
 self.addEventListener('message', (event) => {
