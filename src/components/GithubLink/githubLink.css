@@ -1,0 +1,44 @@
+.gh-link {
+  outline: none !important;
+}
+
+a:hover .octo-arm {
+  animation: wave 560ms ease-in-out;
+}
+.octo-arm {
+  transform-origin: 130px 106px;
+}
+
+@media screen and (max-width: 500px) {
+  a:hover .octo-arm {
+    animation: none;
+  }
+  .octo-arm {
+    animation: wave 560ms ease-in-out;
+  }
+}
+
+.octo-img {
+  z-index: 99;
+  fill: #4a1615;
+  color: #fff4e8;
+  position: fixed;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}

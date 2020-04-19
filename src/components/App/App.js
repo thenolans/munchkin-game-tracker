@@ -8,6 +8,7 @@ import ConfigureGame from "../ConfigureGame";
 import CreatePlayer from "../CreatePlayer";
 import EditPlayer from "../EditPlayer";
 import Game from "../Game";
+import GithubLink from "../GithubLink/GithubLink";
 import { GameContext } from "../../contexts/gameContext";
 import Header from "../Header";
 import NotFoundPage from "../NotFoundPage";
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <div className="game-content">
       <Header />
+      <GithubLink />
       <GameContext.Provider
         value={{
           usePlayers: [players, setPlayers],
