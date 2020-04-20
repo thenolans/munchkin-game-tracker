@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3a3c23a9ef30c00630b161a29949e1b8",
+    "revision": "01f37c8e62c66dd589f1b6f341d34395",
     "url": "/munchkin-game-tracker/index.html"
   },
   {
-    "revision": "ac8787267131a92468df",
+    "revision": "4bdbf5b5ca275211b6ae",
     "url": "/munchkin-game-tracker/static/css/main.af1ee451.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/munchkin-game-tracker/static/js/2.19f09310.chunk.js"
   },
   {
-    "revision": "ac8787267131a92468df",
-    "url": "/munchkin-game-tracker/static/js/main.43120932.chunk.js"
+    "revision": "4bdbf5b5ca275211b6ae",
+    "url": "/munchkin-game-tracker/static/js/main.1fdd2a1a.chunk.js"
   },
   {
     "revision": "8753b4a93d1f25053057",
