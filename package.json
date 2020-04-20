@@ -1,6 +1,6 @@
 {
   "name": "munchkin-game-tracker",
-  "homepage": "https://daceynolan.github.io/munchkin-score-keeper/",
+  "homepage": "https://daceynolan.github.io/munchkin-game-tracker/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
