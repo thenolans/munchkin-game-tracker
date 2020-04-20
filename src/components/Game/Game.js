@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./game.css";
@@ -19,7 +19,7 @@ const Game = (props) => {
   const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
   const [highestPlayerLevel, setHightestPlayerLevel] = useState();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const levels = players.map((player) => player.level);
     setLowestPlayerLevel(getLowestUniqueLevel(levels));
     setHightestPlayerLevel(getHighestLevel(levels));
