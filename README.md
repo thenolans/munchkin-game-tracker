@@ -2,7 +2,7 @@
 
 ### Purpose
 
-Annoyed with the constant crossing out of levels when keeping score on paper and pencil only to lose track of player attributes throughout the game, I built a game tracker application to manage many of the player attributes such as their current level, combat bonuses, discard eligibility, and many more.
+Annoyed with the constant crossing out of levels when keeping score on paper and pencil only to lose track of player attributes throughout the game, I built a game tracker application to manage current level, combat bonuses, discard eligibility, and other player attributes.
 
 ### Development Focus
 
