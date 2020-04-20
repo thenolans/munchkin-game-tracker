@@ -1,20 +1,18 @@
-# Munchkin Score Keeper
+# Munchkin Game Tracker
 
 ### Purpose
 
-One of my favorite games is a role-playing card game called Munchkin, created by Steve Jackson Games. Instead of keeping score with paper and pen, this application is a reusable scorekeeper that tracks users' level, combat bonus, and gender. Users can enter combat mode, which will allow them to increment or decrement their combat score and increment and decrement a monster's level.
+Annoyed with the constant crossing out of levels when keeping score on paper and pencil only to lose track of player attributes throughout the game, I built a game tracker application to manage many of the player attributes such as their current level, combat bonuses, discard eligibility, and many more.
 
 ### Development Focus
 
-- Utilized `useEffect` to check validity of players
-- Implemented a `useContext` hook to manage the state of the game data.
-- Persisted game data in `localStorage` and reload the game progress on refresh
-- Use `react-router`to handle routes and navigation
-- Focused on the accessibility and keyboard navigation for the user
-- Incorporated testing using `jest` and `react-testing-library`
-- Conditionally render player status (First or Discards) based on their level
-- Allow users to toggle their sex while in game mode
-- Created a player form that will allow users to edit existing players or create new players
+- Implement `useContext` hook to manage the state of the game progress and all player data
+- Implement `useEffect` hooks to react to data changes and update player cards accordingly
+- Implement `useLayoutEffect` to synchronously handle certain state updates to prevent element flickering
+- Persist game data in `localStorage` and reload the game progress on refresh, if available
+- Create unit tests for all components using `Jest` and `React Testing Library` to achieve 100% code coverage
+- Use `react-router` to handle routes and navigation
+- Explore improving the accessibility and keyboard navigation using `ARIA` attributes
 
 ### Screenshots
 
