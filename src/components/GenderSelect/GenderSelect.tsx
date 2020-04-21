@@ -1,8 +1,14 @@
 import React from "react";
 
 import "./genderSelect.css";
+import { gender } from "types/gender";
 
-const GenderSelect = (props) => {
+type Props = {
+  value: gender;
+  onChange: (gender: gender) => void;
+};
+
+const GenderSelect: React.FunctionComponent<Props> = (props) => {
   return (
     <div className="gender-select">
       <input

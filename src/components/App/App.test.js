@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import App from "./";
+import App from ".";
 import { Player } from "../../utils/player";
 
 const PLAYERS = [new Player({ name: "Dacey" }), new Player({ name: "Tom" })];

@@ -3,7 +3,16 @@ import cx from "classnames";
 
 import "./input.css";
 
-const Input = ({ className, fluid, ...props }) => {
+type Props = React.HTMLAttributes<HTMLInputElement> & {
+  className?: string;
+  fluid?: boolean;
+};
+
+const Input: React.FunctionComponent<Props> = ({
+  className,
+  fluid,
+  ...props
+}) => {
   return (
     <input
       className={cx("input", { "input--fluid": fluid }, className)}

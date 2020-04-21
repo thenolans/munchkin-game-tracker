@@ -3,7 +3,11 @@ import React from "react";
 
 import "./formError.css";
 
-const FormError = ({ className, ...props }) => {
+type Props = {
+  className?: string;
+};
+
+const FormError: React.FunctionComponent<Props> = ({ className, ...props }) => {
   return (
     <div
       className={cx("form-error", className)}

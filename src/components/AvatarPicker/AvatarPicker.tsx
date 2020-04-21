@@ -3,8 +3,14 @@ import React from "react";
 import AVATAR_LIST from "../../avatarList";
 import Avatar from "../Avatar";
 import "./avatarPicker.css";
+import { AvatarId } from "types/avatars";
 
-const AvatarPicker = (props) => {
+type Props = {
+  value: AvatarId;
+  onChange: (avatarId: AvatarId) => void;
+};
+
+const AvatarPicker: React.FunctionComponent<Props> = (props) => {
   return (
     <div className="avatar-picker" data-testid="avatar-options">
       {AVATAR_LIST.map((avatar) => (

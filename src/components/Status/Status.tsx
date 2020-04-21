@@ -3,7 +3,16 @@ import cx from "classnames";
 
 import "./status.css";
 
-const Status = ({ className, theme = "default", ...props }) => {
+type Props = {
+  className?: string;
+  theme?: "default" | "warning" | "success";
+};
+
+const Status: React.FunctionComponent<Props> = ({
+  className,
+  theme = "default",
+  ...props
+}) => {
   return (
     <div
       className={cx("status", `status--${theme}`, className)}

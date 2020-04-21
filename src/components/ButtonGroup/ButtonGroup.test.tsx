@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import ButtonGroup from "./";
+import ButtonGroup from ".";
 
 describe("<ButtonGroup/>", () => {
   test("passes through all props", () => {

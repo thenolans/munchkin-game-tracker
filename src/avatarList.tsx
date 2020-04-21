@@ -1,4 +1,6 @@
-export default [
+import { Avatar } from "types/avatars";
+
+const AVATAR_LIST: Avatar[] = [
   {
     src: require("./images/dragon.png"),
     alt: "avatar of a dragon",
@@ -31,3 +33,5 @@ export default [
     id: "pirate",
   },
 ];
+
+export default AVATAR_LIST;

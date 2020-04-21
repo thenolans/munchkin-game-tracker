@@ -13,6 +13,8 @@ const SplashScreen = () => {
         src={MainCharacter}
         alt="Munchkin character holding chainsaw"
       />
+      {/* 
+// @ts-ignore */}
       <Button as={Link} to="/configure">
         New Game
       </Button>

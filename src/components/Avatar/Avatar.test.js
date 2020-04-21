@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Avatar from "./";
+import Avatar from ".";
 import AVATAR_LIST from "../../avatarList";
 
 describe("<Avatar/>", () => {
