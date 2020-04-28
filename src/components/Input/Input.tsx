@@ -3,10 +3,11 @@ import cx from "classnames";
 
 import "./input.css";
 
-type Props = React.HTMLAttributes<HTMLInputElement> & {
-  className?: string;
-  fluid?: boolean;
-};
+type Props = React.HTMLAttributes<HTMLInputElement> &
+  React.HTMLProps<HTMLInputElement> & {
+    className?: string;
+    fluid?: boolean;
+  };
 
 const Input: React.FunctionComponent<Props> = ({
   className,

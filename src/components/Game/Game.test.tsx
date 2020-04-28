@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, within } from "@testing-library/react";
 import { MemoryRouter, withRouter } from "react-router-dom";
 
-import Game from "./";
+import Game from ".";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 import getLowestUniqueLevel from "../../utils/getLowestUniqueLevel";

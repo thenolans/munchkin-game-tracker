@@ -1,17 +1,25 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./editPlayer.css";
 import Button from "../Button";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import { GameContext } from "../../contexts/gameContext";
+import { Player } from "../../types/player";
 
-const EditPlayer = (props) => {
-  const { id } = props.match.params;
+type Match = {
+  id: string;
+};
+
+const EditPlayer: React.FunctionComponent<RouteComponentProps<Match>> = ({
+  history,
+  match,
+}) => {
+  const { id } = match.params;
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
 
-  const handlePlayerUpdate = (player) => {
+  const handlePlayerUpdate = (player: Player) => {
     const newData = [...players];
 
     const playerIndex = players.findIndex((p) => {
@@ -20,13 +28,15 @@ const EditPlayer = (props) => {
     newData[playerIndex] = player;
 
     setPlayers(newData);
-    props.history.push("/configure");
+    history.push("/configure");
   };
 
   return (
     <div className="edit-player">
       <div className="edit-player__heading">
         <h1 className="edit-player__title">Edit Player</h1>
+        {/* 
+// @ts-ignore */}
         <Button as={Link} to="/configure" styleReset>
           X
         </Button>
@@ -35,7 +45,7 @@ const EditPlayer = (props) => {
       <PlayerForm
         defaultFormData={players.find((p) => p.id === id)}
         onSave={(player) => {
-          handlePlayerUpdate(player);
+          handlePlayerUpdate(player as Player);
         }}
       />
     </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useLayoutEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./game.css";
 import Avatar from "../Avatar";
@@ -13,19 +13,23 @@ import Swords from "../../images/swords.svg";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 
-const Game = (props) => {
+const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
   const game = useContext(GameContext);
   const [players, setPlayers] = game.usePlayers;
-  const [lowestPlayerLevel, setLowestPlayerLevel] = useState();
-  const [highestPlayerLevel, setHightestPlayerLevel] = useState();
+  const [lowestPlayerLevel, setLowestPlayerLevel] = useState<number | null>(); //number
+  const [highestPlayerLevel, setHightestPlayerLevel] = useState<number>(); //number
 
   useLayoutEffect(() => {
-    const levels = players.map((player) => player.level);
+    const levels: number[] = players.map((player) => player.level);
     setLowestPlayerLevel(getLowestUniqueLevel(levels));
     setHightestPlayerLevel(getHighestLevel(levels));
   }, [players]);
 
-  const updatePlayer = (playerId, field, value) => {
+  const updatePlayer = (
+    playerId: string,
+    field: string,
+    value: string | number
+  ) => {
     setPlayers(
       players.map((player) => {
         if (player.id === playerId) {
@@ -45,13 +49,18 @@ const Game = (props) => {
         .fill(null)
         .map(() => new Player())
     );
-    props.history.push("/");
+    history.push("/");
   };
 
   const rematchGame = () => {
     setPlayers(
       players.map((player) => {
-        return { ...player, level: 1, bonus: 0, sex: player.originalSex };
+        return {
+          ...player,
+          level: 1,
+          bonus: 0,
+          sex: player.originalSex,
+        };
       })
     );
   };
@@ -106,11 +115,10 @@ const Game = (props) => {
                     min={1}
                     max={99}
                     currentScore={player.level}
-                    onChange={(newLevel) =>
+                    onChange={(newLevel: number) =>
                       updatePlayer(player.id, "level", newLevel)
                     }
                     player={player.name}
-                    score="level"
                   />
                 </div>
                 <div className="actions__combat">
@@ -135,11 +143,10 @@ const Game = (props) => {
                   <div className="actions__score">Bonus</div>
                   <ScoreInput
                     currentScore={player.bonus}
-                    onChange={(newBonus) =>
+                    onChange={(newBonus: number) =>
                       updatePlayer(player.id, "bonus", newBonus)
                     }
                     player={player.name}
-                    score="bonus"
                   />
                 </div>
               </div>
@@ -148,6 +155,8 @@ const Game = (props) => {
         ))}
       </div>
       <div className="game__actions">
+        {/*
+         // @ts-ignore */}
         <Button as={Link} to="/configure">
           &lt;
         </Button>

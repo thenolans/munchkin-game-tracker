@@ -2,38 +2,32 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { MemoryRouter, withRouter } from "react-router-dom";
 
-import EditPlayer from "./";
+import CreatePlayer from "./";
 import { GameContext } from "../../contexts/gameContext";
 import { Player } from "../../utils/player";
 
-const PLAYERS = [
-  new Player({ name: "Dacey", sex: "F", avatar: "elf" }),
-  new Player({ name: "Tom", sex: "M", avatar: "wizard" }),
-];
+const PLAYERS = [new Player({ name: "Tom" }), new Player({ name: "Jimmy" })];
 
 const setup = (props = {}, players = PLAYERS, setPlayers = () => {}) => {
-  const EditPlayerWithRouter = withRouter(EditPlayer);
+  const CreatePlayerWithRouter = withRouter(CreatePlayer);
   return render(
     <MemoryRouter>
       <GameContext.Provider value={{ usePlayers: [players, setPlayers] }}>
-        <EditPlayerWithRouter {...props} />
+        <CreatePlayerWithRouter {...props} />
       </GameContext.Provider>
     </MemoryRouter>
   );
 };
 
-describe("<EditPlayer/>", () => {
-  test("handles editing new player", () => {
+describe("<CreatePlayer/>", () => {
+  test("handles creating new player", () => {
     const mockCallback = jest.fn();
     const { getByTestId } = setup(undefined, undefined, mockCallback);
-    const nameInput = getByTestId("form__name-input");
     // Simulate name change
-    fireEvent.change(nameInput, {
-      target: { value: "Nala" },
-    });
-    const submit = getByTestId("player-form__submit");
-    fireEvent.click(submit);
-    // Simulate gender select
+    const nameInput = getByTestId("form__name-input");
+    fireEvent.change(nameInput, { target: { value: "Dacey" } });
+    expect(nameInput.value).toBe("Dacey");
+    // Simulate sex select
     const female = getByTestId("select-female");
     fireEvent.click(female);
     expect(female.checked).toBe(true);

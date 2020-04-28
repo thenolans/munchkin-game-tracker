@@ -25,7 +25,7 @@ const ConfigureGame = () => {
     }
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const removePlayer = (index) => {
+  const removePlayer = (index: number) => {
     const currentPlayers = [...players];
     currentPlayers.splice(index, 1);
     setPlayers(currentPlayers);
@@ -76,12 +76,17 @@ const ConfigureGame = () => {
 
       <div className="configure-game__add-player">
         {numberOfPlayers < MAX_PLAYERS && (
+          /*
+// @ts-ignore */
           <Button as={Link} to="/player/create" styleReset>
             + Add Player
           </Button>
         )}
       </div>
+
       {playersAreValid && (
+        /* 
+// @ts-ignore */
         <Button as={Link} fluid to="/game">
           Start
         </Button>

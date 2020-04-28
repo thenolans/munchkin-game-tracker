@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 import { parse } from "query-string";
 
 import "./combat.css";
@@ -7,7 +7,7 @@ import CombatScoreInput from "../CombatScoreInput";
 import Button from "../Button";
 import Swords from "../../images/swords.svg";
 
-const Combat = (props) => {
+const Combat: React.FunctionComponent<RouteComponentProps> = (props) => {
   const { score } = parse(props.location.search);
 
   const [munchkinScore, setMunchkinScore] = useState(Number(score || 0));
@@ -41,6 +41,8 @@ const Combat = (props) => {
           }
         />
       </div>
+      {/* 
+// @ts-ignore */}
       <Button as={Link} fluid to="/game">
         End Combat
       </Button>

@@ -4,15 +4,35 @@ import "./playerForm.css";
 import AvatarPicker from "../AvatarPicker";
 import Button from "../Button";
 import FormError from "../FormError";
-import GenderSelect from "../GenderSelect";
+import SexSelect from "../SexSelect";
 import Input from "../Input";
 import Label from "../Label";
+import { Player } from "types/player";
 
-const PlayerForm = (props) => {
-  const [playerData, setPlayerData] = useState(props.defaultFormData || {});
-  const [errors, setErrors] = useState({});
+type FormErrors = {
+  name?: string;
+  sex?: string;
+  avatar?: string;
+};
 
-  const updatePlayerData = (field, value) => {
+type Props = {
+  defaultFormData?: Partial<Player>;
+  onSave: (player: Partial<Player>) => void;
+};
+
+const PlayerForm: React.FunctionComponent<Props> = ({
+  defaultFormData = {},
+  onSave,
+}) => {
+  const [playerData, setPlayerData] = useState<Partial<Player>>({
+    name: "",
+    avatar: "dragon",
+    sex: "M",
+    ...defaultFormData,
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const updatePlayerData = (field: string, value: string) => {
     setPlayerData({
       ...playerData,
       [field]: value,
@@ -20,7 +40,7 @@ const PlayerForm = (props) => {
   };
 
   const handleSubmit = () => {
-    const errors = {};
+    const errors: FormErrors = {};
 
     if (!playerData.name) {
       errors.name = "Please enter a name";
@@ -39,7 +59,7 @@ const PlayerForm = (props) => {
     if (errors.avatar || errors.name || errors.sex) {
       setErrors(errors);
     } else {
-      props.onSave(playerData);
+      onSave(playerData);
     }
   };
 
@@ -50,7 +70,9 @@ const PlayerForm = (props) => {
           <Label>Player's Name</Label>
           <Input
             data-testid="form__name-input"
-            onChange={(event) => updatePlayerData("name", event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              updatePlayerData("name", event.target.value)
+            }
             value={playerData.name || ""}
             fluid
           />
@@ -60,7 +82,7 @@ const PlayerForm = (props) => {
         </div>
         <div className="player-form__section">
           <Label>Player's Sex</Label>
-          <GenderSelect
+          <SexSelect
             value={playerData.sex}
             onChange={(newSex) => updatePlayerData("sex", newSex)}
           />
@@ -72,7 +94,7 @@ const PlayerForm = (props) => {
         <div className="player-form__section">
           <Label>Avatar</Label>
           <AvatarPicker
-            value={playerData.avatar}
+            value={playerData.avatar || "dragon"}
             onChange={(newAvatar) => updatePlayerData("avatar", newAvatar)}
           />
           {errors.avatar && (

@@ -10,17 +10,17 @@ type Props = {
   onChange: (avatarId: AvatarId) => void;
 };
 
-const AvatarPicker: React.FunctionComponent<Props> = (props) => {
+const AvatarPicker: React.FunctionComponent<Props> = ({ value, onChange }) => {
   return (
     <div className="avatar-picker" data-testid="avatar-options">
       {AVATAR_LIST.map((avatar) => (
         <div key={avatar.id}>
           <input
-            checked={props.value === avatar.id}
+            checked={value === avatar.id}
             type="radio"
             value={avatar.id}
             name="avatar"
-            onChange={() => props.onChange(avatar.id)}
+            onChange={() => onChange(avatar.id)}
             data-testid={`avatar-option__${avatar.id}`}
             id={avatar.id}
             aria-label={`Change user's avatar to a ${avatar.id}`}

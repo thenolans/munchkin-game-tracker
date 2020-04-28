@@ -3,8 +3,16 @@ import React from "react";
 import Button from "../Button";
 import ButtonGroup from "../ButtonGroup";
 
-const CombatScoreInput = ({ onAdjustmentClick, combatant }) => {
-  const handleAdjustmentClick = (adjustment) => {
+type Props = {
+  combatant: string;
+  onAdjustmentClick: (adjustment: number) => void;
+};
+
+const CombatScoreInput: React.FunctionComponent<Props> = ({
+  onAdjustmentClick,
+  combatant,
+}) => {
+  const handleAdjustmentClick = (adjustment: number) => {
     onAdjustmentClick(adjustment);
   };
 

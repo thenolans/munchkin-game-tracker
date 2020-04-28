@@ -1,21 +1,21 @@
 import React from "react";
 
-import "./genderSelect.css";
-import { gender } from "types/gender";
+import "./sexSelect.css";
+import { Sex } from "types/player";
 
 type Props = {
-  value: gender;
-  onChange: (gender: gender) => void;
+  value?: Sex;
+  onChange: (sex: Sex) => void;
 };
 
-const GenderSelect: React.FunctionComponent<Props> = (props) => {
+const SexSelect: React.FunctionComponent<Props> = (props) => {
   return (
-    <div className="gender-select">
+    <div className="sex-select">
       <input
         checked={props.value === "M"}
         type="radio"
         value="M"
-        name="gender"
+        name="sex"
         onChange={() => props.onChange("M")}
         data-testid="select-male"
         id="select-male"
@@ -25,7 +25,7 @@ const GenderSelect: React.FunctionComponent<Props> = (props) => {
         checked={props.value === "F"}
         type="radio"
         value="F"
-        name="gender"
+        name="sex"
         onChange={() => props.onChange("F")}
         data-testid="select-female"
         id="select-female"
@@ -35,4 +35,4 @@ const GenderSelect: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export default GenderSelect;
+export default SexSelect;

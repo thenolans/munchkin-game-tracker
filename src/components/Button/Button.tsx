@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 
 import "./button.css";
 
-type Props = {
-  as: "button" | "a" | Link;
-  className?: string;
-  fluid?: boolean;
-  styleReset?: boolean;
-  theme?: "default" | "info";
-  type: "button" | "submit";
-};
+type Props = React.HTMLAttributes<HTMLButtonElement> &
+  React.HTMLProps<HTMLButtonElement> & {
+    as?: "button" | "a" | Link;
+    className?: string;
+    fluid?: boolean;
+    styleReset?: boolean;
+    theme?: "default" | "info";
+    type?: "button" | "submit";
+  };
 
 const Button: React.FunctionComponent<Props> = ({
   as: T = "button",

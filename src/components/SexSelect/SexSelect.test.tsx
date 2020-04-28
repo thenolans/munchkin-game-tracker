@@ -1,12 +1,12 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 
-import GenderSelect from "./";
+import SexSelect from "./";
 
-describe("<GenderSelect/>", () => {
+describe("<SexSelect/>", () => {
   test("handles onChange callback", () => {
     const mockCallback = jest.fn();
-    const { getByTestId } = render(<GenderSelect onChange={mockCallback} />);
+    const { getByTestId } = render(<SexSelect onChange={mockCallback} />);
     expect(mockCallback).toHaveBeenCalledTimes(0);
     fireEvent.click(getByTestId("select-female"));
     expect(mockCallback).toHaveBeenCalledTimes(1);
