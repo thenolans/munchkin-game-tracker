@@ -18,14 +18,14 @@ import { createNewPlayer } from "utils/player";
 const App = () => {
   const [players, setPlayers] = useState(
     //version local storage key to prevent stale data with app changes
-    JSON.parse(localStorage.getItem("game") || "") || //game_v1.0.0
+    JSON.parse(localStorage.getItem("game_v1.0.0") || "") ||
       Array(2)
         .fill(null)
         .map(() => createNewPlayer())
   );
 
   useEffect(() => {
-    localStorage.setItem("game", JSON.stringify(players));
+    localStorage.setItem("game_v1.0.0", JSON.stringify(players));
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
