@@ -11,9 +11,7 @@ exports[`<SplashScreen/> renders without crashing 1`] = `
   />
   <a
     class="button button--default"
-    data-testid="button"
     href="/configure"
-    type="button"
   >
     New Game
   </a>

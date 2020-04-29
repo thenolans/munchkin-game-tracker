@@ -21,8 +21,6 @@ const NotFoundPage = () => {
         <span className="page-not-found--bold">Bad Stuff: </span> You don't know
         where you are and you suffer from confusion. You are sent back home.
       </div>
-      {/* 
-// @ts-ignore */}
       <Button as={Link} to="/">
         Run Away
       </Button>

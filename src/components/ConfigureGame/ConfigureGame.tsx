@@ -76,8 +76,6 @@ const ConfigureGame = () => {
 
       <div className="configure-game__add-player">
         {numberOfPlayers < MAX_PLAYERS && (
-          /*
-// @ts-ignore */
           <Button as={Link} to="/player/create" styleReset>
             + Add Player
           </Button>
@@ -85,8 +83,6 @@ const ConfigureGame = () => {
       </div>
 
       {playersAreValid && (
-        /* 
-// @ts-ignore */
         <Button as={Link} fluid to="/game">
           Start
         </Button>

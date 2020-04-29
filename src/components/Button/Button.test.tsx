@@ -10,14 +10,6 @@ describe("<Button/>", () => {
     expect(button).not.toBeNull();
   });
 
-  test("handles as prop", () => {
-    const { container } = render(<Button as="a" />);
-    const button = container.querySelector("button");
-    const anchor = container.querySelector("a");
-    expect(button).toBeNull();
-    expect(anchor).not.toBeNull();
-  });
-
   test("handles className prop", () => {
     const { getByTestId } = render(
       <Button className="custom-class another-custom" />
@@ -52,12 +44,6 @@ describe("<Button/>", () => {
     const button = getByTestId("button");
     expect(button).toHaveClass("button--info");
     expect(button).not.toHaveClass("button--default");
-  });
-
-  test("defaults to button type", () => {
-    const { getByTestId } = render(<Button />);
-    const button = getByTestId("button");
-    expect(button).toHaveAttribute("type", "button");
   });
 
   test("handles type prop", () => {

@@ -153,8 +153,6 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
         ))}
       </div>
       <div className="game__actions">
-        {/*
-         // @ts-ignore */}
         <Button as={Link} to="/configure">
           &lt;
         </Button>

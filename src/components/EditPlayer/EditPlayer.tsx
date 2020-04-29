@@ -35,8 +35,6 @@ const EditPlayer: React.FunctionComponent<RouteComponentProps<Match>> = ({
     <div className="edit-player">
       <div className="edit-player__heading">
         <h1 className="edit-player__title">Edit Player</h1>
-        {/* 
-// @ts-ignore */}
         <Button as={Link} to="/configure" styleReset>
           X
         </Button>

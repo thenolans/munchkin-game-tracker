@@ -40,9 +40,7 @@ exports[`<NotFoundPage/> renders without crashing 1`] = `
   </div>
   <a
     class="button button--default"
-    data-testid="button"
     href="/"
-    type="button"
   >
     Run Away
   </a>

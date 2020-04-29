@@ -41,8 +41,6 @@ const Combat: React.FunctionComponent<RouteComponentProps> = (props) => {
           }
         />
       </div>
-      {/* 
-// @ts-ignore */}
       <Button as={Link} fluid to="/game">
         End Combat
       </Button>

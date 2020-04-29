@@ -15,13 +15,17 @@ import SplashScreen from "components/SplashScreen";
 import { GameContext } from "contexts/gameContext";
 import { createNewPlayer } from "utils/player";
 
+//version local storage key to prevent stale data with app changes
+const LOCAL_STORAGE_KEY = "game_v1.0.0";
+
 const App = () => {
+  const localGame = localStorage.getItem(LOCAL_STORAGE_KEY);
   const [players, setPlayers] = useState(
-    //version local storage key to prevent stale data with app changes
-    JSON.parse(localStorage.getItem("game_v1.0.0") || "") ||
-      Array(2)
-        .fill(null)
-        .map(() => createNewPlayer())
+    localGame
+      ? JSON.parse(localGame)
+      : Array(2)
+          .fill(null)
+          .map(() => createNewPlayer())
   );
 
   useEffect(() => {

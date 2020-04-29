@@ -29,8 +29,6 @@ const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
         <h1 className="create-player__title" data-testid="create-player">
           Create Player
         </h1>
-        {/* 
-// @ts-ignore */}
         <Button as={Link} to="/configure" styleReset>
           X
         </Button>
