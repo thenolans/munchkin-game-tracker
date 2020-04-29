@@ -1,12 +1,12 @@
 import React from "react";
 
 import AVATAR_LIST from "../../avatarList";
-import Avatar from "../Avatar";
 import "./avatarPicker.css";
-import { AvatarId } from "types/avatars";
+import Avatar from "components/Avatar";
+import { AvatarId } from "types/types";
 
 type Props = {
-  value: AvatarId;
+  value?: AvatarId;
   onChange: (avatarId: AvatarId) => void;
 };
 

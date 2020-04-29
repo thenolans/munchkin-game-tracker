@@ -5,7 +5,6 @@ import "./input.css";
 
 type Props = React.HTMLAttributes<HTMLInputElement> &
   React.HTMLProps<HTMLInputElement> & {
-    className?: string;
     fluid?: boolean;
   };
 

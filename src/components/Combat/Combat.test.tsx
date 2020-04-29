@@ -4,7 +4,7 @@ import { withRouter, MemoryRouter } from "react-router-dom";
 
 import Combat from "./";
 
-const setup = (routerProps) => {
+const setup = (routerProps?: {}) => {
   const CombatWithRouter = withRouter(Combat);
   return render(
     <MemoryRouter {...routerProps}>

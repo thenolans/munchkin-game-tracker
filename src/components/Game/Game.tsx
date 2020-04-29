@@ -2,16 +2,16 @@ import React, { useContext, useLayoutEffect, useState } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./game.css";
-import Avatar from "../Avatar";
-import Button from "../Button";
-import getHighestLevel from "../../utils/getHighestLevel";
-import getLowestUniqueLevel from "../../utils/getLowestUniqueLevel";
-import PlayerCard from "../PlayerCard/PlayerCard";
-import ScoreInput from "../ScoreInput/ScoreInput";
-import Status from "../Status";
-import Swords from "../../images/swords.svg";
-import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
+import Avatar from "components/Avatar";
+import Button from "components/Button";
+import PlayerCard from "components/PlayerCard/PlayerCard";
+import ScoreInput from "components/ScoreInput/ScoreInput";
+import Status from "components/Status";
+import { GameContext } from "contexts/gameContext";
+import Swords from "images/swords.svg";
+import getHighestLevel from "utils/getHighestLevel";
+import getLowestUniqueLevel from "utils/getLowestUniqueLevel";
+import { createNewPlayer } from "utils/player";
 
 const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
   const game = useContext(GameContext);
@@ -47,7 +47,7 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
     setPlayers(
       Array(2)
         .fill(null)
-        .map(() => new Player())
+        .map(() => createNewPlayer())
     );
     history.push("/");
   };
@@ -118,7 +118,6 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
                     onChange={(newLevel: number) =>
                       updatePlayer(player.id, "level", newLevel)
                     }
-                    player={player.name}
                   />
                 </div>
                 <div className="actions__combat">
@@ -146,7 +145,6 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
                     onChange={(newBonus: number) =>
                       updatePlayer(player.id, "bonus", newBonus)
                     }
-                    player={player.name}
                   />
                 </div>
               </div>

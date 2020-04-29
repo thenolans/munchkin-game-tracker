@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./app.css";
-import Card from "../Card";
-import Combat from "../Combat";
-import ConfigureGame from "../ConfigureGame";
-import CreatePlayer from "../CreatePlayer";
-import EditPlayer from "../EditPlayer";
-import Game from "../Game";
-import GithubLink from "../GithubLink/GithubLink";
-import { GameContext } from "../../contexts/gameContext";
-import Header from "../Header";
-import NotFoundPage from "../NotFoundPage";
-import SplashScreen from "../SplashScreen";
-import { Player } from "../../utils/player";
+import Card from "components/Card";
+import Combat from "components/Combat";
+import ConfigureGame from "components/ConfigureGame";
+import CreatePlayer from "components/CreatePlayer";
+import EditPlayer from "components/EditPlayer";
+import Game from "components/Game";
+import GithubLink from "components/GithubLink";
+import Header from "components/Header";
+import NotFoundPage from "components/NotFoundPage";
+import SplashScreen from "components/SplashScreen";
+import { GameContext } from "contexts/gameContext";
+import { createNewPlayer } from "utils/player";
 
 const App = () => {
   const [players, setPlayers] = useState(
     //version local storage key to prevent stale data with app changes
-    JSON.parse(localStorage.getItem("game") || "") || //change to game_v1.0.0
+    JSON.parse(localStorage.getItem("game") || "") || //game_v1.0.0
       Array(2)
         .fill(null)
-        .map(() => new Player())
+        .map(() => createNewPlayer())
   );
 
   useEffect(() => {

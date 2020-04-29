@@ -3,8 +3,7 @@ import cx from "classnames";
 
 import "./status.css";
 
-type Props = {
-  className?: string;
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   theme?: "default" | "warning" | "success";
 };
 

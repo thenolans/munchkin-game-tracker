@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import Avatar from "../Avatar";
-import Button from "../Button";
 import "./configureGame.css";
-import { GameContext } from "../../contexts/gameContext";
-import Trash from "../../images/trash.svg";
-import Pencil from "../../images/pencil.svg";
+import Avatar from "components/Avatar";
+import Button from "components/Button";
+import { GameContext } from "contexts/gameContext";
+import Trash from "images/trash.svg";
+import Pencil from "images/pencil.svg";
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 6;

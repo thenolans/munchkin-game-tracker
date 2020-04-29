@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./scoreInput.css";
-import Button from "../Button";
+import Button from "components/Button";
 
 type Props = {
   currentScore: number;
@@ -9,7 +9,6 @@ type Props = {
   min?: number;
   onChange(newLevel: number): void;
   onChange(newBonus: number): void;
-  player: string;
 };
 
 const ScoreInput: React.FunctionComponent<Props> = ({
@@ -17,7 +16,6 @@ const ScoreInput: React.FunctionComponent<Props> = ({
   max,
   min,
   onChange,
-  player,
 }) => {
   const incrementScore = () => {
     if (max && currentScore >= max) return;
@@ -37,7 +35,7 @@ const ScoreInput: React.FunctionComponent<Props> = ({
           onClick={decrementScore}
           className="score-input__button"
           styleReset
-          aria-label={`Decrement ${player}'s by one`}
+          aria-label={`Decrement by one`}
         >
           -
         </Button>
@@ -49,7 +47,7 @@ const ScoreInput: React.FunctionComponent<Props> = ({
           onClick={incrementScore}
           className="score-input__button"
           styleReset
-          aria-label={`Increment ${player}by one`}
+          aria-label={`Increment by one`}
         >
           +
         </Button>

@@ -3,13 +3,13 @@ import { render, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import ConfigureGame from "./";
-import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
+import { GameContext } from "contexts/gameContext";
+import { createNewPlayer } from "utils/player";
 
 const PLAYERS = [
-  new Player({ name: "Dacey" }),
-  new Player({ name: "Tom" }),
-  new Player({ name: "Jimmy" }),
+  createNewPlayer({ name: "Dacey" }),
+  createNewPlayer({ name: "Tom" }),
+  createNewPlayer({ name: "Jimmy" }),
 ];
 
 const setup = (props = {}, players = PLAYERS, setPlayers = () => {}) => {
@@ -50,8 +50,8 @@ describe("<ConfigureGame/>", () => {
 
   test("handles remove players for min players", () => {
     const { queryAllByAltText } = setup(undefined, [
-      new Player({ name: "Dacey" }),
-      new Player({ name: "Tom" }),
+      createNewPlayer({ name: "Dacey" }),
+      createNewPlayer({ name: "Tom" }),
     ]);
     const removeButtons = queryAllByAltText("Remove player");
     expect(removeButtons.length).toBe(0);
@@ -65,9 +65,9 @@ describe("<ConfigureGame/>", () => {
 
   test("handles invalid players", () => {
     const { queryByText } = setup(undefined, [
-      new Player({ name: "Dacey" }),
-      new Player({ name: "Tom" }),
-      new Player({ name: "" }),
+      createNewPlayer({ name: "Dacey" }),
+      createNewPlayer({ name: "Tom" }),
+      createNewPlayer({ name: "" }),
     ]);
     const startGame = queryByText("Start");
     expect(startGame).not.toBeInTheDocument();

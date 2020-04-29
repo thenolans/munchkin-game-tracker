@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./editPlayer.css";
-import Button from "../Button";
-import PlayerForm from "../PlayerForm/PlayerForm";
-import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../types/player";
+import Button from "components/Button";
+import PlayerForm from "components/PlayerForm/PlayerForm";
+import { GameContext } from "contexts/gameContext";
+import { Player } from "types/types";
 
 type Match = {
   id: string;

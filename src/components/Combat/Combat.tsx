@@ -3,9 +3,9 @@ import { Link, RouteComponentProps } from "react-router-dom";
 import { parse } from "query-string";
 
 import "./combat.css";
-import CombatScoreInput from "../CombatScoreInput";
-import Button from "../Button";
-import Swords from "../../images/swords.svg";
+import CombatScoreInput from "components/CombatScoreInput";
+import Button from "components/Button";
+import Swords from "images/swords.svg";
 
 const Combat: React.FunctionComponent<RouteComponentProps> = (props) => {
   const { score } = parse(props.location.search);

@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./createPlayer.css";
-import Button from "../Button";
-import { Player } from "../../utils/player";
-import PlayerForm from "../PlayerForm";
-import { GameContext } from "../../contexts/gameContext";
-import { Player as PlayerType } from "../../types/player";
+import Button from "components/Button";
+import PlayerForm from "components/PlayerForm";
+import { GameContext } from "contexts/gameContext";
+import { Player as PlayerType } from "types/types";
+import { createNewPlayer } from "utils/player";
 
 const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
   history,
@@ -17,7 +17,7 @@ const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
   const handlePlayerCreate = (player: PlayerType) => {
     const newData = [...players];
 
-    newData.push(new Player({ ...player }));
+    newData.push(createNewPlayer({ ...player }));
 
     setPlayers(newData);
     history.push("/configure");

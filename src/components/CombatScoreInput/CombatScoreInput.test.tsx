@@ -15,8 +15,9 @@ describe("<CombatScoreInput/>", () => {
   `("handles callback for $operation", ({ testid, expected }) => {
     const mockCallback = jest.fn();
     const { getByTestId } = render(
-      <CombatScoreInput onAdjustmentClick={mockCallback} />
+      <CombatScoreInput combatant="Dacey" onAdjustmentClick={mockCallback} />
     );
+
     expect(mockCallback).toHaveBeenCalledTimes(0);
     fireEvent.click(getByTestId(testid));
     expect(mockCallback).toHaveBeenCalledTimes(1);

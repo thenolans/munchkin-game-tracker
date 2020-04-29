@@ -1,10 +1,13 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import App from "./";
 
-import App from ".";
-import { Player } from "../../utils/player";
+import { createNewPlayer } from "utils/player";
 
-const PLAYERS = [new Player({ name: "Dacey" }), new Player({ name: "Tom" })];
+const PLAYERS = [
+  createNewPlayer({ name: "Dacey" }),
+  createNewPlayer({ name: "Tom" }),
+];
 
 describe("<App/>", () => {
   test("renders without crashing", () => {
@@ -23,8 +26,6 @@ describe("<App/>", () => {
       },
       writable: true,
     });
-
-    const { container } = render(<App />);
     expect(localStorageGetMock).toHaveBeenCalledTimes(1);
   });
 });

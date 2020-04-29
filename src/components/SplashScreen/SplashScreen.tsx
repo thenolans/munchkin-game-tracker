@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../Button";
-import MainCharacter from "../../images/main-character.png";
 import "./splashScreen.css";
+import Button from "components/Button";
+import MainCharacter from "images/main-character.png";
 
 const SplashScreen = () => {
   return (

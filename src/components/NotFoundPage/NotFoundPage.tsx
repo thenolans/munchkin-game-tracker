@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./notFoundPage.css";
-import Button from "../Button";
-import Monster from "../../images/monster-404.png";
+import Button from "components/Button";
+import Monster from "images/monster-404.png";
 
 const NotFoundPage = () => {
   return (

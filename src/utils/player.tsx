@@ -1,15 +1,19 @@
 import nanoid from "nanoid";
 
-import { Player as PlayerType } from "types/player";
+import { Player } from "types/types";
 
-export const Player = (function Player(this: PlayerType, player?: PlayerType) {
+type CreatedPlayer = Omit<Player, "id" | "originalSex">;
+
+export const createNewPlayer = (player?: Partial<CreatedPlayer>): Player => {
   const { name = "", sex = "M", level = 1, bonus = 0, avatar = "dragon" } =
     player || {};
-  this.id = nanoid();
-  this.name = name;
-  this.sex = sex;
-  this.originalSex = sex;
-  this.level = level;
-  this.bonus = bonus;
-  this.avatar = avatar;
-} as any) as { new (player?: PlayerType): PlayerType };
+  return {
+    id: nanoid(),
+    name,
+    sex,
+    originalSex: sex,
+    level,
+    bonus,
+    avatar,
+  };
+};

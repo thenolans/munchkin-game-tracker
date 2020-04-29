@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 import "./playerForm.css";
-import AvatarPicker from "../AvatarPicker";
-import Button from "../Button";
-import FormError from "../FormError";
-import SexSelect from "../SexSelect";
-import Input from "../Input";
-import Label from "../Label";
-import { Player } from "types/player";
+import AvatarPicker from "components/AvatarPicker";
+import Button from "components/Button";
+import FormError from "components/FormError";
+import Input from "components/Input";
+import Label from "components/Label";
+import SexSelect from "components/SexSelect";
+import { Player } from "types/types";
 
 type FormErrors = {
   name?: string;

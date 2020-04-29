@@ -4,26 +4,26 @@ import { MemoryRouter, withRouter } from "react-router-dom";
 
 import Game from ".";
 import { GameContext } from "../../contexts/gameContext";
-import { Player } from "../../utils/player";
+import { createNewPlayer } from "../../utils/player";
 import getLowestUniqueLevel from "../../utils/getLowestUniqueLevel";
 import getHighestLevel from "../../utils/getHighestLevel";
 
 const PLAYERS = [
-  new Player({
+  createNewPlayer({
     name: "Dacey",
     sex: "F",
     bonus: 0,
     level: 5,
     avatar: "dragon",
   }),
-  new Player({
+  createNewPlayer({
     name: "Tom",
     sex: "M",
     bonus: 0,
     level: 2,
     avatar: "wizard",
   }),
-  new Player({
+  createNewPlayer({
     name: "Nala",
     sex: "F",
     bonus: 1,
@@ -33,7 +33,7 @@ const PLAYERS = [
 ];
 
 const setup = (
-  routerProps,
+  routerProps?: {},
   props = {},
   players = PLAYERS,
   setPlayers = () => {}
@@ -234,9 +234,9 @@ describe("<Game/>", () => {
 
   test("doesn't display discard badge on tied lowest level", () => {
     const players = [
-      new Player({ level: 2 }),
-      new Player({ level: 2 }),
-      new Player({ level: 5 }),
+      createNewPlayer({ level: 2 }),
+      createNewPlayer({ level: 2 }),
+      createNewPlayer({ level: 5 }),
     ];
     const { getByTestId } = setup(undefined, undefined, players);
     players.map((player) => {

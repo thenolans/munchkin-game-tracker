@@ -45,7 +45,10 @@ describe("<ScoreInput/>", () => {
   });
 
   test("displays current score", () => {
-    const { getByTestId } = render(<ScoreInput currentScore={5} />);
+    const mockCallback = jest.fn();
+    const { getByTestId } = render(
+      <ScoreInput onChange={mockCallback} currentScore={5} />
+    );
     expect(getByTestId("current-score")).toHaveTextContent("5");
   });
 });

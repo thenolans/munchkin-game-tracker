@@ -1,7 +1,7 @@
 import React from "react";
 
-import Button from "../Button";
-import ButtonGroup from "../ButtonGroup";
+import Button from "components/Button";
+import ButtonGroup from "components/ButtonGroup";
 
 type Props = {
   combatant: string;

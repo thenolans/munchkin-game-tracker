@@ -18,7 +18,8 @@ describe("<AvatarPicker/>", () => {
   });
 
   test("renders avatar options", () => {
-    const { getByTestId } = render(<AvatarPicker />);
+    const mockCallback = jest.fn();
+    const { getByTestId } = render(<AvatarPicker onChange={mockCallback} />);
     const options = getByTestId("avatar-options");
     expect(options.children).toHaveLength(AVATAR_LIST.length);
   });

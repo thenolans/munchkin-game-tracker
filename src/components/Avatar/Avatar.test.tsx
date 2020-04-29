@@ -9,13 +9,13 @@ describe("<Avatar/>", () => {
     const { getByTestId } = render(<Avatar id="wizard" />);
     const avatar = AVATAR_LIST.find((avatar) => avatar.id === "wizard");
     const img = getByTestId("avatar");
-    expect(img).toHaveAttribute("src", avatar.src);
+    expect(img).toHaveAttribute("src", avatar?.src);
   });
 
   test("handles alt prop", () => {
     const { getByTestId } = render(<Avatar id="wizard" />);
     const avatar = AVATAR_LIST.find((avatar) => avatar.id === "wizard");
     const img = getByTestId("avatar");
-    expect(img).toHaveAttribute("alt", avatar.alt);
+    expect(img).toHaveAttribute("alt", avatar?.alt);
   });
 });
