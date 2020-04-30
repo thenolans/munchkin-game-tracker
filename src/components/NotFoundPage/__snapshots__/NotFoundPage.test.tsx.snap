@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage/> renders without crashing 1`] = `
+<div
+  class="page-not-found"
+>
+  <div
+    class="page-not-found__section"
+  >
+    <h3
+      class="page-not-found__heading"
+    >
+      Level 404
+    </h3>
+    <div
+      class="page-not-found__title"
+    >
+      Monster That Eats Your Page
+    </div>
+    <div
+      class="page-not-found__error"
+    >
+      He has the munchies and eats the page you are looking for. You must runaway and let him keep his treasure.
+    </div>
+  </div>
+  <img
+    alt="door"
+    class="page-not-found__img"
+    src="monster-404.png"
+  />
+  <div
+    class="page-not-found__content"
+  >
+    <span
+      class="page-not-found--bold"
+    >
+      Bad Stuff: 
+    </span>
+     You don't know where you are and you suffer from confusion. You are sent back home.
+  </div>
+  <a
+    class="button button--default"
+    href="/"
+  >
+    Run Away
+  </a>
+  <div
+    class="page-not-found__footer"
+  >
+    10 Treasures
+  </div>
+</div>
+`;
