@@ -7,6 +7,7 @@ Annoyed with the constant crossing out of levels when keeping score on paper and
 ### Development Focus
 
 - Implement `useContext` hook to manage the state of the game progress and all player data
+- Implement `TypeScript` to add static type-checking
 - Implement `useEffect` hooks to react to data changes and update player cards accordingly
 - Implement `useLayoutEffect` to synchronously handle certain state updates to prevent element flickering
 - Persist game data in `localStorage` and reload the game progress on refresh, if available
