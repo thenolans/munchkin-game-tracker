@@ -5,7 +5,7 @@ import "./createPlayer.css";
 import Button from "components/Button";
 import PlayerForm from "components/PlayerForm";
 import { GameContext } from "contexts/gameContext";
-import { Player as PlayerType } from "types/types";
+import { Player as PlayerType } from "types";
 import { createNewPlayer } from "utils/player";
 
 const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({

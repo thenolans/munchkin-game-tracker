@@ -5,7 +5,7 @@ import "./editPlayer.css";
 import Button from "components/Button";
 import PlayerForm from "components/PlayerForm/PlayerForm";
 import { GameContext } from "contexts/gameContext";
-import { Player } from "types/types";
+import { Player } from "types";
 
 type Match = {
   id: string;

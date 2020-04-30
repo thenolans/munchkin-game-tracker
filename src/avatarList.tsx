@@ -1,4 +1,4 @@
-import { Avatar } from "types/types";
+import { Avatar } from "types";
 
 const AVATAR_LIST: Avatar[] = [
   {

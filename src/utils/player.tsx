@@ -1,6 +1,6 @@
 import nanoid from "nanoid";
 
-import { Player } from "types/types";
+import { Player } from "types";
 
 type CreatedPlayer = Omit<Player, "id" | "originalSex">;
 

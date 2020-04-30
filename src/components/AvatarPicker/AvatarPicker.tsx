@@ -3,7 +3,7 @@ import React from "react";
 import AVATAR_LIST from "../../avatarList";
 import "./avatarPicker.css";
 import Avatar from "components/Avatar";
-import { AvatarId } from "types/types";
+import { AvatarId } from "types";
 
 type Props = {
   value?: AvatarId;

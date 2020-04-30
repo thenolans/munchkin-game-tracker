@@ -7,7 +7,7 @@ import FormError from "components/FormError";
 import Input from "components/Input";
 import Label from "components/Label";
 import SexSelect from "components/SexSelect";
-import { Player } from "types/types";
+import { Player } from "types";
 
 type FormErrors = {
   name?: string;

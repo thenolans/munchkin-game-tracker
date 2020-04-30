@@ -29,7 +29,7 @@ const App = () => {
   );
 
   useEffect(() => {
-    localStorage.setItem("game_v1.0.0", JSON.stringify(players));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(players));
   }, [JSON.stringify(players)]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

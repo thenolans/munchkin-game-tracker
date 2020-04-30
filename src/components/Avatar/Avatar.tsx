@@ -2,7 +2,7 @@ import React from "react";
 
 import "./avatar.css";
 import AVATAR_LIST from "../../avatarList";
-import { AvatarId } from "types/types";
+import { AvatarId } from "types";
 
 type Props = {
   id: AvatarId;

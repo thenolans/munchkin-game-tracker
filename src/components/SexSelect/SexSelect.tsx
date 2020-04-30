@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./sexSelect.css";
-import { Sex } from "types/types";
+import { Sex } from "types";
 
 type Props = {
   value?: Sex;
