@@ -6,6 +6,7 @@ import Button from "components/Button";
 import PlayerForm from "components/PlayerForm/PlayerForm";
 import { GameContext } from "contexts/gameContext";
 import { Player } from "types";
+import Urls from "constants/urls";
 
 type Match = {
   id: string;
@@ -28,14 +29,14 @@ const EditPlayer: React.FunctionComponent<RouteComponentProps<Match>> = ({
     newData[playerIndex] = player;
 
     setPlayers(newData);
-    history.push("/configure");
+    history.push(Urls.routes.configure);
   };
 
   return (
     <div className="edit-player">
       <div className="edit-player__heading">
         <h1 className="edit-player__title">Edit Player</h1>
-        <Button as={Link} to="/configure" styleReset>
+        <Button as={Link} to={Urls.routes.configure} styleReset>
           X
         </Button>
       </div>

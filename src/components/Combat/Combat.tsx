@@ -6,6 +6,7 @@ import "./combat.css";
 import CombatScoreInput from "components/CombatScoreInput";
 import Button from "components/Button";
 import Swords from "images/swords.svg";
+import Urls from "constants/urls";
 
 const Combat: React.FunctionComponent<RouteComponentProps> = (props) => {
   const { score } = parse(props.location.search);
@@ -41,7 +42,7 @@ const Combat: React.FunctionComponent<RouteComponentProps> = (props) => {
           }
         />
       </div>
-      <Button as={Link} fluid to="/game">
+      <Button as={Link} fluid to={Urls.routes.game}>
         End Combat
       </Button>
     </div>

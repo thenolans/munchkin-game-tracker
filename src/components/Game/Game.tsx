@@ -12,6 +12,7 @@ import Swords from "images/swords.svg";
 import getHighestLevel from "utils/getHighestLevel";
 import getLowestUniqueLevel from "utils/getLowestUniqueLevel";
 import { createNewPlayer } from "utils/player";
+import Urls from "constants/urls";
 
 const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
   const game = useContext(GameContext);
@@ -49,7 +50,7 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
         .fill(null)
         .map(() => createNewPlayer())
     );
-    history.push("/");
+    history.push(Urls.routes.homePage);
   };
 
   const rematchGame = () => {
@@ -153,7 +154,7 @@ const Game: React.FunctionComponent<RouteComponentProps> = ({ history }) => {
         ))}
       </div>
       <div className="game__actions">
-        <Button as={Link} to="/configure">
+        <Button as={Link} to={Urls.routes.configure}>
           &lt;
         </Button>
         <Button data-testid="game__actions-rematch" onClick={rematchGame}>

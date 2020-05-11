@@ -7,6 +7,7 @@ import PlayerForm from "components/PlayerForm";
 import { GameContext } from "contexts/gameContext";
 import { Player as PlayerType } from "types";
 import { createNewPlayer } from "utils/player";
+import Urls from "constants/urls";
 
 const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
   history,
@@ -20,7 +21,7 @@ const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
     newData.push(createNewPlayer({ ...player }));
 
     setPlayers(newData);
-    history.push("/configure");
+    history.push(Urls.routes.configure);
   };
 
   return (
@@ -29,7 +30,7 @@ const CreatePlayer: React.FunctionComponent<RouteComponentProps> = ({
         <h1 className="create-player__title" data-testid="create-player">
           Create Player
         </h1>
-        <Button as={Link} to="/configure" styleReset>
+        <Button as={Link} to={Urls.routes.configure} styleReset>
           X
         </Button>
       </div>

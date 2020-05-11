@@ -7,6 +7,7 @@ import Button from "components/Button";
 import { GameContext } from "contexts/gameContext";
 import Trash from "images/trash.svg";
 import Pencil from "images/pencil.svg";
+import Urls from "constants/urls";
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 6;
@@ -76,14 +77,14 @@ const ConfigureGame = () => {
 
       <div className="configure-game__add-player">
         {numberOfPlayers < MAX_PLAYERS && (
-          <Button as={Link} to="/player/create" styleReset>
+          <Button as={Link} to={Urls.routes.CreatePlayer} styleReset>
             + Add Player
           </Button>
         )}
       </div>
 
       {playersAreValid && (
-        <Button as={Link} fluid to="/game">
+        <Button as={Link} fluid to={Urls.routes.game}>
           Start
         </Button>
       )}

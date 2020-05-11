@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./notFoundPage.css";
 import Button from "components/Button";
 import Monster from "images/monster-404.png";
+import Urls from "constants/urls";
 
 const NotFoundPage = () => {
   return (
@@ -21,7 +22,7 @@ const NotFoundPage = () => {
         <span className="page-not-found--bold">Bad Stuff: </span> You don't know
         where you are and you suffer from confusion. You are sent back home.
       </div>
-      <Button as={Link} to="/">
+      <Button as={Link} to={Urls.routes.homePage}>
         Run Away
       </Button>
       <div className="page-not-found__footer">10 Treasures</div>

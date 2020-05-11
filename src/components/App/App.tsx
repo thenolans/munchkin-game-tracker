@@ -14,6 +14,7 @@ import NotFoundPage from "components/NotFoundPage";
 import SplashScreen from "components/SplashScreen";
 import { GameContext } from "contexts/gameContext";
 import { createNewPlayer } from "utils/player";
+import Urls from "constants/urls";
 
 //version local storage key to prevent stale data with app changes
 const LOCAL_STORAGE_KEY = "game_v1.0.0";
@@ -44,12 +45,16 @@ const App = () => {
         <Router>
           <Card>
             <Switch>
-              <Route exact path="/" component={SplashScreen} />
-              <Route path="/configure" component={ConfigureGame} />
-              <Route path="/game" component={Game} />
-              <Route path="/combat" component={Combat} />
-              <Route path="/player/edit/:id" component={EditPlayer} />
-              <Route path="/player/create" component={CreatePlayer} />
+              <Route
+                exact
+                path={Urls.routes.homePage}
+                component={SplashScreen}
+              />
+              <Route path={Urls.routes.configure} component={ConfigureGame} />
+              <Route path={Urls.routes.game} component={Game} />
+              <Route path={Urls.routes.combat} component={Combat} />
+              <Route path={Urls.routes.editPlayer} component={EditPlayer} />
+              <Route path={Urls.routes.CreatePlayer} component={CreatePlayer} />
               <Route path="*" component={NotFoundPage} />
             </Switch>
           </Card>

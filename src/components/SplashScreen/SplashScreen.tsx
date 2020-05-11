@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./splashScreen.css";
 import Button from "components/Button";
 import MainCharacter from "images/main-character.png";
+import Urls from "constants/urls";
 
 const SplashScreen = () => {
   return (
@@ -13,7 +14,7 @@ const SplashScreen = () => {
         src={MainCharacter}
         alt="Munchkin character holding chainsaw"
       />
-      <Button as={Link} to="/configure">
+      <Button as={Link} to={Urls.routes.configure}>
         New Game
       </Button>
     </div>
