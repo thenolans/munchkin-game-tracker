@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/munchkin-game-tracker/precache-manifest.ce2f5294987910308f1149733258ab7e.js"
+  "/munchkin-game-tracker/precache-manifest.648aa425db1a8075b5c0a74a764b6d9d.js"
 );
 
 self.addEventListener('message', (event) => {

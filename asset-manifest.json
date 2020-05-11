@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/munchkin-game-tracker/static/css/main.c41bca24.chunk.css",
-    "main.js": "/munchkin-game-tracker/static/js/main.1bb9fd4c.chunk.js",
-    "main.js.map": "/munchkin-game-tracker/static/js/main.1bb9fd4c.chunk.js.map",
+    "main.js": "/munchkin-game-tracker/static/js/main.07e14605.chunk.js",
+    "main.js.map": "/munchkin-game-tracker/static/js/main.07e14605.chunk.js.map",
     "runtime-main.js": "/munchkin-game-tracker/static/js/runtime-main.430a2ab7.js",
     "runtime-main.js.map": "/munchkin-game-tracker/static/js/runtime-main.430a2ab7.js.map",
     "static/js/2.c3febd67.chunk.js": "/munchkin-game-tracker/static/js/2.c3febd67.chunk.js",
     "static/js/2.c3febd67.chunk.js.map": "/munchkin-game-tracker/static/js/2.c3febd67.chunk.js.map",
     "index.html": "/munchkin-game-tracker/index.html",
-    "precache-manifest.ce2f5294987910308f1149733258ab7e.js": "/munchkin-game-tracker/precache-manifest.ce2f5294987910308f1149733258ab7e.js",
+    "precache-manifest.648aa425db1a8075b5c0a74a764b6d9d.js": "/munchkin-game-tracker/precache-manifest.648aa425db1a8075b5c0a74a764b6d9d.js",
     "service-worker.js": "/munchkin-game-tracker/service-worker.js",
     "static/css/main.c41bca24.chunk.css.map": "/munchkin-game-tracker/static/css/main.c41bca24.chunk.css.map",
     "static/media/dragon.png": "/munchkin-game-tracker/static/media/dragon.cd3579e0.png",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.430a2ab7.js",
     "static/js/2.c3febd67.chunk.js",
     "static/css/main.c41bca24.chunk.css",
-    "static/js/main.1bb9fd4c.chunk.js"
+    "static/js/main.07e14605.chunk.js"
   ]
 }
