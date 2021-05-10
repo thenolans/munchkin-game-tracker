@@ -6,7 +6,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "gh-pages": "^2.1.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "nanoid": "^2.1.7",
     "query-string": "^6.11.1",
     "react": "^16.12.0",
