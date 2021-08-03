@@ -1,7 +1,7 @@
 import React, { useContext, useLayoutEffect, useState } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 
-import "./game.css";
+import "./Game.css";
 import Avatar from "components/Avatar";
 import Button from "components/Button";
 import PlayerCard from "components/PlayerCard/PlayerCard";

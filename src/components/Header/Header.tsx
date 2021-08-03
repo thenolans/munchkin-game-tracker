@@ -1,7 +1,7 @@
 import React from "react";
 
 import logo from "images/logo-transparent.png";
-import "./header.css";
+import "./Header.css";
 
 const Header = () => {
   return (

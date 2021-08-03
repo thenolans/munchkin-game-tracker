@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import "./input.css";
+import "./Input.css";
 
 type Props = React.HTMLAttributes<HTMLInputElement> &
   React.HTMLProps<HTMLInputElement> & {

@@ -1,7 +1,7 @@
 import React from "react";
 
 import AVATAR_LIST from "../../avatarList";
-import "./avatarPicker.css";
+import "./AvatarPicker.css";
 import Avatar from "components/Avatar";
 import { AvatarId } from "types";
 

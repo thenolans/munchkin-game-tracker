@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./scoreInput.css";
+import "./ScoreInput.css";
 import Button from "components/Button";
 
 type Props = {

@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { Link, LinkProps as RRLinkProps } from "react-router-dom";
 
-import "./button.css";
+import "./Button.css";
 
 type CommonProps = {
   className?: string;
